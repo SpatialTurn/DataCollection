@@ -243,7 +243,7 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="census.html">1. Intro to Markdown</a>
+        <a href="census.html">1. Working with the U.S. Census Bureau Data</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -306,7 +306,7 @@
     <main id="main-content" class="main-content"><div class="container lesson-content">
         
         
-<section id="aio-census"><p>Content from <a href="census.html">Intro to Markdown</a></p>
+<section id="aio-census"><p>Content from <a href="census.html">Working with the U.S. Census Bureau Data</a></p>
 <hr>
 <p>Last updated on 2024-10-28 |
 
@@ -322,8 +322,14 @@
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>How do you write a lesson using Markdown and
-<a href="https://carpentries.github.io/sandpaper/" class="external-link">sandpaper</a>?</li>
+<li>What are the kinds of datasets available from the U.S. Census
+Bureau?</li>
+<li>How can you visualize and analyze these datasets for your region of
+interest?</li>
+<li>Where can you find additional information about a particular
+dataset?</li>
+<li>How do you combine spatial and tabular data from the Census
+Bureau?</li>
 </ul>
 </div>
 </div>
@@ -333,9 +339,12 @@
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Explain how to use markdown with The Carpentries Workbench</li>
-<li>Demonstrate how to include pieces of code, figures, and nested
-challenge blocks</li>
+<li>Provide an overview of the data available from the U.S. Census
+Bureau</li>
+<li>Explain how to download and visualize spatial data from the Census
+Bureau</li>
+<li>Demonstrate how to query and analyze the spatial data</li>
+<li>Demonstrate how to perform complex spatial joins</li>
 </ul>
 </div>
 </div>
@@ -345,13 +354,63 @@ challenge blocks</li>
 <section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
 <hr class="half-width">
-<p>This is a lesson created via The Carpentries Workbench. It is written
-in <a href="https://pandoc.org/MANUAL.txt" class="external-link">Pandoc-flavored Markdown</a>
-for static files and <a href="https://rmarkdown.rstudio.com/" class="external-link">R
-Markdown</a> for dynamic files that can render code into output. Please
-refer to the <a href="https://carpentries.github.io/sandpaper-docs/" class="external-link">Introduction to The
-Carpentries Workbench</a> for full documentation.</p>
-<p>…</p>
+<p>There are three broad categories of datasets available from the U.S.
+Census Bureau:</p>
+<ol style="list-style-type: decimal">
+<li>Census TIGER/Line Shapefiles</li>
+<li>Decennial Census of Population and Housing</li>
+<li>American Community Survey (ACS)</li>
+</ol>
+<div class="section level3">
+<h3 id="census-tigerline-shapefiles">Census TIGER/Line Shapefiles<a class="anchor" aria-label="anchor" href="#census-tigerline-shapefiles"></a>
+</h3>
+<p>TIGER (Topologically Integrated Geographic Encoding and Referencing)
+system. It is the primary geospatial data provided by Census Bureau.
+TIGER/Line shapefiles are available from 2007 to present. Data before
+2007 are available in ASCII format. It includes all legal boundaries and
+names of different geographic units in United States, including states,
+counties, places, zip codes, urban areas, census blocks, census block
+groups, and census tracts. These shapefiles include a standard
+geographic identifier (GEOID) for each record which links to the GEOID
+in the census data. TIGER/Line Shapefiles use the American National
+Standards Institute (ANSI) codes to identify geographic entities. The
+ANSI include both the Federal Information Processing Series (FIPS) codes
+and the U.S. Geological Survey’s Geographic Names Information System
+(GNIS) codes. The fields in the shapefiles include these information.
+For example, “STATEFP” filed means state FIPS code, and “STATENS” field
+means state GNIS code. County level FIPS codes usually have five digits.
+The first two are the FIPS code of the state to which the county belongs
+and the rest three are county codes.</p>
+</div>
+<div class="section level3">
+<h3 id="decennial-census-of-population-and-housing">Decennial Census of Population and Housing<a class="anchor" aria-label="anchor" href="#decennial-census-of-population-and-housing"></a>
+</h3>
+<p>It is conducted every ten years which counts every person living in
+the U.S. It provides general population characteristics such as age,
+sex, race, ethnicity, and household composition. It is a point-in-time
+data which sample every person with smallest margin of error.</p>
+<p>Variables: * Population data by sex, age, race, Hispanic origin and
+more. * Housing data by occupancy, vacancy status, and tenure at the
+highest geographic resolution (all levels).</p>
+</div>
+<div class="section level3">
+<h3 id="american-community-survey-acs">American Community Survey (ACS)<a class="anchor" aria-label="anchor" href="#american-community-survey-acs"></a>
+</h3>
+<p>ACS is conducted every year by collecting information from a sample
+population. It includes topics not included in the decennial census such
+as education, employment, internet access, and transportation. ACS
+1-year estimate is based on 12-month continuous survey and ACS 5-year
+estimate is based on a 60-month continuous survey. Compared to decennial
+census data, ACS survey information has relatively high margin of error
+(i.e. less reliable estimates).</p>
+<p>Variables: In addition to demographic and housing data, ACS also
+include: 1. Social characteristics * school enrollment * educational
+attainment * marital status * fertility * grandparents caring for
+children * veteran status * disability status * language spoken at home
+2. Income and benefits * food Stamps/Supplemental Nutrition Assistance
+Program (SNAP) * health insurance coverage * income 3. Employment *
+employment location * mode of travel to work 4. Many other variables *
+ancestry * citizenship status * place of birth * year of entry</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -360,14 +419,12 @@ Carpentries Workbench</a> for full documentation.</p>
 <h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
-<li>Use <code>.md</code> files for episodes when you want static
-content</li>
-<li>Use <code>.Rmd</code> files for episodes when you need to generate
-output</li>
-<li>Run <code>sandpaper::check_lesson()</code> to identify any issues
-with your lesson</li>
-<li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
-locally</li>
+<li>Census data can be used for planning services for certain population
+groups</li>
+<li>It can be used for site selection for new businesses or service
+facilities</li>
+<li>Public policy analysis</li>
+<li>Spatial analysis of hazard impact, epidemiological models, etc.</li>
 </ul>
 </div>
 </div>
@@ -376,6 +433,7 @@ locally</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
+</div>
 </section></section>
 </div>
     </main>
