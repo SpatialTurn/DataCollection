@@ -48,6 +48,7 @@ It provides general population characteristics such as age, sex, race, ethnicity
 It is a point-in-time data which sample every person with smallest margin of error.
 
 Variables:
+
 - Population data by sex, age, race, Hispanic origin and more. 
 - Housing data by occupancy, vacancy status, and tenure at the highest geographic resolution (all levels).
 
@@ -60,6 +61,7 @@ Compared to decennial census data, ACS survey information has relatively high ma
 
 Variables:
 In addition to demographic and housing data, ACS also include:
+
 1. Social characteristics
 - school enrollment
 - educational attainment
@@ -91,3 +93,10 @@ In addition to demographic and housing data, ACS also include:
 - Spatial analysis of hazard impact, epidemiological models, etc.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
+
+# Module Overview
+
+| Lesson | Overview                                                                                                                                                         | 
+| ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| [Beginner](https://jupyter.iguide.illinois.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FSpatialTurn%2FDataCollection-Notebooks&urlpath=lab%2Ftree%2FDataCollection-Notebooks%2FCensus%2FBeginner.ipynb+&branch=main)       | Learn how to visualize and analyze shapefiles and tabular data downloaded from the U.S. Census Bureau. |
+
