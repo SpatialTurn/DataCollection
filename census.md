@@ -48,8 +48,8 @@ It provides general population characteristics such as age, sex, race, ethnicity
 It is a point-in-time data which sample every person with smallest margin of error.
 
 Variables:
-* Population data by sex, age, race, Hispanic origin and more. 
-* Housing data by occupancy, vacancy status, and tenure at the highest geographic resolution (all levels).
+- Population data by sex, age, race, Hispanic origin and more. 
+- Housing data by occupancy, vacancy status, and tenure at the highest geographic resolution (all levels).
 
 ### American Community Survey (ACS)
 
@@ -61,26 +61,26 @@ Compared to decennial census data, ACS survey information has relatively high ma
 Variables:
 In addition to demographic and housing data, ACS also include:
 1. Social characteristics
-* school enrollment
-* educational attainment
-* marital status
-* fertility
-* grandparents caring for children
-* veteran status
-* disability status
-* language spoken at home
+- school enrollment
+- educational attainment
+- marital status
+- fertility
+- grandparents caring for children
+- veteran status
+- disability status
+- language spoken at home
 2. Income and benefits
-* food Stamps/Supplemental Nutrition Assistance Program (SNAP)
-* health insurance coverage
-* income
+- food Stamps/Supplemental Nutrition Assistance Program (SNAP)
+- health insurance coverage
+- income
 3. Employment
-* employment location
-* mode of travel to work
+- employment location
+- mode of travel to work
 4. Many other variables
-* ancestry
-* citizenship status
-* place of birth
-* year of entry
+- ancestry
+- citizenship status
+- place of birth
+- year of entry
 
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
