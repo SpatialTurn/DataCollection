@@ -1,17 +1,14 @@
 ## Contributing
 
-[The Carpentries][cp-site] ([Software Carpentry][swc-site], [Data
-Carpentry][dc-site], and [Library Carpentry][lc-site]) are open source
-projects, and we welcome contributions of all kinds: new lessons, fixes to
-existing material, bug reports, and reviews of proposed changes are all
-welcome.
+This is intended to be an open source project and we welcome contributions of 
+all kinds: lessons, fixes, bug reports, and reviews of existing materials. 
 
 ### Contributor Agreement
 
 By contributing, you agree that we may redistribute your work under [our
 license](LICENSE.md). In exchange, we will address your issues and/or assess
 your change proposal as promptly as we can, and help you become a member of our
-community. Everyone involved in [The Carpentries][cp-site] agrees to abide by
+community. Everyone involved in this community agrees to abide by
 our [code of conduct](CODE_OF_CONDUCT.md).
 
 ### How to Contribute
