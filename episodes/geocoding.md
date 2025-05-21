@@ -49,7 +49,7 @@ address is incorrect. Several APIs may also impose daily usage limits for free a
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-# Module Overview
+## Hands-on Exercises
 
 | Lesson | Overview                                                                                                                                                         | 
 | ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
