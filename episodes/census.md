@@ -10,6 +10,7 @@ exercises: 5
 - How can you visualize and analyze these datasets for your region of interest?
 - Where can you find additional information about a particular dataset?
 - How do you combine spatial and tabular data from the Census Bureau?
+- What are the variables in the ACS dataset?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
