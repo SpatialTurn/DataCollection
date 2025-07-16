@@ -25,6 +25,7 @@ exercises: 5
 - It can be used for site selection for new grocery stores
 - Public policy analysis
 - Spatial analysis of public transportation networks
+- Beginner, Intermediate, Expert Modules
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
