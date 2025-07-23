@@ -67,8 +67,6 @@ contact: 'rkalyanapurdue@gmail.com' # FIXME
 # Order of episodes in your lesson
 episodes: 
 - census.md
-- geocoding.md
-- food-deserts.md
 - imagery.md
 - field.md
 
