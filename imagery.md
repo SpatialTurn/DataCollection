@@ -1,7 +1,7 @@
 ---
-title: "Collecting and Using Imagery Datasets"
+title: "Imagery Datasets"
 teaching: 100
-exercises: 5
+exercises: 2
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
@@ -32,8 +32,3 @@ exercises: 5
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 # Module Overview
-
-| Lesson | Overview                                                                                                                                                         | 
-| ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| [Beginner](https://jupyter.iguide.illinois.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FSpatialTurn%2FDataCollection-Notebooks&urlpath=lab%2Ftree%2FDataCollection-Notebooks%2FCensus%2FBeginner.ipynb+&branch=main)       | Learn how to visualize and analyze shapefiles and tabular data downloaded from the U.S. Census Bureau. |
-
