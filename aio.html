@@ -255,7 +255,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="geocoding.html">2. Geocoding</a>
+        <a href="imagery.html">2. Collecting and Using Imagery Datasets</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -267,31 +267,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="food-deserts.html">3. Food Deserts</a>
-    </div>
-<!--/div.accordion-header-->
-
-  </div>
-<!--/div.accordion-item-->
-</div>
-<!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush5">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading5">
-        <a href="imagery.html">4. Collecting and Using Imagery Datasets</a>
-    </div>
-<!--/div.accordion-header-->
-
-  </div>
-<!--/div.accordion-item-->
-</div>
-<!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush6">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading6">
-        <a href="field.html">5. Field Data Collection</a>
+        <a href="field.html">3. Field Data Collection</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -535,192 +511,6 @@ downloaded from the U.S. Census Bureau.</td>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</div></section><section id="aio-geocoding"><p>Content from <a href="geocoding.html">Geocoding</a></p>
-<hr>
-<p>Last updated on 2025-05-21 |
-
-        <a href="https://github.com/SocialTurn/DataCollection/edit/main/episodes/geocoding.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-<div class="text-end">
-          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
-        </div>
-<div class="overview card">
-<h2 class="card-header">Overview</h2>
-<div class="row g-0">
-<div class="col-md-4">
-<div class="card-body">
-<div class="inner">
-<h3 class="card-title">Questions</h3>
-<ul>
-<li>What are the various geocoding services that can be used?</li>
-<li>What are some limitations of the geocoding API?</li>
-<li>What are some categories of places that can be geocoded using the
-Open Street Map (OSM) API?</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="col-md-8">
-<div class="card-body">
-<div class="inner bordered">
-<h3 class="card-title">Objectives</h3>
-<ul>
-<li>Learn how to use the Census geocoding API</li>
-<li>Learn how to use the Nominatim and Overpass APIs to access Open
-Street Map (OSM) data</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<section><h2 class="section-heading" id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
-</h2>
-<hr class="half-width">
-<p>The geocoding API is a service that converts street addresses into
-geographic coordinates. This can be done either way, which is converting
-geographic coordinates back to street addresses. Features of geocoding
-APIs include:</p>
-<ol style="list-style-type: decimal">
-<li>Geocoding – addresses to geographic coordinates.</li>
-<li>Reverse geocoding - geographic coordinates to address.</li>
-<li>Region Biasing – constrain results to specific region, county, or
-postal code.</li>
-<li>Place IDs – place ID to address and vice versa.</li>
-</ol>
-<p>There are several practical applications of geocoding such as:</p>
-<ol style="list-style-type: decimal">
-<li>Location Based Services: Delivery Companies like uber, doordash
-convert user addresses into GPS coordinates for efficient
-dispatching.</li>
-<li>Mapping and GIS: Real estate platforms use geocode to display
-properties of interest on maps.</li>
-<li>Emergency Services: Police, fire, and medical services use geocoding
-for precise identification and to reduce response times by finding the
-fastest route.</li>
-</ol>
-<p>Geocoding APIs also have certain limitations that need to be taken
-into account when using them. They are designed to convert predefined,
-static addresses and can result in an error if the address is incorrect.
-Several APIs may also impose daily usage limits for free access.
-Finally, geographic data involving geocoding needs to be constantly
-updated to avoid inaccuracies over time.</p>
-<div class="section level3">
-<h3 id="open-street-map">Open Street Map<a class="anchor" aria-label="anchor" href="#open-street-map"></a>
-</h3>
-<div id="keypoints1" class="callout keypoints">
-<div class="callout-square">
-<i class="callout-icon" data-feather="key"></i>
-</div>
-<div class="callout-inner">
-<h3 class="callout-title">Key Points</h3>
-<div class="callout-content">
-<ul>
-<li>Geocoding APIs can be used to identify locations of specific
-categories such as grocery stores or restaurants</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</section><section><h2 class="section-heading" id="hands-on-exercises">Hands-on Exercises<a class="anchor" aria-label="anchor" href="#hands-on-exercises"></a>
-</h2>
-<hr class="half-width">
-<table class="table">
-<colgroup>
-<col width="49%">
-<col width="50%">
-</colgroup>
-<thead><tr class="header">
-<th>Lesson</th>
-<th>Overview</th>
-</tr></thead>
-<tbody><tr class="odd">
-<td><a href="https://jupyter.iguide.illinois.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FSpatialTurn%2FDataCollection-Notebooks&amp;urlpath=lab%2Ftree%2FDataCollection-Notebooks%2FCensus%2FBeginner.ipynb+&amp;branch=main" class="external-link">Beginner</a></td>
-<td>Learn how to query and visualize locations of points of interest
-(e.g., museums) or specific grocery stores.</td>
-</tr></tbody>
-</table>
-<!--
-Place links that you need to refer to multiple times across pages here. Delete
-any links that you are not going to use.
- --></section></section><section id="aio-food-deserts"><p>Content from <a href="food-deserts.html">Food Deserts</a></p>
-<hr>
-<p>Last updated on 2025-07-16 |
-
-        <a href="https://github.com/SocialTurn/DataCollection/edit/main/episodes/food-deserts.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-<div class="text-end">
-          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
-        </div>
-<div class="overview card">
-<h2 class="card-header">Overview</h2>
-<div class="row g-0">
-<div class="col-md-4">
-<div class="card-body">
-<div class="inner">
-<h3 class="card-title">Questions</h3>
-<ul>
-<li>What is a food desert?</li>
-<li>Where can we find data on food deserts in the U.S.?</li>
-<li>How can you visualize the food desert data for your region of
-interest?</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="col-md-8">
-<div class="card-body">
-<div class="inner bordered">
-<h3 class="card-title">Objectives</h3>
-<ul>
-<li>Provide an overview of the Food Access Research Atlas data from the
-USDA</li>
-<li>Explain how to download and visualize data from the USDA</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="keypoints1" class="callout keypoints">
-<div class="callout-square">
-<i class="callout-icon" data-feather="key"></i>
-</div>
-<div class="callout-inner">
-<h3 class="callout-title">Key Points</h3>
-<div class="callout-content">
-<ul>
-<li>The Food Access Research Atlas data can be used to study food access
-in terms of socioeconomic factors</li>
-<li>It can be used for site selection for new grocery stores</li>
-<li>Public policy analysis</li>
-<li>Spatial analysis of public transportation networks</li>
-<li>Beginner, Intermediate, Expert Modules</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="section level1">
-<h1 id="module-overview">Module Overview<a class="anchor" aria-label="anchor" href="#module-overview"></a>
-</h1>
-<table class="table">
-<colgroup>
-<col width="49%">
-<col width="50%">
-</colgroup>
-<thead><tr class="header">
-<th>Lesson</th>
-<th>Overview</th>
-</tr></thead>
-<tbody><tr class="odd">
-<td><a href="https://jupyter.iguide.illinois.edu/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FSpatialTurn%2FDataCollection-Notebooks&amp;urlpath=lab%2Ftree%2FDataCollection-Notebooks%2FCensus%2FBeginner.ipynb+&amp;branch=main" class="external-link">Beginner</a></td>
-<td>Learn how to visualize and analyze tabular data downloaded from the
-USDA Food Access Research Atlas.</td>
-</tr></tbody>
-</table>
-<!--
-Place links that you need to refer to multiple times across pages here. Delete
-any links that you are not going to use.
- -->
 </div></section><section id="aio-imagery"><p>Content from <a href="imagery.html">Collecting and Using Imagery Datasets</a></p>
 <hr>
 <p>Last updated on 2024-10-28 |
@@ -939,8 +729,8 @@ any links that you are not going to use.
   "url": "https://SocialTurn.github.io/DataCollection/aio.html",
   "identifier": "https://SocialTurn.github.io/DataCollection/aio.html",
   "dateCreated": "2024-08-08",
-  "dateModified": "2025-07-22",
-  "datePublished": "2025-07-22"
+  "dateModified": "2025-07-23",
+  "datePublished": "2025-07-23"
 }
 
   </script><script>
