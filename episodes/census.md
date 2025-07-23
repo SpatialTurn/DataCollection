@@ -1,5 +1,5 @@
 ---
-title: "Working with the U.S. Census Bureau Data"
+title: "U.S. Census Bureau Data"
 teaching: 100
 exercises: 5
 ---
