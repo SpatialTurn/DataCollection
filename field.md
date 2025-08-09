@@ -1,5 +1,5 @@
 ---
-title: "Field Data Collection"
+title: "Field-based Data Collection"
 teaching: 100
 exercises: 5
 ---
