@@ -42,7 +42,7 @@ The ANSI include both the Federal Information Processing Series (FIPS) codes and
 The fields in the shapefiles include these information. For example, “STATEFP” filed means state FIPS code, and “STATENS” field means state GNIS code. 
 County level FIPS codes usually have five digits. The first two are the FIPS code of the state to which the county belongs and the rest three are county codes.
 
-![Census USA Map]("/census_map.png"){alt='A map showing U.S. Census Bureau TIGER/Line shapefile boundaries for states and counties.'}
+![Census USA Map](census_map.png "A map showing U.S. Census Bureau TIGER/Line shapefile boundaries for states and counties.")
 
 ### Decennial Census of Population and Housing
 
