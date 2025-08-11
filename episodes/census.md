@@ -99,7 +99,9 @@ In addition to demographic and housing data, ACS also include:
 
 # Module Overview
 
-| Lesson | Overview                                                                                                                                                         | 
-| ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| [Beginner](https://hub.cyberfaces.org/hub/user-redirect/git-pull?repo=https%3A%2F%2Fgithub.com%2FSpatialTurn%2FDataCollection-Notebooks&urlpath=lab%2Ftree%2Fmodules%2FDataCollection-Notebooks%2FCensus%2FBeginner.ipynb+&branch=main)       | Learn how to visualize and analyze shapefiles and tabular data downloaded from the U.S. Census Bureau. |
+| Lesson            | Overview                                                                                                   |
+|-------------------|------------------------------------------------------------------------------------------------------------|
+| [Beginner](https://colab.research.google.com/github/SpatialTurn/DataCollection-Notebooks/blob/main/Census/TIGER_FoodDesert_Tutorial.ipynb) | Learn how to visualize and analyze shapefiles downloaded from U.S. Census Bureau |
+| [Intermediate]()  | (To be added)                                                                                              |
+| [Expert](https://colab.research.google.com/github/SpatialTurn/DataCollection-Notebooks/blob/main/Census/CensusGeocodeAPI.ipynb) | Uses all the taught basic tutorials to perform a full spatial and network analysis of food deserts in Indiana. |
 
