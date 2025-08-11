@@ -102,6 +102,6 @@ In addition to demographic and housing data, ACS also include:
 | Lesson            | Overview                                                                                                   |
 |-------------------|------------------------------------------------------------------------------------------------------------|
 | <a href="https://colab.research.google.com/github/SpatialTurn/DataCollection-Notebooks/blob/main/Census/Beginner.ipynb" target="_blank">Beginner</a> | Learn how to visualize and analyze shapefiles manually downloaded from U.S. Census Bureau |
-| [Intermediate]()  | (To be added)                                                                                              |
+| <a href="https://colab.research.google.com/github/SpatialTurn/DataCollection-Notebooks/blob/main/Census/census_join.ipynb" target="_blank">Intermediate</a>  | Learn to request dataset automatically from webpage and visualize the downloaded shape file using interactive map |                                                                                             
 | <a href="https://colab.research.google.com/github/SpatialTurn/DataCollection-Notebooks/blob/main/Census/CensusGeocodeAPI.ipynb" target="_blank">Expert</a> | Uses Census APIs to create url to download desired dataset and visualize it after joining with census tract. |
 
