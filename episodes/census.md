@@ -8,7 +8,6 @@ exercises: 5
 
 - What are the kinds of datasets available from the U.S. Census Bureau?
 - How can you visualize and analyze these datasets for your region of interest?
-- Where can you find additional information about a particular dataset?
 - How do you combine spatial and tabular data from the Census Bureau?
 - What are the variables in the ACS dataset?
 
@@ -42,7 +41,7 @@ The ANSI include both the Federal Information Processing Series (FIPS) codes and
 The fields in the shapefiles include these information. For example, “STATEFP” filed means state FIPS code, and “STATENS” field means state GNIS code. 
 County level FIPS codes usually have five digits. The first two are the FIPS code of the state to which the county belongs and the rest three are county codes.
 
-![Census USA Map](census_map.png "A map showing U.S. Census Bureau TIGER/Line shapefile boundaries for states and counties.")
+![Census USA Map] <img src="/census_map.jpg" alt="Census Map"> ("A map showing U.S. Census Bureau TIGER/Line shapefile boundaries for states and counties.")
 
 ### Decennial Census of Population and Housing
 
@@ -96,6 +95,95 @@ In addition to demographic and housing data, ACS also include:
 - Spatial analysis of hazard impact, epidemiological models, etc.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+## Expert Tutorial: Accessing ACS Data via the Census API
+
+### Step 1 - Explore the Census API
+
+1. Go to [Census Developers Page](https://www.census.gov/data/developers.html).
+2. Select **Available APIs** (left side of the search bar).
+3. Scroll down and click on the desired API dataset. For this tutorial, we choose **American Community Survey (ACS)**.
+4. The ACS offers multiple products — **1-year**, **3-year**, and **5-year estimates**.  
+   - 5-year data provides a longer time frame.  
+   - For example:  
+     - **2023 ACS 5-Year** covers 2019–2023.  
+     - **2022 ACS 5-Year** covers 2018–2022.  
+   - We will use **2023**.
+5. Scroll to **Data Profiles** and review the “Example Call” links — these are the base API URLs used in Python or directly in a browser.
+6. Under **Data Profiles**, click the `html` link next to **2023 ACS Comparison Profiles Variables**. This page lists all available variables and their codes. 
+
+ 
+### Step 2 - Understanding API Links for Geographic Levels 
+
+
+The ACS API provides different base links for:
+- **Country**
+- **State**
+- **Tract within a state**
+
+For tract-level data, use the “state > county > tract” pattern.
+
+Example base link for California (state code `06`): 
+https://api.census.gov/data/2023/acs/acs5/profile?get=NAME&for=tract:*&in=state:06&in=county:*&key=YOUR_KEY_GOES_HERE
+
+
+**Key points:**
+- `tract:*` = all tracts in the selected state  
+- `county:*` = all counties in the selected state  
+- Replace `state:06` with your state code (see [State Codes List](https://www.census.gov/library/reference/code-lists/ansi.html#state))  
+- `state:*` is not allowed for tract-level queries because of dataset size limitations.
+
+---
+
+### Step 3 — Adding Variables to Your Request
+
+1. On the **variables** page you opened earlier, press **Ctrl + F** and search for your variable of interest.  
+   Example: “no vehicles available” → variable `DP04_0058E` (estimate version).
+2. Add the variable to your API link after `NAME`, separated by a comma:  
+  
+**Before**  
+https://api.census.gov/data/2023/acs/acs5/profile?get=NAME&for=tract:*&in=state:18&in=county:*
+
+**After**  
+https://api.census.gov/data/2023/acs/acs5/profile?get=NAME,DP04_0058E&for=tract:*&in=state:18&in=county:*
+
+3. Add more variables by separating with commas:  
+
+
+---
+
+### Step 4 — Optional Enhancements
+
+- **View variable descriptions**  
+Add `&descriptive=true` to the end of your API URL.  
+- **Download as CSV**  
+Add `&outputFormat=csv` to get a spreadsheet-friendly file.  
+
+---
+
+**Note:** API calls are case-sensitive — variable names must match exactly.  
+
+📺 **Video Tutorial:** [How to Access ACS Data from the Census API](https://www.youtube.com/watch?v=rqePUEBrcWQ)  
+
+---
+
+#### Example Final API Call
+
+https://api.census.gov/data/2023/acs/acs5/profile?get=NAME,DP04_0058E&for=tract:*&in=state:18&in=county:*&descriptive=true&outputFormat=csv
+
+
+This returns the number of occupied households without a vehicle for every tract in Indiana.
+
+::::::::::::::::::::::::::::::::::::: keypoints
+
+- The Census API provides flexible, precise access to ACS data.
+- You can combine multiple variables in a single API call.
+- Adding `&descriptive=true` helps you understand variable meanings.
+- Adding `&outputFormat=csv` makes data easier to download and analyze.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 # Module Overview
 
