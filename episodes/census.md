@@ -41,7 +41,7 @@ The ANSI include both the Federal Information Processing Series (FIPS) codes and
 The fields in the shapefiles include these information. For example, “STATEFP” filed means state FIPS code, and “STATENS” field means state GNIS code. 
 County level FIPS codes usually have five digits. The first two are the FIPS code of the state to which the county belongs and the rest three are county codes.
 
-![Census USA Map] <img src="/census_map.jpg" alt="Census Map"> ("A map showing U.S. Census Bureau TIGER/Line shapefile boundaries for states and counties.")
+![Census USA Map](census_map.jpg "A map showing U.S. Census Bureau TIGER/Line shapefile boundaries for states and counties.")
 
 ### Decennial Census of Population and Housing
 
@@ -125,7 +125,8 @@ The ACS API provides different base links for:
 For tract-level data, use the “state > county > tract” pattern.
 
 Example base link for California (state code `06`): 
-https://api.census.gov/data/2023/acs/acs5/profile?get=NAME&for=tract:*&in=state:06&in=county:*&key=YOUR_KEY_GOES_HERE
+
+`https://api.census.gov/data/2023/acs/acs5/profile?get=NAME&for=tract:*&in=state:06&in=county:*&key=YOUR_KEY_GOES_HERE`
 
 
 **Key points:**
@@ -143,10 +144,12 @@ https://api.census.gov/data/2023/acs/acs5/profile?get=NAME&for=tract:*&in=state:
 2. Add the variable to your API link after `NAME`, separated by a comma:  
   
 **Before**  
-https://api.census.gov/data/2023/acs/acs5/profile?get=NAME&for=tract:*&in=state:18&in=county:*
+
+`https://api.census.gov/data/2023/acs/acs5/profile?get=NAME&for=tract:*&in=state:18&in=county:*`
 
 **After**  
-https://api.census.gov/data/2023/acs/acs5/profile?get=NAME,DP04_0058E&for=tract:*&in=state:18&in=county:*
+
+`https://api.census.gov/data/2023/acs/acs5/profile?get=NAME,DP04_0058E&for=tract:*&in=state:18&in=county:*`
 
 3. Add more variables by separating with commas:  
 
@@ -170,7 +173,7 @@ Add `&outputFormat=csv` to get a spreadsheet-friendly file.
 
 #### Example Final API Call
 
-https://api.census.gov/data/2023/acs/acs5/profile?get=NAME,DP04_0058E&for=tract:*&in=state:18&in=county:*&descriptive=true&outputFormat=csv
+`https://api.census.gov/data/2023/acs/acs5/profile?get=NAME,DP04_0058E&for=tract:*&in=state:18&in=county:*&descriptive=true&outputFormat=csv`
 
 
 This returns the number of occupied households without a vehicle for every tract in Indiana.
