@@ -96,6 +96,95 @@ In addition to demographic and housing data, ACS also include:
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+## Accessing the Census Data 
+
+Before we can map or analyze census data spatially, we must first **obtain the data**.
+The U.S. Census Bureau provides multiple ways to download data, including:
+
+- Manual downloads from data.census.gov  
+- Bulk file downloads  
+- Programmatic access through official Census APIs  
+
+In this lesson, we introduce **API-based census data access**, which allows users to
+retrieve demographic and socioeconomic data directly into Python workflows.
+
+### What Does “API-Based Census Access” Mean?
+
+An API (Application Programming Interface) allows computers to request data directly
+from a server using structured URLs. Instead of clicking through a web interface,
+API calls return machine-readable data (e.g., JSON or CSV) that can be processed
+automatically.
+
+Using Census APIs, we can:
+
+- Specify exactly **which variables** we want  
+- Choose the **geographic scale** (state, county, tract, block group)  
+- Automate downloads for reproducibility  
+- Integrate census data directly into scripts and analyses  
+
+This approach is especially useful for research, teaching, and large-scale analysis.
+
+### How This Differs from Geocoding
+
+| Census API Data Access | Geocoding |
+|---|---|
+| Downloads official census tables | Converts addresses → coordinates |
+| Uses predefined census geographies | Uses external location services |
+| Returns demographic attributes | Returns spatial point locations |
+| Designed for aggregation | Designed for individual locations |
+| Emphasizes consistency | Emphasizes positional accuracy |
+
+In this notebook, we **do not geocode addresses**.  
+Instead, we retrieve **attribute data that is already organized by census geography**.
+
+### Why Use Census APIs Instead of Manual Downloads?
+
+Researchers prefer APIs because they:
+
+- Reduce manual steps and human error  
+- Ensure **reproducibility** of results  
+- Make workflows scalable and automatable  
+- Allow direct integration with Python and GIS tools  
+- Support consistent data retrieval across years  
+
+For example, the same API query can be reused to:
+- Update data annually
+- Change geographic extent
+- Swap variables without re-downloading files
+
+### Typical Census API Workflow
+
+1. Construct a request URL specifying variables and geography  
+2. Send the request to the Census API endpoint  
+3. Receive structured data (JSON or CSV)  
+4. Convert results into a DataFrame  
+5. Join data with geographic boundaries later (optional)  
+
+At this stage, the data is **tabular**, not spatial — but ready to become spatial
+through joins with census boundary files or mapping tools.
+
+::::::::::::::::::::::::::::::::::::: callout
+
+**Important**
+
+Census APIs return **aggregate data only**.  
+Individual-level records are never provided, ensuring privacy protection.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+### When to Use Census APIs
+
+Use Census APIs when:
+
+- You need demographic or socioeconomic variables
+- You want official, authoritative data
+- Reproducibility is important
+- You plan to analyze multiple regions or years
+- Data will later be joined to spatial boundaries
+
+This API-based approach forms the **foundation** for spatial census analysis,
+which we will build on in the remainder of this lesson.
+
 
 ## Expert Tutorial: Accessing ACS Data via the Census API
 
