@@ -218,6 +218,7 @@
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#introduction">Introduction</a></li>
+<li><a href="#accessing-the-census-data">Accessing the Census Data</a></li>
 <li><a href="#expert-tutorial-accessing-acs-data-via-the-census-api">Expert Tutorial: Accessing ACS Data via the Census API</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
@@ -310,7 +311,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Data from U.S. Census Bureau</h1>
-        <p>Last updated on 2025-08-11 |
+        <p>Last updated on 2025-12-16 |
 
         <a href="https://github.com/SocialTurn/DataCollection/edit/main/episodes/census.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -440,6 +441,98 @@ facilities</li>
 </ul></div>
 </div>
 </div>
+</div>
+</section><section><h2 class="section-heading" id="accessing-the-census-data">Accessing the Census Data<a class="anchor" aria-label="anchor" href="#accessing-the-census-data"></a></h2>
+<hr class="half-width"><p>Before we can map or analyze census data spatially, we must first
+<strong>obtain the data</strong>. The U.S. Census Bureau provides
+multiple ways to download data, including:</p>
+<ul><li>Manual downloads from data.census.gov<br></li>
+<li>Bulk file downloads<br></li>
+<li>Programmatic access through official Census APIs</li>
+</ul><p>In this lesson, we introduce <strong>API-based census data
+access</strong>, which allows users to retrieve demographic and
+socioeconomic data directly into Python workflows.</p>
+<div class="section level3">
+<h3 id="what-does-api-based-census-access-mean">What Does “API-Based Census Access” Mean?<a class="anchor" aria-label="anchor" href="#what-does-api-based-census-access-mean"></a></h3>
+<p>An API (Application Programming Interface) allows computers to
+request data directly from a server using structured URLs. Instead of
+clicking through a web interface, API calls return machine-readable data
+(e.g., JSON or CSV) that can be processed automatically.</p>
+<p>Using Census APIs, we can:</p>
+<ul><li>Specify exactly <strong>which variables</strong> we want<br></li>
+<li>Choose the <strong>geographic scale</strong> (state, county, tract,
+block group)<br></li>
+<li>Automate downloads for reproducibility<br></li>
+<li>Integrate census data directly into scripts and analyses</li>
+</ul><p>This approach is especially useful for research, teaching, and
+large-scale analysis.</p>
+</div>
+<div class="section level3">
+<h3 id="how-this-differs-from-geocoding">How This Differs from Geocoding<a class="anchor" aria-label="anchor" href="#how-this-differs-from-geocoding"></a></h3>
+<table class="table"><thead><tr class="header"><th>Census API Data Access</th>
+<th>Geocoding</th>
+</tr></thead><tbody><tr class="odd"><td>Downloads official census tables</td>
+<td>Converts addresses → coordinates</td>
+</tr><tr class="even"><td>Uses predefined census geographies</td>
+<td>Uses external location services</td>
+</tr><tr class="odd"><td>Returns demographic attributes</td>
+<td>Returns spatial point locations</td>
+</tr><tr class="even"><td>Designed for aggregation</td>
+<td>Designed for individual locations</td>
+</tr><tr class="odd"><td>Emphasizes consistency</td>
+<td>Emphasizes positional accuracy</td>
+</tr></tbody></table><p>In this notebook, we <strong>do not geocode addresses</strong>.<br>
+Instead, we retrieve <strong>attribute data that is already organized by
+census geography</strong>.</p>
+</div>
+<div class="section level3">
+<h3 id="why-use-census-apis-instead-of-manual-downloads">Why Use Census APIs Instead of Manual Downloads?<a class="anchor" aria-label="anchor" href="#why-use-census-apis-instead-of-manual-downloads"></a></h3>
+<p>Researchers prefer APIs because they:</p>
+<ul><li>Reduce manual steps and human error<br></li>
+<li>Ensure <strong>reproducibility</strong> of results<br></li>
+<li>Make workflows scalable and automatable<br></li>
+<li>Allow direct integration with Python and GIS tools<br></li>
+<li>Support consistent data retrieval across years</li>
+</ul><p>For example, the same API query can be reused to: - Update data
+annually - Change geographic extent - Swap variables without
+re-downloading files</p>
+</div>
+<div class="section level3">
+<h3 id="typical-census-api-workflow">Typical Census API Workflow<a class="anchor" aria-label="anchor" href="#typical-census-api-workflow"></a></h3>
+<ol style="list-style-type: decimal"><li>Construct a request URL specifying variables and geography<br></li>
+<li>Send the request to the Census API endpoint<br></li>
+<li>Receive structured data (JSON or CSV)<br></li>
+<li>Convert results into a DataFrame<br></li>
+<li>Join data with geographic boundaries later (optional)</li>
+</ol><p>At this stage, the data is <strong>tabular</strong>, not spatial —
+but ready to become spatial through joins with census boundary files or
+mapping tools.</p>
+<div id="callout1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p><strong>Important</strong></p>
+<p>Census APIs return <strong>aggregate data only</strong>.<br>
+Individual-level records are never provided, ensuring privacy
+protection.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="when-to-use-census-apis">When to Use Census APIs<a class="anchor" aria-label="anchor" href="#when-to-use-census-apis"></a></h3>
+<p>Use Census APIs when:</p>
+<ul><li>You need demographic or socioeconomic variables</li>
+<li>You want official, authoritative data</li>
+<li>Reproducibility is important</li>
+<li>You plan to analyze multiple regions or years</li>
+<li>Data will later be joined to spatial boundaries</li>
+</ul><p>This API-based approach forms the <strong>foundation</strong> for
+spatial census analysis, which we will build on in the remainder of this
+lesson.</p>
 </div>
 </section><section><h2 class="section-heading" id="expert-tutorial-accessing-acs-data-via-the-census-api">Expert Tutorial: Accessing ACS Data via the Census API<a class="anchor" aria-label="anchor" href="#expert-tutorial-accessing-acs-data-via-the-census-api"></a></h2>
 <hr class="half-width"><div class="section level3">
@@ -616,7 +709,7 @@ any links that you are not going to use.
   "url": "https://SocialTurn.github.io/DataCollection/census.html",
   "identifier": "https://SocialTurn.github.io/DataCollection/census.html",
   "dateCreated": "2024-08-08",
-  "dateModified": "2025-08-11",
+  "dateModified": "2025-12-16",
   "datePublished": "2025-12-16"
 }
 
