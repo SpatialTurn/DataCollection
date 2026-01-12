@@ -269,10 +269,10 @@ This returns the number of occupied households without a vehicle for every tract
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
-- The Census API provides flexible, precise access to ACS data.
-- You can combine multiple variables in a single API call.
-- Adding `&descriptive=true` helps you understand variable meanings.
-- Adding `&outputFormat=csv` makes data easier to download and analyze.
+- The Census API provides flexible, precise access to ACS data
+- You can combine multiple variables in a single API call
+- Adding `&descriptive=true` helps you understand variable meanings
+- Adding `&outputFormat=csv` makes data easier to download and analyze
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
