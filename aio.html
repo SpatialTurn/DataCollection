@@ -289,6 +289,18 @@
 </div>
 <!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush6">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading6">
+        <a href="qfield.html">5. QField Training: Mapping Grocery Stores to Identify Potential Food Deserts</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -868,7 +880,7 @@ few of these sources in more detail.</p>
   Scanned Historic Maps
   </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <ul>
 <li><a href="https://legacy.lib.utexas.edu/maps/" class="external-link">Perry-Castañeda
@@ -889,7 +901,7 @@ Trove</a></li>
   Satellite imagery and digital elevation models (most sources require creating a user account):
   </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <ul>
 <li><a href="https://earthexplorer.usgs.gov/" class="external-link">USGS Earth
@@ -1386,7 +1398,376 @@ facilities</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</div></section>
+</div></section><section id="aio-qfield"><p>Content from <a href="qfield.html">QField Training: Mapping Grocery Stores to Identify Potential Food Deserts</a></p>
+<hr>
+<p>Last updated on 2026-02-06 |
+
+        <a href="https://github.com/SocialTurn/DataCollection/edit/main/episodes/qfield.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>What does a QField grocery-store mapping workflow look like from
+start to finish?</li>
+<li>What fields should we collect at groccery stores to support a later
+food-desert analysis?</li>
+<li>How do we keep field data consistent and QA-ready?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul>
+<li>See an end-to-end demonstration workflow using Lafayette grocery
+stores as an example.</li>
+<li>Understand the rationale behind point placement, attribute choices,
+and GPS accuracy rules.</li>
+<li>Learn what ‘good’ field data looks like before doing it
+yourself.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section><h2 class="section-heading" id="scenario">Scenario<a class="anchor" aria-label="anchor" href="#scenario"></a>
+</h2>
+<hr class="half-width">
+<p>Imagine you are on a community research team in
+<strong>Lafayette-West Lafayette, Indiana</strong>. Your goal is to
+understand where <strong>grocery access may be limited</strong>, so you
+can later map <strong>potential food deserts</strong> using demographic
+and network/travel-time analysisi.</p>
+<p>Before you can analyze food access, you need a clean consistent
+dataset of <strong>grocery store locations and basic access
+attributes</strong>. This tutorial is a <strong>walk-through
+demonstration</strong> of how that dataset can be created by using
+<strong>QField</strong> in the field and <strong>QGIS</strong> on a
+computer, using <strong>Lafayette groccery stores as
+examples</strong>.</p>
+<div id="this-is-a-demon-not-a-lab" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="this-is-a-demon-not-a-lab" class="callout-inner">
+<h3 class="callout-title">This is a demon, not a lab</h3>
+<div class="callout-content">
+<p>You do <strong>not</strong> need to downlaod anaything or click
+along. The goal is to understand the workflow and what “good data” looks
+like.</p>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="what-will-be-demonstrated">What will be demonstrated<a class="anchor" aria-label="anchor" href="#what-will-be-demonstrated"></a>
+</h2>
+<hr class="half-width">
+<p>In the demo, the mapper collects:</p>
+<p>-<strong>One point per grocery storoe</strong>, placed at the
+<strong>main public entrance</strong> - A standardized set of attributes
+- A photo of storefront signage - A short note documenting anything
+unusual.</p>
+<p>The result is a dataset ready for later food-access/ food desert
+analysis</p>
+</section><section><h2 class="section-heading" id="project-setup">Project setup<a class="anchor" aria-label="anchor" href="#project-setup"></a>
+</h2>
+<hr class="half-width">
+<p>In a real project, the instructor prepares a QGIS project that
+includes:</p>
+<ul>
+<li>An offline basemap</li>
+<li>A study area boundary for Lafayette-West Lafayette</li>
+<li>An editable layer called <strong>Grocery Stores</strong>
+</li>
+<li>A prebuilt <strong>data-entry form</strong> with dropdowns (domains)
+to keep entries consistent</li>
+</ul>
+<div id="why-preconfigure" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="why-preconfigure" class="callout-inner">
+<h3 class="callout-title">Why preconfigure?</h3>
+<div class="callout-content">
+<p>Field collection fails when every person invents their own fields and
+categories. A prebuilt form keeps the dataset clean and analyzable.</p>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="data-schema-shown-in-the-demo-what-gets-collect-and-why">Data schema shown in the demo (What gets collect and why)<a class="anchor" aria-label="anchor" href="#data-schema-shown-in-the-demo-what-gets-collect-and-why"></a>
+</h2>
+<hr class="half-width">
+<p>The <strong>Grocer Stores</strong> layer uses a form like this:</p>
+<ul>
+<li>‘store_name’ (text) - needed to deduplicate and verify</li>
+<li>‘store_type’ (dropwdown) - lets you compare supermarkets vs
+convenience, etc.</li>
+<li>‘address’ (text) - helps match to other datasets/verify
+location</li>
+<li>‘city’ (dropdown) - supports filtering and reporting</li>
+<li>‘zip’ (text) - supports nieghborhood-level summaries</li>
+<li>‘snap_accepted’ (Yes/No/Unknown) - access for benefits users</li>
+<li>‘wic_accepted’ (Yes/No/Unknown) - additonal access signal</li>
+<li>‘produce_available’ (Yes/No/Unknown) - “healthy food” availability
+proxy</li>
+<li>‘hours_observed’ (text) - can matter for access (night shifts,
+weekends)</li>
+<li>‘notes’ (text) - preserves context without inventing new fields</li>
+<li>‘photo_1’ (attatchment) evidence/verification for QA</li>
+</ul>
+<div id="why-dropdowns-matter" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="why-dropdowns-matter" class="callout-inner">
+<h3 class="callout-title">Why dropdowns matter</h3>
+<div class="callout-content">
+<p>If one person writes “EBT,” another writes “SNAP,” and onother writes
+“Yes,” your later analysis becomes messy. Dropdowns prevent category
+drift.</p>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="part-1---opening-the-project-and-checking-readiness">Part 1 - Opening the project and checking readiness<a class="anchor" aria-label="anchor" href="#part-1---opening-the-project-and-checking-readiness"></a>
+</h2>
+<hr class="half-width">
+<p>The mapper opens QField and performs a fast readiness check:</p>
+<ol style="list-style-type: decimal">
+<li>Confirm the basemap displays.</li>
+<li>Confirm the study boundary loads.</li>
+<li>Confirm <strong>Grocery Stores</strong> is visible and
+editable.</li>
+</ol>
+<div id="why-this-check-is-shown" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="why-this-check-is-shown" class="callout-inner">
+<h3 class="callout-title">Why this check is shown</h3>
+<div class="callout-content">
+<p>It’s the most common failure pint: missing layers, broken paths, or
+non-editable files often discovered <em>after</em> arriving at the first
+location.</p>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="part-2---gps-rules">Part 2 - GPS rules<a class="anchor" aria-label="anchor" href="#part-2---gps-rules"></a>
+</h2>
+<hr class="half-width">
+<p>The mapper waits for GPS accuracy to stabilize and applies a
+rule:</p>
+<ul>
+<li>
+<strong>Preferred:</strong> record a point when accuracy is
+<strong>&lt; 10 meters</strong>
+</li>
+<li>
+<strong>If not possible:</strong> record anyway and document the
+issue in ‘notes’</li>
+</ul>
+<div id="why-accuracy-is-a-big-deal-for-food-access" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="why-accuracy-is-a-big-deal-for-food-access" class="callout-inner">
+<h3 class="callout-title">Why accuracy is a big deal for food
+access</h3>
+<div class="callout-content">
+<p>A store point shifted 30-50 meters can change whether it falls inside
+a buffer/service area, especially near boundaries or along road
+networks</p>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="part-3---collecting-a-grocery-store-point">Part 3 - Collecting a grocery store point<a class="anchor" aria-label="anchor" href="#part-3---collecting-a-grocery-store-point"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="example-a-a-full-service-supermarket">Example A: A full-service supermarket<a class="anchor" aria-label="anchor" href="#example-a-a-full-service-supermarket"></a>
+</h3>
+<p><strong>Demo location:</strong> “Example Supermarket” (Lafayette,
+IN)</p>
+<p><strong>What the mapper does:</strong></p>
+<ol style="list-style-type: decimal">
+<li>Stands near the <strong>main public entrance</strong> (consistent
+placement rule)</li>
+<li>Creates <strong>one pint</strong> for the store.</li>
+<li>Fills the form:</li>
+</ol>
+<ul>
+<li>‘store_name’: “Example Supermarket”</li>
+<li>‘store_type’: Supermarket</li>
+<li>‘snap_accepted’: Yes (based on posted signage)</li>
+<li>‘wic_accepted’: Unknown (no clear sign visible)</li>
+<li>‘produce available’: Yes (visible produce section)</li>
+<li>‘hours_observed’: copied from door signage</li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li>Adds a storefront pot that captures:</li>
+</ol>
+<ul>
+<li>store name signage</li>
+<li>posted hours (if visible)</li>
+</ul>
+<div id="why-the-entrance-rule-is-demonstrated" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="why-the-entrance-rule-is-demonstrated" class="callout-inner">
+<h3 class="callout-title">Why the “entrance” rule is demonstrated</h3>
+<div class="callout-content">
+<p>Entrances are consistent, repeatable, and relevant for walking-time
+analysis. The centroid of a building is less meaningful for access.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="example-b-a-small-market-convenience-style-grocery">Example B: A small market / convenience-style grocery<a class="anchor" aria-label="anchor" href="#example-b-a-small-market-convenience-style-grocery"></a>
+</h3>
+<p><strong>Demo location:</strong> “Example Neighborhood Market”</p>
+<p><strong>What changes in the form:</strong> - ‘store_type’ might be
+“Convenience” or “Small Market” - ‘produce_available’ might be “Unknown”
+or “No” (depending on what’s visible) - The mapper is careful not to
+assume SNAP/WIC without evidence</p>
+<div id="why-we-use-unknown" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="why-we-use-unknown" class="callout-inner">
+<h3 class="callout-title">Why we use “Unknown”</h3>
+<div class="callout-content">
+<p>“Unknown” is better than guessing. Guessing introduces systematic
+bias into the dataset.</p>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="part-4---handling-common-edge-cases">Part 4 - Handling common edge cases<a class="anchor" aria-label="anchor" href="#part-4---handling-common-edge-cases"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="edge-case-1-duplicate-risk">Edge case 1: Duplicate risk<a class="anchor" aria-label="anchor" href="#edge-case-1-duplicate-risk"></a>
+</h3>
+<p>If the mapper sees a nearby exisiting point with the same store name:
+- They <strong>edit the exisiting feature</strong> instead of creating a
+new one.</p>
+<p><strong>Why:</strong> duplicates inflate stores counts and distort
+service coverage.</p>
+</div>
+<div class="section level3">
+<h3 id="edge-case-2-poor-gps">Edge case 2: Poor GPS<a class="anchor" aria-label="anchor" href="#edge-case-2-poor-gps"></a>
+</h3>
+<p>If accuracy is high (worse than 10 m,) the mapper: - records the
+point anyway - writes a note like: “GPS ~22m; point approximated at main
+entrance”</p>
+<p><strong>Why:</strong> transparency beats false precision.</p>
+</div>
+<div class="section level3">
+<h3 id="edge-case-3-store-closedrenovation">Edge case 3: Store closed/renovation<a class="anchor" aria-label="anchor" href="#edge-case-3-store-closedrenovation"></a>
+</h3>
+<p>The mapper can still record the location and note: - “Closed during
+visit”/“Under renovation” - and leave uncertain fields as unknown</p>
+<p><strong>Why:</strong> closure status can matter for real access</p>
+</div>
+</section><section><h2 class="section-heading" id="part-5---sync-and-quick-qa-in-qgis">Part 5 - Sync and quick QA in QGIS<a class="anchor" aria-label="anchor" href="#part-5---sync-and-quick-qa-in-qgis"></a>
+</h2>
+<hr class="half-width">
+<p>Back on the computer, the mapper opens the project in QGIS and
+checks:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Completeness</strong></li>
+</ol>
+<ul>
+<li>Are required fields filled?</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Spatial sanity</strong></li>
+</ol>
+<ul>
+<li>Do points fall inside the study area?</li>
+<li>Any points in impossible locations?</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li><strong>Duplicates</strong></li>
+</ol>
+<ul>
+<li>Same name and very close geometry?</li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li><strong>Photo verification</strong></li>
+</ol>
+<ul>
+<li>Can photos be opened and do they match the record</li>
+</ul>
+<div id="why-qa-is-shown-as-part-of-collection" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="why-qa-is-shown-as-part-of-collection" class="callout-inner">
+<h3 class="callout-title">Why QA is shown as part of collection</h3>
+<div class="callout-content">
+<p>If you QA right away, you will remember what you saw. Waiting weeks
+turns fixable issues into permanent uncertainty.</p>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="what-good-output-lookes-like">What “good output” lookes like<a class="anchor" aria-label="anchor" href="#what-good-output-lookes-like"></a>
+</h2>
+<hr class="half-width">
+<p>At the end of the demo, the dataset has:</p>
+<ul>
+<li>One record per store (no duplicates)</li>
+<li>Consistent categories (dropdown-controlled)</li>
+<li>Minimal guessing (Unknown used appropiately)</li>
+<li>Photos that support verification</li>
+<li>Notes that caputre exceptions without creating new categories</li>
+</ul>
+<p>This is the foundation you need before any foo desert mapping
+begins.</p>
+</section><section><h2 class="section-heading" id="next-module">Next module<a class="anchor" aria-label="anchor" href="#next-module"></a>
+</h2>
+<hr class="half-width">
+<p>Placeholderplaceholderplaceholderplaceholder</p>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul>
+<li>A clear scenarion and consistent schema makes field data
+analyzable</li>
+<li>Demonstrations should highlight <em>why</em> each step exists, not
+just which buttons to press.</li>
+<li>QA is part of collection, not a separate afterthought</li>
+</ul>
+</div>
+</div>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</section></section>
 </div>
     </main>
 </div>
@@ -1436,8 +1817,8 @@ any links that you are not going to use.
   "url": "https://SocialTurn.github.io/DataCollection/aio.html",
   "identifier": "https://SocialTurn.github.io/DataCollection/aio.html",
   "dateCreated": "2024-08-08",
-  "dateModified": "2026-02-03",
-  "datePublished": "2026-02-03"
+  "dateModified": "2026-02-06",
+  "datePublished": "2026-02-06"
 }
 
   </script><script>
