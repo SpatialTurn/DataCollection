@@ -26,13 +26,13 @@ exercises: 0
 
 Imagine you are on a community research team in **Lafayette-West Lafayette, Indiana**. Your goal is to understand where **grocery access may be limited**, so you can later map **potential food deserts** using demographic and network/travel-time analysisi.
 
-Before you can analyze food access, you need a clean consistent dataset of **grocery store locations and basic access attributes**. This tutorial is a **walk-through demonstration** of how that dataset can be created by using **QField** in the field and **QGIS** on a computer, using **Lafayette groccery stores as examples**.
+Before you can analyze food access, you need a clean consistent dataset of **grocery store locations and basic access attributes**. This tutorial is a **walk-through demonstration** of how that dataset can be created by using **QField** in the field and **QGIS** on a computer, using **Lafayette grocery stores as examples**.
 
 :::: callout
 
-## This is a demon, not a lab
+## This is a demo, not a lab
 
-You do **not** need to downlaod anaything or click along. The goal is to understand the workflow and what "good data" looks like.
+You do **not** need to download anything or click along. The goal is to understand the workflow and what "good data" looks like.
 
 ::::
 
@@ -40,7 +40,7 @@ You do **not** need to downlaod anaything or click along. The goal is to underst
 
 In the demo, the mapper collects:
 
--**One point per grocery storoe**, placed at the **main public entrance**
+-**One point per grocery store**, placed at the **main public entrance**
 - A standardized set of attributes
 - A photo of storefront signage
 - A short note documenting anything unusual.
