@@ -4,23 +4,21 @@ teaching: 70
 exercises: 35
 ---
 
-:::::::::::::::::::::::::::::::::::::: questions 
+::::::::::::::::::::::::::::::::::::: questions
 
 - How can we move from collected grocery store points to a road-based accessibility analysis?
 - How do shortest path and service area tools in QGIS answer different questions about grocery access?
-- Why is network distance often better than straight-line distance for accesss studies?
+- Why is network distance often better than straight-line distance for access studies?
 
-::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
-
 - Load and inspect grocery store points collected in QField
 - Prepare a road network and confirm that all layers use an appropriate projected CRS.
 - Calculate shortest paths from a selected origin to multiple grocery stores.
 - Generate service areas from grocery stores to estimate walkable or drivable access.
 - Interpret the outputs as part of a reproducible grocery access workflow.
-
-::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Overview
 
@@ -31,7 +29,6 @@ In the previous lesson, learners simulated a collection of grocery store locatio
 This episode shifts away from field **data collection** to **spatial analysis**. Instead of treating distance as a straight line, learners will use the street network to calculate routes. 
 
 :::::::::::::::::::::::::::::::::::::::: prereq
-
 ## Before we begin
 
 Learners should have downloaded:
@@ -40,8 +37,7 @@ Learners should have downloaded:
 - a road layer for the study area (lesson link)
 - study area boundary (lesson link)
 - basic familiarity with QGIS (lesson link)
-
-::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Lesson goals and scenario 
 
@@ -53,7 +49,6 @@ In this lesson, we will complete three related tasks:
 2. calculate routes from one origin to multiple stores
 3. create service areas that estimate the streets reachable within chosen travel cost
 
-
 ## Data setup
 
 You should have the following layers ready to open in QGIS:
@@ -63,12 +58,10 @@ You should have the following layers ready to open in QGIS:
 - 'study_area' - boundary polygon for the lesson extent
 
 ::::::::::::::::::::::::::::::::::::::: callout
-
 ## Teaching note
 
 For a workshop or classroom lesson/setting, use a small instructional sample instead of the full county data. A small area will run faster for your class, makes outputs and maps easier to read, and ensures your learners have a clear idea of the basics of network analysis
-
-::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Step 1: Load and inspect the layers
 
@@ -80,8 +73,6 @@ For a workshop or classroom lesson/setting, use a small instructional sample ins
   - store type
   - verification status
 5. Visually inspect the grocery store points on top of the road network
-
-
 
 Look and identify any obvious problems
 
@@ -192,7 +183,6 @@ This layer is useful for teaching because it identifies destinations that could 
 3. Style the origin point with a larger marker.
 4. Zoom to the study area and inspect the output.
 
-
 - Which stores appear easiest to reach?
 - Are any routes unexpectedly long?
 - Are any stores missing from the routed output?
@@ -246,7 +236,6 @@ Run the tool.
 
 The resulting output shows the network segments reachable from each grocery store within the chosen cost threshold.
 
-
 ## Step 9: Interpret the service area
 
 Service areas can support discussion questions such as:
@@ -255,8 +244,6 @@ Service areas can support discussion questions such as:
 - Which neighborhoods or campus zones appear less connected?
 - How does the answer change if the travel cost is 400 m, 800 m, or 1600 m?
 
-:::::::::::::::: instructor
-
 At this stage, remind learners that the output is only as good as the network and assumptions behind it.
 
 For example:
@@ -264,8 +251,6 @@ For example:
 - a road centerline layer does not necessarily represent sidewalks
 - a driving-oriented network may not be ideal for pedestrian access
 - field-collected store points improve destination quality, but they do not fix a poor road dataset
-
-:::::::::::::::: instructor
 
 :::::::::::::::::::::::::::::::::::::: discussion
 ## Reflection
@@ -286,8 +271,6 @@ Save the following layers into the lesson geopackage or project folder:
 - `non_routable_grocery`
 - `grocery_service_area`
 
-:::::::::::::::: instructor
-
 These outputs can be reused in later episodes on:
 
 - accessibility comparison between neighborhoods
@@ -295,10 +278,10 @@ These outputs can be reused in later episodes on:
 - map layout design
 - reproducible analysis in the Processing Model Designer
 - exporting results for a story map or final report
-::::::::::::::::::
+
+:::::::::::::::::::::::::::::::: instructor
 ## Instructor notes
 
-:::::::::::::::::::::::::::::::::::: instructor
 ### Suggested pacing
 
 - Introduction and setup: 10 minutes
@@ -326,7 +309,7 @@ Keep the lesson focused on one clear idea: network distance differs from straigh
 - build a small housing-origin layer and use a many-to-one routing workflow
 - compare service areas across different travel thresholds
 - discuss whether a road network is an appropriate proxy for pedestrian access
-:::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::: keypoints
 - Grocery points collected in QField become much more analytically useful when paired with a road network.
@@ -335,5 +318,3 @@ Keep the lesson focused on one clear idea: network distance differs from straigh
 - Projected data, clean destination points, and a connected road layer are essential for reliable outputs.
 - Saving routable and non-routable results supports interpretation and troubleshooting.
 :::::::::::::::::::::::::::::::::::::::::::::::
-
-
