@@ -8,39 +8,38 @@
 # lc: Library Carpentry
 # cp: Carpentries (to use for instructor training for instance)
 # incubator: The Carpentries Incubator
-#
-# This option supports custom types so lessons can be branded
-# and themed with your own logo and alt-text (see `carpentry_description`)
-# See https://carpentries.github.io/sandpaper-docs/editing.html#adding-a-custom-logo
+# Note that you can also use a custom carpentry type. For more info,
+# see the documentation: https://carpentries.github.io/sandpaper-docs/editing.html
 carpentry: 'incubator'
 
-# Alt-text description of the lesson.
-carpentry_description: 'GIS Data Collection for Social Scientists'
+# Custom carpentry description
+# This will be used as the alt text for the logo
+# carpentry_description: "Custom Carpentry"
 
 # Overall title for pages.
-title: 'GIS Data Collection for Social Scientists' # FIXME
+title: 'GIS Data Collection for Social Scientists'
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
-created: 2024-08-08 # FIXME
+created: '2024-08-08'
 
 # Comma-separated list of keywords for the lesson
-keywords: 'GIS, data, FAIR, social science' # FIXME
+keywords: 'GIS, data, FAIR, social science'
 
 # Life cycle stage of the lesson
 # possible values: pre-alpha, alpha, beta, stable
-life_cycle: 'pre-alpha' # FIXME
+life_cycle: 'pre-alpha'
 
-# License of the lesson
+# License of the lesson materials (recommended CC-BY 4.0)
 license: 'CC-BY 4.0'
 
 # Link to the source repository for this lesson
-source: 'https://github.com/SocialTurn/DataCollection' # FIXME
+source: 'https://github.com/SocialTurn/DataCollection'
 
 # Default branch of your lesson
 branch: 'main'
 
 # Who to contact if there are any issues
-contact: 'rkalyanapurdue@gmail.com' # FIXME
+contact: 'rkalyanapurdue@gmail.com'
 
 # Navigation ------------------------------------------------
 #
@@ -65,25 +64,26 @@ contact: 'rkalyanapurdue@gmail.com' # FIXME
 # - another-learner.md
 
 # Order of episodes in your lesson
-episodes:
+episodes: 
 - census.md
 - imagery.md
 - imageryvector.md
 - field.md
 - qfield.md
+- qfield-network.md
 
 # Information for Learners
-learners:
+learners: 
 
 # Information for Instructors
-instructors:
+instructors: 
 
 # Learner Profiles
-profiles:
+profiles: 
 
 # Customisation ---------------------------------------------
 #
 # This space below is where custom yaml items (e.g. pinning
 # sandpaper and varnish versions) should live
 
-
+carpentry_description: GIS Data Collection for Social Scientists
