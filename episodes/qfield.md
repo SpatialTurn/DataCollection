@@ -66,13 +66,13 @@ Field collection fails when every person invents their own fields and categories
 
 ## Data schema shown in the demo (What gets collect and why)
 
-The **Grocer Stores** layer uses a form like this:
+The **Grocery Stores** layer uses a form like this:
 
 - 'store_name' (text) - needed to deduplicate and verify
-- 'store_type' (dropwdown) - lets you compare supermarkets vs convenience, etc.
+- 'store_type' (dropdown) - lets you compare supermarkets vs convenience, etc.
 - 'address' (text) - helps match to other datasets/verify location
 - 'city' (dropdown) - supports filtering and reporting
-- 'zip' (text) - supports nieghborhood-level summaries
+- 'zip' (text) - supports neighborhood-level summaries
 - 'snap_accepted' (Yes/No/Unknown) - access for benefits users
 - 'wic_accepted' (Yes/No/Unknown) - additonal access signal
 - 'produce_available' (Yes/No/Unknown) - "healthy food" availability proxy
