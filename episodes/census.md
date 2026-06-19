@@ -226,62 +226,56 @@ Example base link for California (state code `06`):
 
 ---
 
-### Step 3 — Adding Variables to Your Request
-
-1. On the **variables** page you opened earlier, press **Ctrl + F** and search for your variable of interest.  
-   Example: “no vehicles available” → variable `DP04_0058E` (estimate version).
-2. Add the variable to your API link after `NAME`, separated by a comma:  
-  
-**Before**  
-
-`https://api.census.gov/data/2023/acs/acs5/profile?get=NAME&for=tract:*&in=state:18&in=county:*`
-
-**After**  
-
-`https://api.census.gov/data/2023/acs/acs5/profile?get=NAME,DP04_0058E&for=tract:*&in=state:18&in=county:*`
-
-3. Add more variables by separating with commas:  
-
+### Step 3 — Add Variables to Your Request
+ 
+1. On the variables page from Step 1, press **Ctrl+F** and search for your variable of interest.  
+   Example: searching "no vehicles available" returns variable `DP04_0058E` (the estimate version).
+2. Add the variable after `NAME`, separated by a comma:
+   **Before:**
+   ```
+   https://api.census.gov/data/2023/acs/acs5/profile?get=NAME&for=tract:*&in=state:18&in=county:*
+   ```
+ 
+   **After:**
+   ```
+   https://api.census.gov/data/2023/acs/acs5/profile?get=NAME,DP04_0058E&for=tract:*&in=state:18&in=county:*
+   ```
+ 
+3. Add additional variables by separating them with commas:
+   ```
+   get=NAME,DP04_0058E,DP02_0001E,DP03_0062E
+   ```
 
 ---
 
 ### Step 4 — Optional Enhancements
+ 
+- **View variable descriptions:** Add `&descriptive=true` to your URL
+- **Download as CSV:** Add `&outputFormat=csv` for a spreadsheet-friendly file
 
-- **View variable descriptions**  
-Add `&descriptive=true` to the end of your API URL.  
-- **Download as CSV**  
-Add `&outputFormat=csv` to get a spreadsheet-friendly file.  
-
----
-
-**Note:** API calls are case-sensitive — variable names must match exactly.  
-
-📺 **Video Tutorial:** [How to Access ACS Data from the Census API](https://www.youtube.com/watch?v=rqePUEBrcWQ)  
-
----
-
-#### Example Final API Call
-
-`https://api.census.gov/data/2023/acs/acs5/profile?get=NAME,DP04_0058E&for=tract:*&in=state:18&in=county:*&descriptive=true&outputFormat=csv`
-
-
-This returns the number of occupied households without a vehicle for every tract in Indiana.
-
-::::::::::::::::::::::::::::::::::::: keypoints
-
-- The Census API provides flexible, precise access to ACS data
-- You can combine multiple variables in a single API call
-- Adding `&descriptive=true` helps you understand variable meanings
-- Adding `&outputFormat=csv` makes data easier to download and analyze
-
+::::::::::::::::::::::::::::::::::::: callout
+ 
+**Heads up:** API variable names are **case-sensitive** — they must match exactly as listed in the variables page.
+ 
 ::::::::::::::::::::::::::::::::::::::::::::::::
+ 
+📺 **Video Tutorial:** [How to Access ACS Data from the Census API](https://www.youtube.com/watch?v=rqePUEBrcWQ)
+---
 
 
-# Module Overview
-
-| Lesson            | Overview                                                                                                   |
-|-------------------|------------------------------------------------------------------------------------------------------------|
-| <a href="https://colab.research.google.com/github/SpatialTurn/DataCollection-Notebooks/blob/main/Census/Beginner.ipynb" target="_blank">Beginner</a> | Learn how to visualize and analyze shapefiles manually downloaded from U.S. Census Bureau |
-| <a href="https://colab.research.google.com/github/SpatialTurn/DataCollection-Notebooks/blob/main/Census/census_join.ipynb" target="_blank">Intermediate</a>  | Learn to request dataset automatically from webpage and visualize the downloaded shape file using interactive map |                                                                                             
-| <a href="https://colab.research.google.com/github/SpatialTurn/DataCollection-Notebooks/blob/main/Census/CensusGeocodeAPI.ipynb" target="_blank">Expert</a> | Uses Census APIs to create url to download desired dataset and visualize it after joining with census tract. |
+### Example: Final API Call
+ 
+```
+https://api.census.gov/data/2023/acs/acs5/profile?get=NAME,DP04_0058E&for=tract:*&in=state:18&in=county:*&descriptive=true&outputFormat=csv
+```
+ 
+This returns the number of occupied households **without a vehicle** for every census tract in Indiana.
+ 
+::::::::::::::::::::::::::::::::::::: keypoints
+ 
+- The Census API gives you flexible, precise access to ACS data
+- You can combine multiple variables in a single API call
+- `&descriptive=true` adds plain-language descriptions for each variable
+- `&outputFormat=csv` makes the data easy to open in Excel or import into Python
+::::::::::::::::::::::::::::::::::::::::::::::::
 
