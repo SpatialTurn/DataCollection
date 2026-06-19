@@ -212,6 +212,8 @@
         <ul><li><a href="#introduction">Introduction</a></li>
 <li><a href="#accessing-the-census-data">Accessing the Census Data</a></li>
 <li><a href="#expert-tutorial-accessing-acs-data-via-the-census-api">Expert Tutorial: Accessing ACS Data via the Census API</a></li>
+<li><a href="#video-tutorial-how-to-access-acs-data-from-the-census-api">📺 <strong>Video Tutorial:</strong> </a><a href="https://www.youtube.com/watch?v=rqePUEBrcWQ" class="external-link">How to Access ACS
+Data from the Census API</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -321,7 +323,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Data from U.S. Census Bureau</h1>
-        <p>Last updated on 2026-01-20 |
+        <p>Last updated on 2026-06-19 |
 
         <a href="https://github.com/SocialTurn/DataCollection/edit/main/episodes/census.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -589,38 +591,53 @@ Codes List</a>)<br>
 dataset size limitations.</p>
 <hr></div>
 <div class="section level3">
-<h3 id="step-3-adding-variables-to-your-request">Step 3 — Adding Variables to Your Request<a class="anchor" aria-label="anchor" href="#step-3-adding-variables-to-your-request"></a></h3>
-<ol style="list-style-type: decimal"><li>On the <strong>variables</strong> page you opened earlier, press
-<strong>Ctrl + F</strong> and search for your variable of
-interest.<br>
-Example: “no vehicles available” → variable <code>DP04_0058E</code>
-(estimate version).</li>
-<li>Add the variable to your API link after <code>NAME</code>, separated
-by a comma:</li>
-</ol><p><strong>Before</strong></p>
-<p><code>https://api.census.gov/data/2023/acs/acs5/profile?get=NAME&amp;for=tract:*&amp;in=state:18&amp;in=county:*</code></p>
-<p><strong>After</strong></p>
-<p><code>https://api.census.gov/data/2023/acs/acs5/profile?get=NAME,DP04_0058E&amp;for=tract:*&amp;in=state:18&amp;in=county:*</code></p>
-<ol start="3" style="list-style-type: decimal"><li>Add more variables by separating with commas:</li>
+<h3 id="step-3-add-variables-to-your-request">Step 3 — Add Variables to Your Request<a class="anchor" aria-label="anchor" href="#step-3-add-variables-to-your-request"></a></h3>
+<ol style="list-style-type: decimal"><li><p>On the variables page from Step 1, press <strong>Ctrl+F</strong>
+and search for your variable of interest.<br>
+Example: searching “no vehicles available” returns variable
+<code>DP04_0058E</code> (the estimate version).</p></li>
+<li>
+<p>Add the variable after <code>NAME</code>, separated by a comma:
+<strong>Before:</strong></p>
+<pre><code>https://api.census.gov/data/2023/acs/acs5/profile?get=NAME&amp;for=tract:*&amp;in=state:18&amp;in=county:*</code></pre>
+<p><strong>After:</strong></p>
+<pre><code>https://api.census.gov/data/2023/acs/acs5/profile?get=NAME,DP04_0058E&amp;for=tract:*&amp;in=state:18&amp;in=county:*</code></pre>
+</li>
+<li>
+<p>Add additional variables by separating them with commas:</p>
+<pre><code>get=NAME,DP04_0058E,DP02_0001E,DP03_0062E</code></pre>
+</li>
 </ol><hr></div>
 <div class="section level3">
 <h3 id="step-4-optional-enhancements">Step 4 — Optional Enhancements<a class="anchor" aria-label="anchor" href="#step-4-optional-enhancements"></a></h3>
 <ul><li>
-<strong>View variable descriptions</strong><br>
-Add <code>&amp;descriptive=true</code> to the end of your API URL.<br></li>
+<strong>View variable descriptions:</strong> Add
+<code>&amp;descriptive=true</code> to your URL</li>
 <li>
-<strong>Download as CSV</strong><br>
-Add <code>&amp;outputFormat=csv</code> to get a spreadsheet-friendly
-file.</li>
-</ul><hr><p><strong>Note:</strong> API calls are case-sensitive — variable names
-must match exactly.</p>
-<p>📺 <strong>Video Tutorial:</strong> <a href="https://www.youtube.com/watch?v=rqePUEBrcWQ" class="external-link">How to Access ACS
-Data from the Census API</a></p>
-<hr><div class="section level4">
-<h4 id="example-final-api-call">Example Final API Call<a class="anchor" aria-label="anchor" href="#example-final-api-call"></a></h4>
-<p><code>https://api.census.gov/data/2023/acs/acs5/profile?get=NAME,DP04_0058E&amp;for=tract:*&amp;in=state:18&amp;in=county:*&amp;descriptive=true&amp;outputFormat=csv</code></p>
-<p>This returns the number of occupied households without a vehicle for
-every tract in Indiana.</p>
+<strong>Download as CSV:</strong> Add
+<code>&amp;outputFormat=csv</code> for a spreadsheet-friendly file</li>
+</ul><div id="callout2" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p><strong>Heads up:</strong> API variable names are
+<strong>case-sensitive</strong> — they must match exactly as listed in
+the variables page.</p>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="video-tutorial-how-to-access-acs-data-from-the-census-api">📺 <strong>Video Tutorial:</strong> <a href="https://www.youtube.com/watch?v=rqePUEBrcWQ" class="external-link">How to Access ACS
+Data from the Census API</a>
+<a class="anchor" aria-label="anchor" href="#video-tutorial-how-to-access-acs-data-from-the-census-api"></a></h2>
+<hr class="half-width"><div class="section level3">
+<h3 id="example-final-api-call">Example: Final API Call<a class="anchor" aria-label="anchor" href="#example-final-api-call"></a></h3>
+<pre><code>https://api.census.gov/data/2023/acs/acs5/profile?get=NAME,DP04_0058E&amp;for=tract:*&amp;in=state:18&amp;in=county:*&amp;descriptive=true&amp;outputFormat=csv</code></pre>
+<p>This returns the number of occupied households <strong>without a
+vehicle</strong> for every census tract in Indiana.</p>
 <div id="keypoints2" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -628,38 +645,23 @@ every tract in Indiana.</p>
 <span class="callout-header">Key Points</span>
 <div class="callout-inner">
 <div class="callout-content">
-<ul><li>The Census API provides flexible, precise access to ACS data</li>
+<ul><li>The Census API gives you flexible, precise access to ACS data</li>
 <li>You can combine multiple variables in a single API call</li>
-<li>Adding <code>&amp;descriptive=true</code> helps you understand
-variable meanings</li>
-<li>Adding <code>&amp;outputFormat=csv</code> makes data easier to
-download and analyze</li>
+<li>
+<code>&amp;descriptive=true</code> adds plain-language descriptions
+for each variable</li>
+<li>
+<code>&amp;outputFormat=csv</code> makes the data easy to open in
+Excel or import into Python</li>
 </ul></div>
 </div>
 </div>
-</div>
-</div>
-</section><div class="section level1">
-<h1 id="module-overview">Module Overview<a class="anchor" aria-label="anchor" href="#module-overview"></a></h1>
-<table class="table"><colgroup><col width="14%"><col width="85%"></colgroup><thead><tr><th>Lesson</th>
-<th>Overview</th>
-</tr></thead><tbody><tr><td><a href="https://colab.research.google.com/github/SpatialTurn/DataCollection-Notebooks/blob/main/Census/Beginner.ipynb" target="_blank" class="external-link">Beginner</a></td>
-<td>Learn how to visualize and analyze shapefiles manually downloaded
-from U.S. Census Bureau</td>
-</tr><tr><td><a href="https://colab.research.google.com/github/SpatialTurn/DataCollection-Notebooks/blob/main/Census/census_join.ipynb" target="_blank" class="external-link">Intermediate</a></td>
-<td>Learn to request dataset automatically from webpage and visualize
-the downloaded shape file using interactive map</td>
-</tr><tr><td><a href="https://colab.research.google.com/github/SpatialTurn/DataCollection-Notebooks/blob/main/Census/CensusGeocodeAPI.ipynb" target="_blank" class="external-link">Expert</a></td>
-<td>Uses Census APIs to create url to download desired dataset and
-visualize it after joining with census tract.</td>
-</tr></tbody></table><!--
+<!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
- --></div>
-
-
-
-      </div> <!-- / div.lesson-content -->
+ -->
+</div>
+</section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter Bottom"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="index.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="imagery.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
@@ -719,8 +721,8 @@ any links that you are not going to use.
   "url": "https://SocialTurn.github.io/DataCollection/census.html",
   "identifier": "https://SocialTurn.github.io/DataCollection/census.html",
   "dateCreated": "2024-08-08",
-  "dateModified": "2026-01-20",
-  "datePublished": "2026-06-16"
+  "dateModified": "2026-06-19",
+  "datePublished": "2026-06-19"
 }
 
   </script><script>
