@@ -65,43 +65,34 @@ Geospatial data comes in two basic forms.
 
 ![The same area as vector and raster data.](dc_raster_vector.png){alt="Two panels of the same 5 by 4 kilometer area of West Lafayette and Lafayette. Left, vector: orange store points, gray road lines and a light blue city polygon. Right, raster: a grid of 200 meter gray cells, darker where there is more road length in the cell, so the road pattern appears as a blocky texture."}
 
-| | Vector | Raster |
-|---|---|---|
-| Represents | Discrete features with clear edges | Continuous surfaces, or images |
-| Examples | Tracts, roads, stores, survey points | Satellite images, elevation, land cover |
-| Detail | Set by the precision of coordinates | Set by the cell size (resolution) |
-| Common formats | GeoJSON, shapefile, GeoPackage | GeoTIFF, JPEG2000, NetCDF |
-
-Neither is better; they answer different questions, and many projects use both. A satellite image (raster)
-might be traced to create building outlines (vector), and census tracts (vector) might be used to summarize
-a land cover map (raster).
+Neither is better; many projects use both. The census and field episodes in this module collect vector data,
+and the imagery episode collects rasters. The Data Management module's
+[Geospatial Data Models](https://spatialturn.github.io/DataManagement/data-models.html) episode covers both in depth: geometry types,
+topology, resolution, NoData, and how to choose a model for your question.
 
 ## Is this dataset good enough?
 
-Before you build a project on someone else's data, ask:
+Before you build a project on someone else's data, ask a few quick questions:
 
-| Question | Why it matters |
-|---|---|
-| **Who made it, and how?** | A government survey, a crowd-sourced map and a student project differ in method and reliability |
-| **When?** | Boundaries, roads and stores change. Is it recent enough for your question? |
-| **Where, and at what detail?** | Coverage, resolution or scale must match your study area and question |
-| **What exactly is measured?** | Read the definitions. "Grocery store" or "household" may not mean what you assume |
-| **How accurate is it?** | Look for margins of error, positional accuracy and known gaps |
-| **What coordinate system?** | You will need it to line layers up correctly |
-| **Can I use it?** | Check the license: some data is public domain, some requires credit, some cannot be shared |
+- **Who made it, how and when?** A government survey and a crowd-sourced map differ in method, and
+  boundaries, roads and stores change over time.
+- **Where, and at what detail?** Coverage and resolution must match your study area and question.
+- **What exactly is measured?** Read the definitions: "grocery store" or "household" may not mean what you
+  assume.
+- **How accurate is it, and in what coordinate system?**
+- **Can I use it?** Check the license.
 
-Most of these answers are in the dataset's **metadata**: the documentation that describes the data. Data
-without metadata is a warning sign.
+Most of these answers are in the dataset's **metadata**. Data without metadata is a warning sign. The Data
+Management module's [Data Quality](https://spatialturn.github.io/DataManagement/quality.html) episode explains the elements of spatial data
+quality in detail, and the Data Curation module's [Metadata](https://spatialturn.github.io/datacurationmain/metadata.html) episode shows
+what good metadata contains.
 
 ## FAIR data
 
-When you collect or share data yourself, aim to make it **FAIR**:
-
-- **Findable**: it has a clear name, a description and, ideally, a persistent identifier such as a DOI
-- **Accessible**: others can retrieve it, for example from a repository, even if access is controlled
-- **Interoperable**: it uses common formats and standard codes (GeoJSON, GEOIDs, EPSG codes)
-- **Reusable**: it has a license, a description of methods, and enough metadata for someone else to use it
-  correctly
+When you collect or share data yourself, aim to make it **FAIR**: **findable**, **accessible**,
+**interoperable** and **reusable**. The Data Curation module's
+[Introduction](https://spatialturn.github.io/datacurationmain/introduction.html) explains the principles, and its later episodes show how to
+meet them.
 
 Field data that sits in one person's phone, with column names only they understand, is none of these
 things. The field episode, and the QField demonstration in the Case Studies module's grocery access case
