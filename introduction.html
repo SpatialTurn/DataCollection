@@ -441,67 +441,41 @@ holding a value: a color, an elevation, a land cover class, a
 temperature. Satellite images, scanned maps and elevation models are
 rasters.</li>
 </ul><figure><img src="dc_raster_vector.png" alt="Two panels of the same 5 by 4 kilometer area of West Lafayette and Lafayette. Left, vector: orange store points, gray road lines and a light blue city polygon. Right, raster: a grid of 200 meter gray cells, darker where there is more road length in the cell, so the road pattern appears as a blocky texture." class="figure mx-auto d-block"><div class="figcaption">The same area as vector and raster data.</div>
-</figure><table class="table"><colgroup><col width="33%"><col width="33%"><col width="33%"></colgroup><thead><tr><th></th>
-<th>Vector</th>
-<th>Raster</th>
-</tr></thead><tbody><tr><td>Represents</td>
-<td>Discrete features with clear edges</td>
-<td>Continuous surfaces, or images</td>
-</tr><tr><td>Examples</td>
-<td>Tracts, roads, stores, survey points</td>
-<td>Satellite images, elevation, land cover</td>
-</tr><tr><td>Detail</td>
-<td>Set by the precision of coordinates</td>
-<td>Set by the cell size (resolution)</td>
-</tr><tr><td>Common formats</td>
-<td>GeoJSON, shapefile, GeoPackage</td>
-<td>GeoTIFF, JPEG2000, NetCDF</td>
-</tr></tbody></table><p>Neither is better; they answer different questions, and many projects
-use both. A satellite image (raster) might be traced to create building
-outlines (vector), and census tracts (vector) might be used to summarize
-a land cover map (raster).</p>
+</figure><p>Neither is better; many projects use both. The census and field
+episodes in this module collect vector data, and the imagery episode
+collects rasters. The Data Management module’s <a href="https://spatialturn.github.io/DataManagement/data-models.html" class="external-link">Geospatial
+Data Models</a> episode covers both in depth: geometry types, topology,
+resolution, NoData, and how to choose a model for your question.</p>
 </section><section><h2 class="section-heading" id="is-this-dataset-good-enough">Is this dataset good enough?<a class="anchor" aria-label="anchor" href="#is-this-dataset-good-enough"></a></h2>
-<hr class="half-width"><p>Before you build a project on someone else’s data, ask:</p>
-<table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Question</th>
-<th>Why it matters</th>
-</tr></thead><tbody><tr><td><strong>Who made it, and how?</strong></td>
-<td>A government survey, a crowd-sourced map and a student project
-differ in method and reliability</td>
-</tr><tr><td><strong>When?</strong></td>
-<td>Boundaries, roads and stores change. Is it recent enough for your
-question?</td>
-</tr><tr><td><strong>Where, and at what detail?</strong></td>
-<td>Coverage, resolution or scale must match your study area and
-question</td>
-</tr><tr><td><strong>What exactly is measured?</strong></td>
-<td>Read the definitions. “Grocery store” or “household” may not mean
-what you assume</td>
-</tr><tr><td><strong>How accurate is it?</strong></td>
-<td>Look for margins of error, positional accuracy and known gaps</td>
-</tr><tr><td><strong>What coordinate system?</strong></td>
-<td>You will need it to line layers up correctly</td>
-</tr><tr><td><strong>Can I use it?</strong></td>
-<td>Check the license: some data is public domain, some requires credit,
-some cannot be shared</td>
-</tr></tbody></table><p>Most of these answers are in the dataset’s <strong>metadata</strong>:
-the documentation that describes the data. Data without metadata is a
-warning sign.</p>
+<hr class="half-width"><p>Before you build a project on someone else’s data, ask a few quick
+questions:</p>
+<ul><li>
+<strong>Who made it, how and when?</strong> A government survey and
+a crowd-sourced map differ in method, and boundaries, roads and stores
+change over time.</li>
+<li>
+<strong>Where, and at what detail?</strong> Coverage and resolution
+must match your study area and question.</li>
+<li>
+<strong>What exactly is measured?</strong> Read the definitions:
+“grocery store” or “household” may not mean what you assume.</li>
+<li><strong>How accurate is it, and in what coordinate
+system?</strong></li>
+<li>
+<strong>Can I use it?</strong> Check the license.</li>
+</ul><p>Most of these answers are in the dataset’s <strong>metadata</strong>.
+Data without metadata is a warning sign. The Data Management module’s <a href="https://spatialturn.github.io/DataManagement/quality.html" class="external-link">Data
+Quality</a> episode explains the elements of spatial data quality in
+detail, and the Data Curation module’s <a href="https://spatialturn.github.io/datacurationmain/metadata.html" class="external-link">Metadata</a>
+episode shows what good metadata contains.</p>
 </section><section><h2 class="section-heading" id="fair-data">FAIR data<a class="anchor" aria-label="anchor" href="#fair-data"></a></h2>
 <hr class="half-width"><p>When you collect or share data yourself, aim to make it
-<strong>FAIR</strong>:</p>
-<ul><li>
-<strong>Findable</strong>: it has a clear name, a description and,
-ideally, a persistent identifier such as a DOI</li>
-<li>
-<strong>Accessible</strong>: others can retrieve it, for example
-from a repository, even if access is controlled</li>
-<li>
-<strong>Interoperable</strong>: it uses common formats and standard
-codes (GeoJSON, GEOIDs, EPSG codes)</li>
-<li>
-<strong>Reusable</strong>: it has a license, a description of
-methods, and enough metadata for someone else to use it correctly</li>
-</ul><p>Field data that sits in one person’s phone, with column names only
+<strong>FAIR</strong>: <strong>findable</strong>,
+<strong>accessible</strong>, <strong>interoperable</strong> and
+<strong>reusable</strong>. The Data Curation module’s <a href="https://spatialturn.github.io/datacurationmain/introduction.html" class="external-link">Introduction</a>
+explains the principles, and its later episodes show how to meet
+them.</p>
+<p>Field data that sits in one person’s phone, with column names only
 they understand, is none of these things. The field episode, and the
 QField demonstration in the Case Studies module’s grocery access case
 study, show how a planned form, consistent categories and good notes
@@ -529,7 +503,7 @@ today?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>
 <strong>Existing data.</strong> The American Community Survey
@@ -569,7 +543,7 @@ field.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>Vector (points)</li>
 <li>Raster (a continuous surface)</li>

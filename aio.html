@@ -509,115 +509,46 @@ temperature. Satellite images, scanned maps and elevation models are
 rasters.</li>
 </ul>
 <figure><img src="dc_raster_vector.png" alt="Two panels of the same 5 by 4 kilometer area of West Lafayette and Lafayette. Left, vector: orange store points, gray road lines and a light blue city polygon. Right, raster: a grid of 200 meter gray cells, darker where there is more road length in the cell, so the road pattern appears as a blocky texture." class="figure mx-auto d-block"><div class="figcaption">The same area as vector and raster data.</div>
-</figure><table class="table">
-<colgroup>
-<col width="33%">
-<col width="33%">
-<col width="33%">
-</colgroup>
-<thead><tr>
-<th></th>
-<th>Vector</th>
-<th>Raster</th>
-</tr></thead>
-<tbody>
-<tr>
-<td>Represents</td>
-<td>Discrete features with clear edges</td>
-<td>Continuous surfaces, or images</td>
-</tr>
-<tr>
-<td>Examples</td>
-<td>Tracts, roads, stores, survey points</td>
-<td>Satellite images, elevation, land cover</td>
-</tr>
-<tr>
-<td>Detail</td>
-<td>Set by the precision of coordinates</td>
-<td>Set by the cell size (resolution)</td>
-</tr>
-<tr>
-<td>Common formats</td>
-<td>GeoJSON, shapefile, GeoPackage</td>
-<td>GeoTIFF, JPEG2000, NetCDF</td>
-</tr>
-</tbody>
-</table>
-<p>Neither is better; they answer different questions, and many projects
-use both. A satellite image (raster) might be traced to create building
-outlines (vector), and census tracts (vector) might be used to summarize
-a land cover map (raster).</p>
+</figure><p>Neither is better; many projects use both. The census and field
+episodes in this module collect vector data, and the imagery episode
+collects rasters. The Data Management module’s <a href="https://spatialturn.github.io/DataManagement/data-models.html" class="external-link">Geospatial
+Data Models</a> episode covers both in depth: geometry types, topology,
+resolution, NoData, and how to choose a model for your question.</p>
 </section><section><h2 class="section-heading" id="is-this-dataset-good-enough">Is this dataset good enough?<a class="anchor" aria-label="anchor" href="#is-this-dataset-good-enough"></a>
 </h2>
 <hr class="half-width">
-<p>Before you build a project on someone else’s data, ask:</p>
-<table class="table">
-<colgroup>
-<col width="50%">
-<col width="50%">
-</colgroup>
-<thead><tr>
-<th>Question</th>
-<th>Why it matters</th>
-</tr></thead>
-<tbody>
-<tr>
-<td><strong>Who made it, and how?</strong></td>
-<td>A government survey, a crowd-sourced map and a student project
-differ in method and reliability</td>
-</tr>
-<tr>
-<td><strong>When?</strong></td>
-<td>Boundaries, roads and stores change. Is it recent enough for your
-question?</td>
-</tr>
-<tr>
-<td><strong>Where, and at what detail?</strong></td>
-<td>Coverage, resolution or scale must match your study area and
-question</td>
-</tr>
-<tr>
-<td><strong>What exactly is measured?</strong></td>
-<td>Read the definitions. “Grocery store” or “household” may not mean
-what you assume</td>
-</tr>
-<tr>
-<td><strong>How accurate is it?</strong></td>
-<td>Look for margins of error, positional accuracy and known gaps</td>
-</tr>
-<tr>
-<td><strong>What coordinate system?</strong></td>
-<td>You will need it to line layers up correctly</td>
-</tr>
-<tr>
-<td><strong>Can I use it?</strong></td>
-<td>Check the license: some data is public domain, some requires credit,
-some cannot be shared</td>
-</tr>
-</tbody>
-</table>
-<p>Most of these answers are in the dataset’s <strong>metadata</strong>:
-the documentation that describes the data. Data without metadata is a
-warning sign.</p>
+<p>Before you build a project on someone else’s data, ask a few quick
+questions:</p>
+<ul>
+<li>
+<strong>Who made it, how and when?</strong> A government survey and
+a crowd-sourced map differ in method, and boundaries, roads and stores
+change over time.</li>
+<li>
+<strong>Where, and at what detail?</strong> Coverage and resolution
+must match your study area and question.</li>
+<li>
+<strong>What exactly is measured?</strong> Read the definitions:
+“grocery store” or “household” may not mean what you assume.</li>
+<li><strong>How accurate is it, and in what coordinate
+system?</strong></li>
+<li>
+<strong>Can I use it?</strong> Check the license.</li>
+</ul>
+<p>Most of these answers are in the dataset’s <strong>metadata</strong>.
+Data without metadata is a warning sign. The Data Management module’s <a href="https://spatialturn.github.io/DataManagement/quality.html" class="external-link">Data
+Quality</a> episode explains the elements of spatial data quality in
+detail, and the Data Curation module’s <a href="https://spatialturn.github.io/datacurationmain/metadata.html" class="external-link">Metadata</a>
+episode shows what good metadata contains.</p>
 </section><section><h2 class="section-heading" id="fair-data">FAIR data<a class="anchor" aria-label="anchor" href="#fair-data"></a>
 </h2>
 <hr class="half-width">
 <p>When you collect or share data yourself, aim to make it
-<strong>FAIR</strong>:</p>
-<ul>
-<li>
-<strong>Findable</strong>: it has a clear name, a description and,
-ideally, a persistent identifier such as a DOI</li>
-<li>
-<strong>Accessible</strong>: others can retrieve it, for example
-from a repository, even if access is controlled</li>
-<li>
-<strong>Interoperable</strong>: it uses common formats and standard
-codes (GeoJSON, GEOIDs, EPSG codes)</li>
-<li>
-<strong>Reusable</strong>: it has a license, a description of
-methods, and enough metadata for someone else to use it correctly</li>
-</ul>
+<strong>FAIR</strong>: <strong>findable</strong>,
+<strong>accessible</strong>, <strong>interoperable</strong> and
+<strong>reusable</strong>. The Data Curation module’s <a href="https://spatialturn.github.io/datacurationmain/introduction.html" class="external-link">Introduction</a>
+explains the principles, and its later episodes show how to meet
+them.</p>
 <p>Field data that sits in one person’s phone, with column names only
 they understand, is none of these things. The field episode, and the
 QField demonstration in the Case Studies module’s grocery access case
@@ -648,7 +579,7 @@ today?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>
@@ -692,7 +623,7 @@ field.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>Vector (points)</li>
@@ -2172,7 +2103,7 @@ let you track change.</p>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Scanned historic maps </h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <ul>
 <li>
@@ -2198,7 +2129,7 @@ Geoportal</a>
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
   <h3 class="accordion-header" id="headingSpoiler2">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div> Satellite imagery and elevation (most require a free account) </h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <ul>
 <li>
@@ -2411,7 +2342,7 @@ date, scale and publisher.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Answers will vary. A good record of a map includes its title, date,
 scale (for example 1:24,000), publisher, the collection that holds it,
@@ -2440,7 +2371,7 @@ EarthExplorer instead. Then open the image in QGIS.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>The CAST atlas does not cover every area; if yours is missing,
 EarthExplorer holds the complete collection. An image from CAST lines up
@@ -2474,7 +2405,7 @@ summer</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>
@@ -2657,60 +2588,10 @@ complete QField project.</p>
 desk beforehand. If every person invents their own categories, the
 result cannot be analyzed. Before anyone goes out, decide on a
 <strong>schema</strong>: the list of fields, their types and their
-allowed values.</p>
-<table class="table">
-<colgroup>
-<col width="25%">
-<col width="25%">
-<col width="25%">
-<col width="25%">
-</colgroup>
-<thead><tr>
-<th>Field</th>
-<th>Type</th>
-<th>Allowed values</th>
-<th>Why</th>
-</tr></thead>
-<tbody>
-<tr>
-<td><code>store_name</code></td>
-<td>Text</td>
-<td></td>
-<td>To identify and de-duplicate stores</td>
-</tr>
-<tr>
-<td><code>store_type</code></td>
-<td>Dropdown</td>
-<td>Supermarket, Convenience, Small market, Other</td>
-<td>So stores can be compared and filtered</td>
-</tr>
-<tr>
-<td><code>snap_accepted</code></td>
-<td>Dropdown</td>
-<td>Yes, No, Unknown</td>
-<td>Access for people using benefits</td>
-</tr>
-<tr>
-<td><code>produce_available</code></td>
-<td>Dropdown</td>
-<td>Yes, No, Unknown</td>
-<td>A simple measure of healthy food</td>
-</tr>
-<tr>
-<td><code>photo</code></td>
-<td>Attachment</td>
-<td></td>
-<td>Evidence for checking later</td>
-</tr>
-<tr>
-<td><code>notes</code></td>
-<td>Text</td>
-<td></td>
-<td>Anything unusual, without inventing new fields</td>
-</tr>
-</tbody>
-</table>
-<p>Good practice:</p>
+allowed values. The Data Management module’s <a href="https://spatialturn.github.io/DataManagement/designing-data.html" class="external-link">Designing
+Your Data</a> episode shows how to write one as a data dictionary, with
+field types, domains and unique IDs. For field work, a few rules matter
+most:</p>
 <ul>
 <li>Use <strong>dropdowns</strong> (also called domains or value maps)
 wherever possible. Free text produces “SNAP”, “snap”, “EBT” and “yes”
@@ -2722,13 +2603,14 @@ be saved without them.</li>
 <li>Write a <strong>placement rule</strong> for points, for example
 “stand at the main public entrance”. Without one, some people will mark
 the middle of the building and others the parking lot.</li>
-<li>Use <strong>short, lowercase field names without spaces</strong>
-(<code>snap_accepted</code>, not <code>SNAP Accepted?</code>). They work
-in every program.</li>
 <li>
 <strong>Test the form</strong> on a few real sites before the full
 collection.</li>
-</ul></section><section><h2 class="section-heading" id="how-accurate-is-gps">How accurate is GPS?<a class="anchor" aria-label="anchor" href="#how-accurate-is-gps"></a>
+</ul>
+<p>The <a href="https://spatialturn.github.io/CaseStudyFoodDesert/grocery-qfield.html" class="external-link">QField
+demonstration</a> in the Case Studies module shows a complete schema for
+mapping grocery stores.</p>
+</section><section><h2 class="section-heading" id="how-accurate-is-gps">How accurate is GPS?<a class="anchor" aria-label="anchor" href="#how-accurate-is-gps"></a>
 </h2>
 <hr class="half-width">
 <p>Phones use <strong>GNSS</strong> (Global Navigation Satellite
@@ -2767,9 +2649,10 @@ institution’s Institutional Review Board (IRB).</li>
 used and shared.</li>
 <li>
 <strong>Protect privacy.</strong> A precise location can identify a
-person or a household. Avoid recording home locations unless you must;
-if you do, store them securely, and share only aggregated or generalized
-versions.</li>
+person or a household, so avoid recording home locations unless you
+must. The Data Curation module’s <a href="https://spatialturn.github.io/datacurationmain/ethics.html" class="external-link">Ethics
+and Sensitive Location Data</a> episode covers how to store, mask and
+share sensitive locations.</li>
 <li>
 <strong>Respect property and people.</strong> Stay on public land
 unless you have permission. Do not photograph people without
@@ -2784,21 +2667,12 @@ weather, problems and decisions. They become part of your metadata.</li>
 </h2>
 <hr class="half-width">
 <p>Review the data <strong>the same day</strong> while you still
-remember what you saw:</p>
-<ol style="list-style-type: decimal">
-<li>
-<strong>Completeness</strong>: are required fields filled in?</li>
-<li>
-<strong>Location</strong>: do points fall where they should, inside
-the study area?</li>
-<li>
-<strong>Duplicates</strong>: is the same place recorded twice?</li>
-<li>
-<strong>Consistency</strong>: are categories used the same way by
-everyone?</li>
-<li>
-<strong>Evidence</strong>: do photos match their records?</li>
-</ol>
+remember what you saw: are required fields filled in, do points fall
+inside the study area, is any place recorded twice, are categories used
+the same way by everyone, and do photos match their records? The Data
+Management module’s <a href="https://spatialturn.github.io/DataManagement/quality.html" class="external-link">Data
+Quality</a> episode explains quality checks (and the difference between
+quality assurance and quality control) in more depth.</p>
 <div id="design-a-schema" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -2818,7 +2692,7 @@ with their type and allowed values.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>One possible schema:</p>
 <table class="table">
@@ -2924,7 +2798,7 @@ prevented them?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <ul>
 <li>The first two rows are probably the <strong>same store</strong>
