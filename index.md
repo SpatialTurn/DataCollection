@@ -17,7 +17,7 @@ geocoding to satellite imagery and field data collection with a phone.
 | Collecting Data in the Field | Methods and apps, designing a schema, GPS accuracy, ethics and quality checks | Concepts |
 
 Several episodes use one example: **access to grocery stores in Lafayette and West Lafayette, Indiana**. The
-[grocery access case study](https://spatialturn.github.io/CaseStudyFoodDesert/grocery-qfield.html) in the
+[grocery access case study](https://spatialturn.github.io/CaseStudies/grocery-qfield.html) in the
 Case Studies module completes it, with a QField field mapping demonstration and a network analysis in QGIS.
 
 ::::::::::::::::::::::::::::::::::::::::::: prereq

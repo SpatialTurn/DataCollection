@@ -31,7 +31,7 @@ The lesson is built with [The Carpentries Workbench](https://carpentries.github.
 | `data/museums.txt` | Names and street addresses of 15 U.S. museums (tab separated, no header), for geocoding practice | This project |
 
 The QField demonstration and the QGIS network analysis, with their Lafayette GeoJSON files, moved to the
-[Case Studies module](https://github.com/SpatialTurn/CaseStudyFoodDesert) in October 2026.
+[Case Studies module](https://github.com/SpatialTurn/CaseStudies) in October 2026.
 
 Figures named `dc_*.png` in `episodes/` were generated with Python from U.S. Census Bureau data (American
 Community Survey 2020-2024 5-year estimates, 2020 Decennial Census, TIGER/Line and cartographic boundary

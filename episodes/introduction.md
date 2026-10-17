@@ -38,7 +38,7 @@ interviews, or by digitizing features from maps and imagery.
 
 ![A data collection workflow.](dc_workflow.png){alt="Flow diagram. Step 1, define the question, leads to step 2, does suitable data already exist? If yes, step 3a, find it in a repository or API, then step 4a, check quality, license and metadata. If no, step 3b, design a field form and schema, then step 4b, collect and quality-check. Both paths end at step 5, document and analyze. A dashed arrow from 4a to 3b says: not good enough? Fill the gaps yourself."}
 
-The two paths often meet. In the [grocery access case study](https://spatialturn.github.io/CaseStudyFoodDesert/grocery-qfield.html) in the
+The two paths often meet. In the [grocery access case study](https://spatialturn.github.io/CaseStudies/grocery-qfield.html) in the
 Case Studies module, we take **census data** and **road data** from government sources, then add **grocery
 store locations** that could be checked or collected in the field, because no official list says where every store is, what it sells, and whether
 it accepts SNAP benefits.
@@ -84,14 +84,14 @@ Before you build a project on someone else's data, ask a few quick questions:
 
 Most of these answers are in the dataset's **metadata**. Data without metadata is a warning sign. The Data
 Management module's [Data Quality](https://spatialturn.github.io/DataManagement/quality.html) episode explains the elements of spatial data
-quality in detail, and the Data Curation module's [Metadata](https://spatialturn.github.io/datacurationmain/metadata.html) episode shows
+quality in detail, and the Data Curation module's [Metadata](https://spatialturn.github.io/DataCuration/metadata.html) episode shows
 what good metadata contains.
 
 ## FAIR data
 
 When you collect or share data yourself, aim to make it **FAIR**: **findable**, **accessible**,
 **interoperable** and **reusable**. The Data Curation module's
-[Introduction](https://spatialturn.github.io/datacurationmain/introduction.html) explains the principles, and its later episodes show how to
+[Introduction](https://spatialturn.github.io/DataCuration/introduction.html) explains the principles, and its later episodes show how to
 meet them.
 
 Field data that sits in one person's phone, with column names only they understand, is none of these
