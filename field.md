@@ -58,18 +58,9 @@ complete QField project.
 
 Field data collection fails most often not in the field, but at the desk beforehand. If every person invents
 their own categories, the result cannot be analyzed. Before anyone goes out, decide on a **schema**: the list
-of fields, their types and their allowed values.
-
-| Field | Type | Allowed values | Why |
-|---|---|---|---|
-| `store_name` | Text | | To identify and de-duplicate stores |
-| `store_type` | Dropdown | Supermarket, Convenience, Small market, Other | So stores can be compared and filtered |
-| `snap_accepted` | Dropdown | Yes, No, Unknown | Access for people using benefits |
-| `produce_available` | Dropdown | Yes, No, Unknown | A simple measure of healthy food |
-| `photo` | Attachment | | Evidence for checking later |
-| `notes` | Text | | Anything unusual, without inventing new fields |
-
-Good practice:
+of fields, their types and their allowed values. The Data Management module's
+[Designing Your Data](https://spatialturn.github.io/DataManagement/designing-data.html) episode shows how to write one as a data dictionary,
+with field types, domains and unique IDs. For field work, a few rules matter most:
 
 - Use **dropdowns** (also called domains or value maps) wherever possible. Free text produces "SNAP", "snap",
   "EBT" and "yes" for the same thing.
@@ -77,9 +68,10 @@ Good practice:
 - Make essential fields **required**, so a record cannot be saved without them.
 - Write a **placement rule** for points, for example "stand at the main public entrance". Without one, some
   people will mark the middle of the building and others the parking lot.
-- Use **short, lowercase field names without spaces** (`snap_accepted`, not `SNAP Accepted?`). They work in
-  every program.
 - **Test the form** on a few real sites before the full collection.
+
+The [QField demonstration](https://spatialturn.github.io/CaseStudyFoodDesert/grocery-qfield.html) in the Case Studies module shows a complete
+schema for mapping grocery stores.
 
 ## How accurate is GPS?
 
@@ -108,9 +100,10 @@ Collecting data about places often means collecting data about people. Before yo
 - **Get approval.** Research with human participants (surveys, interviews, photos of people) usually needs
   review by your institution's Institutional Review Board (IRB).
 - **Ask for consent**, and explain how the data will be used and shared.
-- **Protect privacy.** A precise location can identify a person or a household. Avoid recording home
-  locations unless you must; if you do, store them securely, and share only aggregated or generalized
-  versions.
+- **Protect privacy.** A precise location can identify a person or a household, so avoid recording home
+  locations unless you must. The Data Curation module's
+  [Ethics and Sensitive Location Data](https://spatialturn.github.io/datacurationmain/ethics.html) episode covers how to store, mask and
+  share sensitive locations.
 - **Respect property and people.** Stay on public land unless you have permission. Do not photograph people
   without consent.
 - **Stay safe.** Work in pairs, tell someone your route, and carry a charged phone.
@@ -119,13 +112,11 @@ Collecting data about places often means collecting data about people. Before yo
 
 ## Check the data quickly (quality assurance)
 
-Review the data **the same day** while you still remember what you saw:
-
-1. **Completeness**: are required fields filled in?
-2. **Location**: do points fall where they should, inside the study area?
-3. **Duplicates**: is the same place recorded twice?
-4. **Consistency**: are categories used the same way by everyone?
-5. **Evidence**: do photos match their records?
+Review the data **the same day** while you still remember what you saw: are required fields filled in, do
+points fall inside the study area, is any place recorded twice, are categories used the same way by
+everyone, and do photos match their records? The Data Management module's
+[Data Quality](https://spatialturn.github.io/DataManagement/quality.html) episode explains quality checks (and the difference between
+quality assurance and quality control) in more depth.
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
