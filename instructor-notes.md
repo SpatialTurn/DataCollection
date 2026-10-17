@@ -4,17 +4,18 @@ title: 'Instructor Notes'
 
 ## Overall approach
 
-- The module follows one thread: find existing data, judge it, fill the gaps with field data, and use the
-  result. The grocery access case (Lafayette and West Lafayette) ties the Census, QField and network analysis
-  episodes together.
+- The module follows one thread: find existing data, judge it, and fill the gaps with data you create
+  (geocoded points or field data). The grocery access example (Lafayette and West Lafayette) runs through
+  the Census and field episodes, and the Case Studies module finishes it with the QField demonstration and
+  the QGIS network analysis (moved there in October 2026).
 - **Census API keys** are the most common delay. Ask learners to request and activate a key before the
   session (see Setup); activation requires clicking a link in an email.
-- All lesson data is read from the web: the notebooks read Census files directly, and QGIS loads the network
-  analysis files from this repository's `data/` folder by URL. Imagery episodes do involve downloads, because
-  finding and downloading imagery is the skill being taught.
+- All lesson data is read from the web: the notebooks read Census files, the Census Geocoder and
+  OpenStreetMap directly, and `museums.txt` from this repository's `data/` folder. Imagery episodes do involve
+  downloads, because finding and downloading imagery is the skill being taught.
 - Suggested timing for a full day: Introduction 25 min; Repositories 35 min; Census 65 min (including
-  notebook 1a or 1b); Imagery 50 min; Field data 40 min; QField demonstration 45 min; Network analysis 75 min.
-  Notebook 1c works well as take-home practice.
+  notebook 1a or 1b); Geocoding 50 min (including notebook 2a); Imagery 50 min; Field data 40 min.
+  Notebooks 1c, 2b and 2c work well as take-home practice.
 
 ## Episode by episode
 
@@ -27,8 +28,7 @@ title: 'Instructor Notes'
 
 - Purdue is a member of the Big Ten Academic Alliance, so the BTAA Geoportal search for "Tippecanoe" gives
   local results.
-- Loading Natural Earth by URL in QGIS is a good first QGIS task, and it prepares learners for the network
-  episode.
+- Loading Natural Earth by URL in QGIS is a good first QGIS task.
 
 ### Data from the U.S. Census Bureau
 
@@ -38,6 +38,19 @@ title: 'Instructor Notes'
   LaGrange County so different?
 - Tract 104 (Purdue's west campus) returns `-666666666` for median household income and has no households,
   because almost everyone there lives in residence halls. Learners from Purdue usually recognize it.
+
+### Geocoding and Adding Spatial Context
+
+- The Census Geocoder is free and needs no key, but only covers U.S. addresses in its database.
+  Campus addresses (for example "610 Purdue Mall") return no match; the notebooks use
+  101 N Grant St (Purdue Memorial Union) instead.
+- Two museums fail: the National Gallery (no street number; fixable as an intersection) and the
+  Philadelphia Museum of Art (not in the Census database). Use them to discuss address quality.
+- Nominatim (used in notebooks 2b and 2c) allows one request per second. In a room of 30 people sharing
+  one network, requests may be throttled; ask learners to wait and rerun.
+- Raise privacy: geocoding personal addresses creates sensitive location data.
+- The OpenStreetMap part prepares learners for the Data Analysis module's Network Analysis episode, which
+  uses the same OSM tags.
 
 ### Acquiring Imagery
 
@@ -52,23 +65,6 @@ title: 'Instructor Notes'
 - If you have IRB-approved projects in your department, mention how they handled consent and location
   privacy.
 
-### QField Demonstration
-
-- This is a demonstration. If time and devices allow, a short walk to map a few campus locations with a
-  prepared QField project makes it memorable.
-
-### Network Analysis for Grocery Access
-
-- The most important setting is the **project CRS** (EPSG:26916). If learners see costs around 0.04, their
-  project is still in EPSG:4326.
-- Do **not** clip the roads to the city limits; the episode shows why. All 17 supermarkets are reachable with
-  the provided road layer.
-- With the full layer, routes from the Purdue Memorial Union to the 17 supermarkets average about 5.7 km by
-  road against 5.0 km in a straight line. About 11% of city street length is within 800 m of a supermarket
-  along the network, and about 40% within 1,600 m.
-- The grocery store data comes from OpenStreetMap (October 2026) and is not field verified; say so when
-  presenting results.
-
 ## Common problems
 
 | Symptom | Likely cause | Fix |
@@ -77,6 +73,7 @@ title: 'Instructor Notes'
 | Census API shows "Invalid Key" | Key not activated, or mistyped | Click the activation link in the email; copy the key again |
 | `error: unknown variable` | Variable code misspelled, or wrong dataset path | Profile variables (DP) need `/profile` in the dataset path; check case |
 | A join gives no matches | GEOID stored as a number, or different years | Keep GEOIDs as text; use boundaries and data from compatible years |
-| Network costs are tiny | Project CRS is EPSG:4326 | Set the project CRS to EPSG:26916 |
-| Some routes have a NULL cost | Network broken, often by clipping | Use the full road layer |
 | A web layer loads but nothing appears | Off screen or under another layer | Right-click > **Zoom to Layer**; reorder layers |
+| Census Geocoder returns `(None, None)` | Address not in the Census database (campus addresses such as "610 Purdue Mall") | Use a building's street address, or Nominatim |
+| Geocoder or OSM timeout | Free server busy or rate limited | Wait a minute and rerun |
+| Map shows "403 Access blocked" or "API key required" behind the points | OpenStreetMap and CARTO tiles do not work inside Colab | Add `tiles="Esri.WorldGrayCanvas"` to `.explore()` |

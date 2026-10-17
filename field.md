@@ -50,7 +50,8 @@ Most field data is now collected on a phone or tablet, with forms that record a 
 | [KoboToolbox](https://www.kobotoolbox.org/) and [ODK](https://getodk.org/) | Free survey tools widely used in research and humanitarian work; strong for questionnaires, with GPS points |
 | ArcGIS Field Maps and Survey123 | Esri's apps; require an ArcGIS account, which many universities provide |
 
-This module uses **QField**, because it is free and works directly with QGIS. The next episode walks through a
+This module uses **QField**, because it is free and works directly with QGIS. The
+[grocery access case study](https://spatialturn.github.io/CaseStudyFoodDesert/grocery-qfield.html) in the Case Studies module walks through a
 complete QField project.
 
 ## Design the data before you collect it

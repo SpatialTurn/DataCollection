@@ -5,10 +5,9 @@ title: Setup
 This module uses free tools only:
 
 - **A web browser** for the repositories, the Census API and the imagery websites
-- **Google Colab** for the Python notebooks in the Census episode. It runs in your browser, so there is
-  nothing to install.
-- **QGIS** for the imagery and network analysis episodes. It is a desktop program you install once.
-- **QField** (optional) if you want to try field data collection on your phone
+- **Google Colab** for the Python notebooks in the Census and Geocoding episodes. It runs in your browser,
+  so there is nothing to install.
+- **QGIS** for the repositories and imagery episodes. It is a desktop program you install once.
 
 ## What you need
 
@@ -31,14 +30,15 @@ This module uses free tools only:
 
 ## Part 2: Google Colab
 
-1. Click a notebook link in the table in the Census episode. It opens in Colab.
+1. Click a notebook link in the table in the Census or Geocoding episode. It opens in Colab.
 2. Click **File > Save a copy in Drive** so your changes are kept.
 3. Paste your Census API key where the notebook asks for it.
 4. Run cells from top to bottom: click a cell and press **Shift + Enter**.
 5. If Colab warns that the notebook was not written by Google, click **Run anyway**.
 
-The notebooks read all their data straight from the Census Bureau's website, so you never need to download
-anything.
+The notebooks read all their data straight from the web (the Census Bureau's website, the Census Geocoder,
+OpenStreetMap and this lesson's repository), so you never need to download anything. The geocoding notebooks
+do not need a Census API key.
 
 ## Part 3: Install QGIS
 
@@ -57,23 +57,16 @@ spatial data.
 If you are new to QGIS, the Data Visualization module's "Getting Started with QGIS" episode introduces the
 interface.
 
-### Loading the lesson data in QGIS
+### Loading data from a web address in QGIS
 
-The network analysis episode reads its data straight from this lesson's repository:
+The repositories episode loads data straight from the web:
 
 1. **Layer > Add Layer > Add Vector Layer**
 2. **Source Type**: **Protocol: HTTP(S), cloud, etc.**
 3. Paste the address given in the episode into **URI**, then click **Add**
 
-## Part 4 (optional): QField
-
-To try field data collection yourself:
-
-1. Install **QField** from <https://qfield.org/> (Android and iOS app stores, or Windows, macOS and Linux).
-2. In QGIS, install the **QFieldSync** plugin: **Plugins > Manage and Install Plugins**, search for
-   QFieldSync, and click **Install Plugin**.
-
-The QField episode is a demonstration, so this part is not required.
+If you want to try field data collection with **QField**, see the setup page of the
+[Case Studies module](https://spatialturn.github.io/CaseStudyFoodDesert/), where the QField demonstration lives.
 
 ## Troubleshooting
 
@@ -83,4 +76,5 @@ The QField episode is a demonstration, so this part is not required.
 | A notebook cell says `NameError` | A cell above it was skipped. Use **Runtime > Run before** |
 | QGIS will not open on macOS | Right-click the app, choose **Open**, then confirm |
 | A layer loaded from a web address shows nothing | Right-click the layer and choose **Zoom to Layer**; check that the address was pasted completely |
-| Network analysis costs look tiny (such as 0.04) | Set the project coordinate system to EPSG:26916 (bottom-right corner of the QGIS window) |
+| The Census Geocoder returns no match | Check the address has a street number; campus and landmark addresses are often missing, so try Nominatim (notebook 2c) |
+| An OpenStreetMap or Nominatim request times out | The free server is busy or rate limited; wait a minute and rerun the cell |
