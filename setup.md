@@ -42,7 +42,7 @@ do not need a Census API key.
 
 ## Part 3: Install QGIS
 
-Install **QGIS** (the free Long Term Release) by following the [central Setup page](https://spatialturn.github.io/Foundations/learners/setup.html) of the
+Install **QGIS** (the free Long Term Release) by following the [central Setup page](https://spatialturn.github.io/Foundations/index.html#part-2-install-qgis) of the
 Foundations module. If you are new to QGIS, its [Getting Started with QGIS](https://spatialturn.github.io/Foundations/qgisintro.html) episode introduces the
 interface.
 
