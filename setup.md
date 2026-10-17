@@ -66,7 +66,7 @@ The repositories episode loads data straight from the web:
 3. Paste the address given in the episode into **URI**, then click **Add**
 
 If you want to try field data collection with **QField**, see the setup page of the
-[Case Studies module](https://spatialturn.github.io/CaseStudyFoodDesert/), where the QField demonstration lives.
+[Case Studies module](https://spatialturn.github.io/CaseStudies/), where the QField demonstration lives.
 
 ## Troubleshooting
 

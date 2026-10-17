@@ -51,7 +51,7 @@ Most field data is now collected on a phone or tablet, with forms that record a 
 | ArcGIS Field Maps and Survey123 | Esri's apps; require an ArcGIS account, which many universities provide |
 
 This module uses **QField**, because it is free and works directly with QGIS. The
-[grocery access case study](https://spatialturn.github.io/CaseStudyFoodDesert/grocery-qfield.html) in the Case Studies module walks through a
+[grocery access case study](https://spatialturn.github.io/CaseStudies/grocery-qfield.html) in the Case Studies module walks through a
 complete QField project.
 
 ## Design the data before you collect it
@@ -70,7 +70,7 @@ with field types, domains and unique IDs. For field work, a few rules matter mos
   people will mark the middle of the building and others the parking lot.
 - **Test the form** on a few real sites before the full collection.
 
-The [QField demonstration](https://spatialturn.github.io/CaseStudyFoodDesert/grocery-qfield.html) in the Case Studies module shows a complete
+The [QField demonstration](https://spatialturn.github.io/CaseStudies/grocery-qfield.html) in the Case Studies module shows a complete
 schema for mapping grocery stores.
 
 ## How accurate is GPS?
@@ -102,7 +102,7 @@ Collecting data about places often means collecting data about people. Before yo
 - **Ask for consent**, and explain how the data will be used and shared.
 - **Protect privacy.** A precise location can identify a person or a household, so avoid recording home
   locations unless you must. The Data Curation module's
-  [Ethics and Sensitive Location Data](https://spatialturn.github.io/datacurationmain/ethics.html) episode covers how to store, mask and
+  [Ethics and Sensitive Location Data](https://spatialturn.github.io/DataCuration/ethics.html) episode covers how to store, mask and
   share sensitive locations.
 - **Respect property and people.** Stay on public land unless you have permission. Do not photograph people
   without consent.
