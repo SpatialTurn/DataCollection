@@ -1,0 +1,15 @@
+The Metropolitan Museum of Art	1000 5th Ave, New York, NY 10028
+The Museum of Modern Art (MoMA)	11 W 53rd St, New York, NY 10019
+The Art Institute of Chicago	111 S Michigan Ave, Chicago, IL 60603
+Smithsonian National Museum of Natural History	10th St. & Constitution Ave. NW, Washington, DC 20560
+The Getty Center	1200 Getty Center Dr, Los Angeles, CA 90049
+The National Gallery of Art	Constitution Ave NW, Washington, DC 20565
+The Solomon R. Guggenheim Museum	1071 5th Ave, New York, NY 10128
+The American Museum of Natural History	Central Park West & 79th St, New York, NY 10024
+The Field Museum	1400 S Lake Shore Dr, Chicago, IL 60605
+The Museum of Fine Arts, Boston	465 Huntington Ave, Boston, MA 02115
+The Whitney Museum of American Art	99 Gansevoort St, New York, NY 10014
+The Cleveland Museum of Art	11150 East Blvd, Cleveland, OH 44106
+The Philadelphia Museum of Art	2600 Benjamin Franklin Pkwy, Philadelphia, PA 19130
+The Denver Art Museum	100 W 14th Ave Pkwy, Denver, CO 80204
+The San Francisco Museum of Modern Art	151 3rd St, San Francisco, CA 94103

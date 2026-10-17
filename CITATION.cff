@@ -25,15 +25,17 @@ authors:
 abstract: >-
   This module teaches social scientists how to find, evaluate and collect
   geospatial data: searching data repositories, downloading U.S. Census Bureau
-  boundaries and statistics with the Census API, acquiring scanned maps and
-  satellite imagery, and collecting field data with QField, ending with a
-  network analysis of grocery store access in QGIS.
+  boundaries and statistics with the Census API, geocoding addresses and
+  adding OpenStreetMap features, acquiring scanned maps and satellite imagery,
+  and planning field data collection.
 keywords:
   - GIS
   - data collection
   - U.S. Census
   - American Community Survey
   - Census API
+  - geocoding
+  - OpenStreetMap
   - satellite imagery
   - QField
   - FAIR data

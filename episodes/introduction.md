@@ -38,9 +38,9 @@ interviews, or by digitizing features from maps and imagery.
 
 ![A data collection workflow.](dc_workflow.png){alt="Flow diagram. Step 1, define the question, leads to step 2, does suitable data already exist? If yes, step 3a, find it in a repository or API, then step 4a, check quality, license and metadata. If no, step 3b, design a field form and schema, then step 4b, collect and quality-check. Both paths end at step 5, document and analyze. A dashed arrow from 4a to 3b says: not good enough? Fill the gaps yourself."}
 
-The two paths often meet. In the case study used later in this module, we take **census data** and
-**road data** from government sources, then add **grocery store locations** that could be checked or
-collected in the field, because no official list says where every store is, what it sells, and whether
+The two paths often meet. In the [grocery access case study](https://spatialturn.github.io/CaseStudyFoodDesert/grocery-qfield.html) in the
+Case Studies module, we take **census data** and **road data** from government sources, then add **grocery
+store locations** that could be checked or collected in the field, because no official list says where every store is, what it sells, and whether
 it accepts SNAP benefits.
 
 ## What this module covers
@@ -49,10 +49,9 @@ it accepts SNAP benefits.
 |---|---|---|
 | Finding Data in Repositories | Vector data from geoportals and open data hubs | Web browser, QGIS |
 | Data from the U.S. Census Bureau | Census boundaries and statistics | Web browser, Python (Colab) |
+| Geocoding and Adding Spatial Context | Points made from addresses; OpenStreetMap features | Python (Colab) |
 | Acquiring Imagery | Scanned maps and satellite imagery (raster) | Web browser, QGIS |
 | Collecting Data in the Field | Original observations | QField, QGIS |
-| QField demonstration | Mapping grocery stores | QField, QGIS |
-| Network Analysis for Grocery Access | Using the collected data | QGIS |
 
 ## Vector and raster data
 
@@ -105,8 +104,8 @@ When you collect or share data yourself, aim to make it **FAIR**:
   correctly
 
 Field data that sits in one person's phone, with column names only they understand, is none of these
-things. The QField episodes show how a planned form, consistent categories and good notes make field data
-reusable.
+things. The field episode, and the QField demonstration in the Case Studies module's grocery access case
+study, show how a planned form, consistent categories and good notes make field data reusable.
 
 ::::::::::::::::::::::::::::::::::::: challenge
 

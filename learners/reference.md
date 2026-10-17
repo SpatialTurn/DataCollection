@@ -32,13 +32,13 @@ Coefficient of variation (CV)
 :   A measure of how reliable an estimate is: the standard error as a percentage of the estimate. For ACS
     data, `CV = (MOE / 1.645) / estimate x 100`.
 
-CORONA
-:   A U.S. reconnaissance satellite program (1960 to 1972) whose more than 860,000 images were declassified
-    in 1995.
-
 Coordinate reference system (CRS)
 :   The system that links map coordinates to places on Earth, identified by an EPSG code such as EPSG:4326
     (latitude and longitude) or EPSG:26916 (UTM zone 16N, in meters).
+
+CORONA
+:   A U.S. reconnaissance satellite program (1960 to 1972) whose more than 860,000 images were declassified
+    in 1995.
 
 Decennial Census
 :   The U.S. count of every person, taken every ten years. It has no margin of error but asks only a few
@@ -52,6 +52,10 @@ FAIR principles
 
 FIPS code
 :   A Federal Information Processing Standards code identifying a state (2 digits) or county (3 digits).
+
+Geocoding
+:   Converting a text location, such as an address, into coordinates. **Reverse geocoding** goes from
+    coordinates back to an address.
 
 GEOID
 :   A census geography's identifier, built by joining FIPS and other codes, for example `18157` for
@@ -71,13 +75,16 @@ Group quarters
 Margin of error (MOE)
 :   The range around an ACS estimate within which the true value lies with 90% confidence.
 
+Match rate
+:   The share of addresses a geocoder places successfully. Always check the addresses that did not match.
+
 Metadata
 :   Documentation describing a dataset: who made it, when, how, where it covers, its attributes, its
     coordinate system and its license.
 
-Network analysis
-:   Analysis of movement along a network, such as roads, for example finding shortest paths or service
-    areas.
+OpenStreetMap (OSM)
+:   A free, volunteer-built map of the world. Features are described by `key=value` tags such as
+    `shop=supermarket`.
 
 QField
 :   A free, open source app for collecting field data on phones and tablets, using projects prepared in
@@ -85,6 +92,10 @@ QField
 
 Raster data
 :   Data stored as a grid of cells, each with a value, such as a satellite image or elevation model.
+
+Rate limit
+:   The maximum number of requests a web service accepts in a period, for example one per second for
+    Nominatim.
 
 Resolution
 :   For imagery: the ground size of one pixel (spatial), the number of wavelength bands (spectral), or how
@@ -96,12 +107,6 @@ Schema
 Sentinel-2
 :   European Union Copernicus satellites providing free 13-band imagery at 10 to 60 m resolution about
     every 5 days.
-
-Service area
-:   The part of a network that can be reached from a starting point within a given distance or time.
-
-Shortest path
-:   The route between two points along a network with the lowest total distance (or time).
 
 TIGER/Line
 :   The Census Bureau's full-detail geographic files of boundaries and features such as roads. Their file
@@ -121,4 +126,6 @@ ZCTA (ZIP Code Tabulation Area)
 - [USGS: declassified satellite imagery](https://www.usgs.gov/centers/eros/science/usgs-eros-archive-declassified-data-declassified-satellite-imagery-1)
 - [Copernicus Browser documentation](https://documentation.dataspace.copernicus.eu/Applications/Browser.html)
 - [QField documentation](https://docs.qfield.org/)
+- [U.S. Census Geocoder](https://geocoding.geo.census.gov/geocoder/)
+- [OpenStreetMap Map Features](https://wiki.openstreetmap.org/wiki/Map_features)
 - [GO FAIR: the FAIR principles](https://www.go-fair.org/fair-principles/)

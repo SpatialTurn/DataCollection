@@ -23,7 +23,7 @@ title: 'GIS Data Collection for Social Scientists'
 created: '2024-08-08'
 
 # Comma-separated list of keywords for the lesson
-keywords: 'GIS, data collection, U.S. Census, American Community Survey, Census API, satellite imagery, QField, network analysis, FAIR, social science'
+keywords: 'GIS, data collection, U.S. Census, American Community Survey, Census API, geocoding, OpenStreetMap, satellite imagery, QField, FAIR, social science'
 
 # Life cycle stage of the lesson
 # possible values: pre-alpha, alpha, beta, stable
@@ -68,10 +68,9 @@ episodes:
 - introduction.md
 - repositories.md
 - census.md
+- geocoding.md
 - imagery.md
 - field.md
-- qfield.md
-- qfield-network.md
 
 # Information for Learners
 learners: 
