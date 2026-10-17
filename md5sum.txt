@@ -11,6 +11,6 @@
 "episodes/imagery.md" "6bdec0a00b970116d7a68fcb7873ed11" "site/built/imagery.md" "2026-10-17"
 "episodes/field.md" "37133d6eb585a8150d25335481101a90" "site/built/field.md" "2026-10-17"
 "instructors/instructor-notes.md" "cb3cf93dc933b3b777b9b9cf0dc3159c" "site/built/instructor-notes.md" "2026-10-17"
-"learners/setup.md" "9829eb4887a912dc6b8dbe989710c359" "site/built/setup.md" "2026-10-17"
+"learners/setup.md" "08e408ffba9ef3cdb822c28c255a7c56" "site/built/setup.md" "2026-10-17"
 "learners/reference.md" "23a39148cc4011b71b420b436b15e09b" "site/built/reference.md" "2026-10-17"
 "profiles/learner-profiles.md" "171483346244ba2dc48c16fb56ef97ae" "site/built/learner-profiles.md" "2026-10-17"
