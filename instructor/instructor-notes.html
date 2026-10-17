@@ -281,7 +281,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="imagery.html">4. Acquiring Imagery: Scanned Maps and Satellite Data</a>
+        <a href="geocoding.html">4. Geocoding and Adding Spatial Context</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -293,7 +293,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="field.html">5. Collecting Data in the Field</a>
+        <a href="imagery.html">5. Acquiring Imagery: Scanned Maps and Satellite Data</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -305,19 +305,7 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="qfield.html">6. QField Demonstration: Mapping Grocery Stores</a>
-    </div>
-<!--/div.accordion-header-->
-
-  </div>
-<!--/div.accordion-item-->
-</div>
-<!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush8">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading8">
-        <a href="qfield-network.html">7. Network Analysis for Grocery Access in QGIS</a>
+        <a href="field.html">6. Collecting Data in the Field</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -405,23 +393,25 @@
 </h2>
 <hr class="half-width">
 <ul>
-<li>The module follows one thread: find existing data, judge it, fill
-the gaps with field data, and use the result. The grocery access case
-(Lafayette and West Lafayette) ties the Census, QField and network
-analysis episodes together.</li>
+<li>The module follows one thread: find existing data, judge it, and
+fill the gaps with data you create (geocoded points or field data). The
+grocery access example (Lafayette and West Lafayette) runs through the
+Census and field episodes, and the Case Studies module finishes it with
+the QField demonstration and the QGIS network analysis (moved there in
+October 2026).</li>
 <li>
 <strong>Census API keys</strong> are the most common delay. Ask
 learners to request and activate a key before the session (see Setup);
 activation requires clicking a link in an email.</li>
 <li>All lesson data is read from the web: the notebooks read Census
-files directly, and QGIS loads the network analysis files from this
-repository’s <code>data/</code> folder by URL. Imagery episodes do
-involve downloads, because finding and downloading imagery is the skill
-being taught.</li>
+files, the Census Geocoder and OpenStreetMap directly, and
+<code>museums.txt</code> from this repository’s <code>data/</code>
+folder. Imagery episodes do involve downloads, because finding and
+downloading imagery is the skill being taught.</li>
 <li>Suggested timing for a full day: Introduction 25 min; Repositories
-35 min; Census 65 min (including notebook 1a or 1b); Imagery 50 min;
-Field data 40 min; QField demonstration 45 min; Network analysis 75 min.
-Notebook 1c works well as take-home practice.</li>
+35 min; Census 65 min (including notebook 1a or 1b); Geocoding 50 min
+(including notebook 2a); Imagery 50 min; Field data 40 min. Notebooks
+1c, 2b and 2c work well as take-home practice.</li>
 </ul></section><section><h2 class="section-heading" id="episode-by-episode">Episode by episode<a class="anchor" aria-label="anchor" href="#episode-by-episode"></a>
 </h2>
 <hr class="half-width">
@@ -440,8 +430,7 @@ research.</li>
 <ul>
 <li>Purdue is a member of the Big Ten Academic Alliance, so the BTAA
 Geoportal search for “Tippecanoe” gives local results.</li>
-<li>Loading Natural Earth by URL in QGIS is a good first QGIS task, and
-it prepares learners for the network episode.</li>
+<li>Loading Natural Earth by URL in QGIS is a good first QGIS task.</li>
 </ul>
 </div>
 <div class="section level3">
@@ -456,6 +445,26 @@ small counties less certain? Why is LaGrange County so different?</li>
 median household income and has no households, because almost everyone
 there lives in residence halls. Learners from Purdue usually recognize
 it.</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="geocoding-and-adding-spatial-context">Geocoding and Adding Spatial Context<a class="anchor" aria-label="anchor" href="#geocoding-and-adding-spatial-context"></a>
+</h3>
+<ul>
+<li>The Census Geocoder is free and needs no key, but only covers U.S.
+addresses in its database. Campus addresses (for example “610 Purdue
+Mall”) return no match; the notebooks use 101 N Grant St (Purdue
+Memorial Union) instead.</li>
+<li>Two museums fail: the National Gallery (no street number; fixable as
+an intersection) and the Philadelphia Museum of Art (not in the Census
+database). Use them to discuss address quality.</li>
+<li>Nominatim (used in notebooks 2b and 2c) allows one request per
+second. In a room of 30 people sharing one network, requests may be
+throttled; ask learners to wait and rerun.</li>
+<li>Raise privacy: geocoding personal addresses creates sensitive
+location data.</li>
+<li>The OpenStreetMap part prepares learners for the Data Analysis
+module’s Network Analysis episode, which uses the same OSM tags.</li>
 </ul>
 </div>
 <div class="section level3">
@@ -477,33 +486,6 @@ a single band.</li>
 schemas before showing QField.</li>
 <li>If you have IRB-approved projects in your department, mention how
 they handled consent and location privacy.</li>
-</ul>
-</div>
-<div class="section level3">
-<h3 id="qfield-demonstration">QField Demonstration<a class="anchor" aria-label="anchor" href="#qfield-demonstration"></a>
-</h3>
-<ul>
-<li>This is a demonstration. If time and devices allow, a short walk to
-map a few campus locations with a prepared QField project makes it
-memorable.</li>
-</ul>
-</div>
-<div class="section level3">
-<h3 id="network-analysis-for-grocery-access">Network Analysis for Grocery Access<a class="anchor" aria-label="anchor" href="#network-analysis-for-grocery-access"></a>
-</h3>
-<ul>
-<li>The most important setting is the <strong>project CRS</strong>
-(EPSG:26916). If learners see costs around 0.04, their project is still
-in EPSG:4326.</li>
-<li>Do <strong>not</strong> clip the roads to the city limits; the
-episode shows why. All 17 supermarkets are reachable with the provided
-road layer.</li>
-<li>With the full layer, routes from the Purdue Memorial Union to the 17
-supermarkets average about 5.7 km by road against 5.0 km in a straight
-line. About 11% of city street length is within 800 m of a supermarket
-along the network, and about 40% within 1,600 m.</li>
-<li>The grocery store data comes from OpenStreetMap (October 2026) and
-is not field verified; say so when presenting results.</li>
 </ul>
 </div>
 </section><section><h2 class="section-heading" id="common-problems">Common problems<a class="anchor" aria-label="anchor" href="#common-problems"></a>
@@ -545,19 +527,29 @@ path; check case</td>
 years</td>
 </tr>
 <tr>
-<td>Network costs are tiny</td>
-<td>Project CRS is EPSG:4326</td>
-<td>Set the project CRS to EPSG:26916</td>
-</tr>
-<tr>
-<td>Some routes have a NULL cost</td>
-<td>Network broken, often by clipping</td>
-<td>Use the full road layer</td>
-</tr>
-<tr>
 <td>A web layer loads but nothing appears</td>
 <td>Off screen or under another layer</td>
 <td>Right-click &gt; <strong>Zoom to Layer</strong>; reorder layers</td>
+</tr>
+<tr>
+<td>Census Geocoder returns <code>(None, None)</code>
+</td>
+<td>Address not in the Census database (campus addresses such as “610
+Purdue Mall”)</td>
+<td>Use a building’s street address, or Nominatim</td>
+</tr>
+<tr>
+<td>Geocoder or OSM timeout</td>
+<td>Free server busy or rate limited</td>
+<td>Wait a minute and rerun</td>
+</tr>
+<tr>
+<td>Map shows “403 Access blocked” or “API key required” behind the
+points</td>
+<td>OpenStreetMap and CARTO tiles do not work inside Colab</td>
+<td>Add <code>tiles="Esri.WorldGrayCanvas"</code> to
+<code>.explore()</code>
+</td>
 </tr>
 </tbody>
 </table>
@@ -567,38 +559,19 @@ Add reference-style links below as needed.
 --></section><section id="aggregate-instructor-notes"><section id="introduction"><h2 class="section-heading"><a href="introduction.html">Introduction to Data Collection</a></h2>
 <hr class="half-width"></section><section id="repositories"><h2 class="section-heading"><a href="repositories.html">Finding Data in Repositories</a></h2>
 <hr class="half-width"></section><section id="census"><h2 class="section-heading"><a href="census.html">Data from the U.S. Census Bureau</a></h2>
-<hr class="half-width"></section><section id="imagery"><h2 class="section-heading"><a href="imagery.html">Acquiring Imagery: Scanned Maps and Satellite Data</a></h2>
-<hr class="half-width"></section><section id="field"><h2 class="section-heading"><a href="field.html">Collecting Data in the Field</a></h2>
-<hr class="half-width"></section><section id="qfield"><h2 class="section-heading"><a href="qfield.html">QField Demonstration: Mapping Grocery Stores</a></h2>
-<hr class="half-width"></section><section id="qfield-network"><h2 class="section-heading"><a href="qfield-network.html">Network Analysis for Grocery Access in QGIS</a></h2>
+<hr class="half-width"></section><section id="geocoding"><h2 class="section-heading"><a href="geocoding.html">Geocoding and Adding Spatial Context</a></h2>
 <hr class="half-width">
-<h3 id="qfield-network-headingInstructor1">
-<a href="qfield-network.html#headingInstructor1">Instructor notes</a><a class="anchor" aria-label="anchor" href="#qfield-network-headingInstructor1"></a>
+<h3 id="geocoding-headingInstructor1">
+<a href="geocoding.html#headingInstructor1">Instructor Note</a><a class="anchor" aria-label="anchor" href="#geocoding-headingInstructor1"></a>
 </h3>
-<p><strong>Suggested pacing</strong>: loading and inspection 10 minutes;
-extracting and reprojecting 15; shortest paths 15; comparing distances
-10; service areas 15; discussion and challenges 15.</p>
-<p><strong>Teaching strategy</strong>: keep the lesson focused on one
-idea: network distance differs from straight-line distance. Connect it
-to the census episode’s map of households without a car.</p>
-<p><strong>Common learner problems</strong>:</p>
-<ul>
-<li>the project CRS is left in EPSG:4326, so costs appear in
-degrees</li>
-<li>layers are not reprojected consistently</li>
-<li>the road network is clipped too tightly (show the clipping
-figure)</li>
-<li>learners confuse service areas with buffers (a buffer ignores
-roads)</li>
-<li>outputs are left as temporary layers and lost</li>
-</ul>
-<p><strong>Extensions</strong>: compare shortest and fastest paths;
-build a layer of several origins (residence halls or apartment
-complexes); convert service area lines to polygons with the
-<strong>Concave hull</strong> tool; join service areas to census
-tracts.</p>
+<p>Stress responsible use of free services: one request per second for
+Nominatim, and no bulk geocoding of personal addresses without
+considering privacy. Remind learners that match rates depend heavily on
+address quality.</p>
 <hr>
-<br></section></section>
+<br></section><section id="imagery"><h2 class="section-heading"><a href="imagery.html">Acquiring Imagery: Scanned Maps and Satellite Data</a></h2>
+<hr class="half-width"></section><section id="field"><h2 class="section-heading"><a href="field.html">Collecting Data in the Field</a></h2>
+<hr class="half-width"></section></section>
 </div>
     </main>
 </div>
@@ -642,7 +615,7 @@ tracts.</p>
   "inLanguage": "en",
   "dct:conformsTo": "https://bioschemas.org/profiles/LearningResource/1.0-RELEASE",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
-  "keywords": "GIS, data collection, U.S. Census, American Community Survey, Census API, satellite imagery, QField, network analysis, FAIR, social science",
+  "keywords": "GIS, data collection, U.S. Census, American Community Survey, Census API, geocoding, OpenStreetMap, satellite imagery, QField, FAIR, social science",
   "name": "Instructor Notes",
   "creativeWorkStatus": "active",
   "url": "https://SpatialTurn.github.io/DataCollection/instructor/instructor-notes.html",

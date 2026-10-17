@@ -250,7 +250,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="imagery.html">4. Acquiring Imagery: Scanned Maps and Satellite Data</a>
+        <a href="geocoding.html">4. Geocoding and Adding Spatial Context</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -259,7 +259,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="field.html">5. Collecting Data in the Field</a>
+        <a href="imagery.html">5. Acquiring Imagery: Scanned Maps and Satellite Data</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -268,16 +268,7 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="qfield.html">6. QField Demonstration: Mapping Grocery Stores</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush8">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading8">
-        <a href="qfield-network.html">7. Network Analysis for Grocery Access in QGIS</a>
+        <a href="field.html">6. Collecting Data in the Field</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -413,12 +404,12 @@ coarse, missing the attribute you need, or simply not exist for your
 topic. Then you collect original data: with a survey, a field visit,
 interviews, or by digitizing features from maps and imagery.</p>
 <figure><img src="../dc_workflow.png" alt="Flow diagram. Step 1, define the question, leads to step 2, does suitable data already exist? If yes, step 3a, find it in a repository or API, then step 4a, check quality, license and metadata. If no, step 3b, design a field form and schema, then step 4b, collect and quality-check. Both paths end at step 5, document and analyze. A dashed arrow from 4a to 3b says: not good enough? Fill the gaps yourself." class="figure mx-auto d-block"><div class="figcaption">A data collection workflow.</div>
-</figure><p>The two paths often meet. In the case study used later in this
-module, we take <strong>census data</strong> and <strong>road
-data</strong> from government sources, then add <strong>grocery store
-locations</strong> that could be checked or collected in the field,
-because no official list says where every store is, what it sells, and
-whether it accepts SNAP benefits.</p>
+</figure><p>The two paths often meet. In the <a href="https://spatialturn.github.io/CaseStudyFoodDesert/grocery-qfield.html" class="external-link">grocery
+access case study</a> in the Case Studies module, we take <strong>census
+data</strong> and <strong>road data</strong> from government sources,
+then add <strong>grocery store locations</strong> that could be checked
+or collected in the field, because no official list says where every
+store is, what it sells, and whether it accepts SNAP benefits.</p>
 </section><section><h2 class="section-heading" id="what-this-module-covers">What this module covers<a class="anchor" aria-label="anchor" href="#what-this-module-covers"></a></h2>
 <hr class="half-width"><table class="table"><colgroup><col width="33%"><col width="33%"><col width="33%"></colgroup><thead><tr><th>Episode</th>
 <th>Kind of data</th>
@@ -429,18 +420,15 @@ whether it accepts SNAP benefits.</p>
 </tr><tr><td>Data from the U.S. Census Bureau</td>
 <td>Census boundaries and statistics</td>
 <td>Web browser, Python (Colab)</td>
+</tr><tr><td>Geocoding and Adding Spatial Context</td>
+<td>Points made from addresses; OpenStreetMap features</td>
+<td>Python (Colab)</td>
 </tr><tr><td>Acquiring Imagery</td>
 <td>Scanned maps and satellite imagery (raster)</td>
 <td>Web browser, QGIS</td>
 </tr><tr><td>Collecting Data in the Field</td>
 <td>Original observations</td>
 <td>QField, QGIS</td>
-</tr><tr><td>QField demonstration</td>
-<td>Mapping grocery stores</td>
-<td>QField, QGIS</td>
-</tr><tr><td>Network Analysis for Grocery Access</td>
-<td>Using the collected data</td>
-<td>QGIS</td>
 </tr></tbody></table></section><section><h2 class="section-heading" id="vector-and-raster-data">Vector and raster data<a class="anchor" aria-label="anchor" href="#vector-and-raster-data"></a></h2>
 <hr class="half-width"><p>Geospatial data comes in two basic forms.</p>
 <ul><li>
@@ -516,9 +504,10 @@ codes (GeoJSON, GEOIDs, EPSG codes)</li>
 <strong>Reusable</strong>: it has a license, a description of
 methods, and enough metadata for someone else to use it correctly</li>
 </ul><p>Field data that sits in one person’s phone, with column names only
-they understand, is none of these things. The QField episodes show how a
-planned form, consistent categories and good notes make field data
-reusable.</p>
+they understand, is none of these things. The field episode, and the
+QField demonstration in the Case Studies module’s grocery access case
+study, show how a planned form, consistent categories and good notes
+make field data reusable.</p>
 <div id="existing-data-or-new-data" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -542,7 +531,7 @@ today?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>
 <strong>Existing data.</strong> The American Community Survey
@@ -582,7 +571,7 @@ field.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li>Vector (points)</li>
 <li>Raster (a continuous surface)</li>
@@ -669,7 +658,7 @@ Add reference-style links below as needed.
   "inLanguage": "en",
   "dct:conformsTo": "https://bioschemas.org/profiles/LearningResource/1.0-RELEASE",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
-  "keywords": "GIS, data collection, U.S. Census, American Community Survey, Census API, satellite imagery, QField, network analysis, FAIR, social science",
+  "keywords": "GIS, data collection, U.S. Census, American Community Survey, Census API, geocoding, OpenStreetMap, satellite imagery, QField, FAIR, social science",
   "name": "Introduction to Data Collection",
   "creativeWorkStatus": "active",
   "url": "https://SpatialTurn.github.io/DataCollection/instructor/introduction.html",

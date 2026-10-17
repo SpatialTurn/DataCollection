@@ -232,7 +232,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="imagery.html">4. Acquiring Imagery: Scanned Maps and Satellite Data</a>
+        <a href="geocoding.html">4. Geocoding and Adding Spatial Context</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -241,7 +241,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="field.html">5. Collecting Data in the Field</a>
+        <a href="imagery.html">5. Acquiring Imagery: Scanned Maps and Satellite Data</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -250,16 +250,7 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="qfield.html">6. QField Demonstration: Mapping Grocery Stores</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush8">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading8">
-        <a href="qfield-network.html">7. Network Analysis for Grocery Access in QGIS</a>
+        <a href="field.html">6. Collecting Data in the Field</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -385,16 +376,16 @@ A measure of how reliable an estimate is: the standard error as a
 percentage of the estimate. For ACS data,
 <code>CV = (MOE / 1.645) / estimate x 100</code>.
 </dd>
-<dt>CORONA</dt>
-<dd>
-A U.S. reconnaissance satellite program (1960 to 1972) whose more than
-860,000 images were declassified in 1995.
-</dd>
 <dt>Coordinate reference system (CRS)</dt>
 <dd>
 The system that links map coordinates to places on Earth, identified by
 an EPSG code such as EPSG:4326 (latitude and longitude) or EPSG:26916
 (UTM zone 16N, in meters).
+</dd>
+<dt>CORONA</dt>
+<dd>
+A U.S. reconnaissance satellite program (1960 to 1972) whose more than
+860,000 images were declassified in 1995.
 </dd>
 <dt>Decennial Census</dt>
 <dd>
@@ -414,6 +405,12 @@ Reusable.
 <dd>
 A Federal Information Processing Standards code identifying a state (2
 digits) or county (3 digits).
+</dd>
+<dt>Geocoding</dt>
+<dd>
+Converting a text location, such as an address, into coordinates.
+<strong>Reverse geocoding</strong> goes from coordinates back to an
+address.
 </dd>
 <dt>GEOID</dt>
 <dd>
@@ -442,15 +439,20 @@ households.
 The range around an ACS estimate within which the true value lies with
 90% confidence.
 </dd>
+<dt>Match rate</dt>
+<dd>
+The share of addresses a geocoder places successfully. Always check the
+addresses that did not match.
+</dd>
 <dt>Metadata</dt>
 <dd>
 Documentation describing a dataset: who made it, when, how, where it
 covers, its attributes, its coordinate system and its license.
 </dd>
-<dt>Network analysis</dt>
+<dt>OpenStreetMap (OSM)</dt>
 <dd>
-Analysis of movement along a network, such as roads, for example finding
-shortest paths or service areas.
+A free, volunteer-built map of the world. Features are described by
+<code>key=value</code> tags such as <code>shop=supermarket</code>.
 </dd>
 <dt>QField</dt>
 <dd>
@@ -461,6 +463,11 @@ using projects prepared in QGIS.
 <dd>
 Data stored as a grid of cells, each with a value, such as a satellite
 image or elevation model.
+</dd>
+<dt>Rate limit</dt>
+<dd>
+The maximum number of requests a web service accepts in a period, for
+example one per second for Nominatim.
 </dd>
 <dt>Resolution</dt>
 <dd>
@@ -476,16 +483,6 @@ values.
 <dd>
 European Union Copernicus satellites providing free 13-band imagery at
 10 to 60 m resolution about every 5 days.
-</dd>
-<dt>Service area</dt>
-<dd>
-The part of a network that can be reached from a starting point within a
-given distance or time.
-</dd>
-<dt>Shortest path</dt>
-<dd>
-The route between two points along a network with the lowest total
-distance (or time).
 </dd>
 <dt>TIGER/Line</dt>
 <dd>
@@ -513,6 +510,10 @@ declassified satellite imagery</a></li>
 <li><a href="https://documentation.dataspace.copernicus.eu/Applications/Browser.html" class="external-link">Copernicus
 Browser documentation</a></li>
 <li><a href="https://docs.qfield.org/" class="external-link">QField documentation</a></li>
+<li><a href="https://geocoding.geo.census.gov/geocoder/" class="external-link">U.S. Census
+Geocoder</a></li>
+<li><a href="https://wiki.openstreetmap.org/wiki/Map_features" class="external-link">OpenStreetMap
+Map Features</a></li>
 <li><a href="https://www.go-fair.org/fair-principles/" class="external-link">GO FAIR: the FAIR
 principles</a></li>
 </ul><!--
@@ -567,7 +568,7 @@ Add reference-style links below as needed.
   "inLanguage": "en",
   "dct:conformsTo": "https://bioschemas.org/profiles/LearningResource/1.0-RELEASE",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
-  "keywords": "GIS, data collection, U.S. Census, American Community Survey, Census API, satellite imagery, QField, network analysis, FAIR, social science",
+  "keywords": "GIS, data collection, U.S. Census, American Community Survey, Census API, geocoding, OpenStreetMap, satellite imagery, QField, FAIR, social science",
   "name": "Reference",
   "creativeWorkStatus": "active",
   "url": "https://SpatialTurn.github.io/DataCollection/instructor/reference.html",

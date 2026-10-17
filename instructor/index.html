@@ -236,7 +236,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="imagery.html">4. Acquiring Imagery: Scanned Maps and Satellite Data</a>
+        <a href="geocoding.html">4. Geocoding and Adding Spatial Context</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -245,7 +245,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="field.html">5. Collecting Data in the Field</a>
+        <a href="imagery.html">5. Acquiring Imagery: Scanned Maps and Satellite Data</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -254,16 +254,7 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="qfield.html">6. QField Demonstration: Mapping Grocery Stores</a>
-    </div><!--/div.accordion-header-->
-
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush8">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading8">
-        <a href="qfield-network.html">7. Network Analysis for Grocery Access in QGIS</a>
+        <a href="field.html">6. Collecting Data in the Field</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -338,8 +329,8 @@
 sciences is knowing how to <strong>collect</strong> it: where to find
 existing data, how to judge whether it can be trusted, and how to gather
 original data when nothing suitable exists. This module covers both
-sides, from data repositories and the U.S. Census Bureau to satellite
-imagery and field data collection with a phone.</p>
+sides, from data repositories, the U.S. Census Bureau and geocoding to
+satellite imagery and field data collection with a phone.</p>
 <table class="table"><colgroup><col width="33%"><col width="33%"><col width="33%"></colgroup><thead><tr><th>Episode</th>
 <th>What you will learn</th>
 <th>Tools</th>
@@ -355,6 +346,10 @@ load data from the web</td>
 <td>Census geography, the Decennial Census and the ACS, margins of
 error, and the Census API</td>
 <td>Web browser, Python notebooks</td>
+</tr><tr><td>Geocoding and Adding Spatial Context</td>
+<td>Turning addresses into points, checking match rates, and downloading
+features from OpenStreetMap</td>
+<td>Python notebooks</td>
 </tr><tr><td>Acquiring Imagery</td>
 <td>Scanned historic maps, declassified CORONA imagery and Sentinel-2
 satellite data</td>
@@ -363,15 +358,10 @@ satellite data</td>
 <td>Methods and apps, designing a schema, GPS accuracy, ethics and
 quality checks</td>
 <td>Concepts</td>
-</tr><tr><td>QField Demonstration</td>
-<td>A complete field workflow for mapping grocery stores</td>
-<td>QField, QGIS</td>
-</tr><tr><td>Network Analysis for Grocery Access</td>
-<td>Shortest paths and service areas along the road network</td>
-<td>QGIS</td>
-</tr></tbody></table><p>The Census, QField and network analysis episodes share one example:
-<strong>access to grocery stores in Lafayette and West Lafayette,
-Indiana</strong>.</p>
+</tr></tbody></table><p>Several episodes use one example: <strong>access to grocery stores in
+Lafayette and West Lafayette, Indiana</strong>. The <a href="https://spatialturn.github.io/CaseStudyFoodDesert/grocery-qfield.html" class="external-link">grocery
+access case study</a> in the Case Studies module completes it, with a
+QField field mapping demonstration and a network analysis in QGIS.</p>
 <div id="prerequisites" class="callout prereq">
 <div class="callout-square">
 <i class="callout-icon" data-feather="check"></i>
@@ -437,7 +427,18 @@ Census API?<br>How do census tables connect to census maps?
 <span class="visually-hidden">Duration: </span>02h 15m
 </td>
 <td>
- 4. <a href="imagery.html">Acquiring Imagery: Scanned Maps and Satellite
+ 4. <a href="geocoding.html">Geocoding and Adding Spatial Context</a>
+</td>
+<td>
+What is geocoding, and why do social scientists need it?<br>How do we
+turn a list of addresses into points on a map?<br>How can OpenStreetMap
+add context such as stores, schools or parks?
+</td>
+</tr><tr><td>
+<span class="visually-hidden">Duration: </span>03h 25m
+</td>
+<td>
+ 5. <a href="imagery.html">Acquiring Imagery: Scanned Maps and Satellite
 Data</a>
 </td>
 <td>
@@ -446,10 +447,10 @@ difference between a scanned map and a georeferenced image?<br>How do I
 find and download declassified CORONA and Sentinel-2 imagery?
 </td>
 </tr><tr><td>
-<span class="visually-hidden">Duration: </span>03h 05m
+<span class="visually-hidden">Duration: </span>04h 15m
 </td>
 <td>
- 5. <a href="field.html">Collecting Data in the Field</a>
+ 6. <a href="field.html">Collecting Data in the Field</a>
 </td>
 <td>
 When should I collect my own geospatial data?<br>How do I design a form
@@ -458,33 +459,7 @@ is GPS on a phone, and why does it matter?<br>What ethical questions
 come with collecting data about people and places?
 </td>
 </tr><tr><td>
-<span class="visually-hidden">Duration: </span>03h 45m
-</td>
-<td>
- 6. <a href="qfield.html">QField Demonstration: Mapping Grocery
-Stores</a>
-</td>
-<td>
-What does a QField data collection project look like from start to
-finish?<br>What should we record at each grocery store to support a
-later food access analysis?<br>How do we keep field data consistent and
-ready for quality checks?
-</td>
-</tr><tr><td>
-<span class="visually-hidden">Duration: </span>04h 30m
-</td>
-<td>
- 7. <a href="qfield-network.html">Network Analysis for Grocery Access in
-QGIS</a>
-</td>
-<td>
-How do we move from grocery store points to an analysis of travel along
-roads?<br>How do shortest path and service area tools in QGIS answer
-different questions about access?<br>Why is network distance often
-better than straight-line distance for access studies?
-</td>
-</tr><tr><td>
-<span class="visually-hidden">Duration: </span>05h 45m
+<span class="visually-hidden">Duration: </span>04h 55m
 </td>
 <td>
 Finish
@@ -503,13 +478,11 @@ Add reference-style links below as needed.
 and the imagery websites</li>
 <li>
 <strong>Google Colab</strong> for the Python notebooks in the Census
-episode. It runs in your browser, so there is nothing to install.</li>
+and Geocoding episodes. It runs in your browser, so there is nothing to
+install.</li>
 <li>
-<strong>QGIS</strong> for the imagery and network analysis episodes.
-It is a desktop program you install once.</li>
-<li>
-<strong>QField</strong> (optional) if you want to try field data
-collection on your phone</li>
+<strong>QGIS</strong> for the repositories and imagery episodes. It
+is a desktop program you install once.</li>
 </ul><section><h2 class="section-heading" id="what-you-need">What you need<a class="anchor" aria-label="anchor" href="#what-you-need"></a></h2>
 <hr class="half-width"><ul><li>A Google account (for Colab)</li>
 <li>A computer where you can install software (for QGIS)</li>
@@ -530,8 +503,8 @@ does not work until you do.</li>
 <li>Keep the key somewhere safe. Treat it like a password: do not post
 it online or leave it in a notebook you share.</li>
 </ol></section><section><h2 class="section-heading" id="part-2-google-colab">Part 2: Google Colab<a class="anchor" aria-label="anchor" href="#part-2-google-colab"></a></h2>
-<hr class="half-width"><ol style="list-style-type: decimal"><li>Click a notebook link in the table in the Census episode. It opens
-in Colab.</li>
+<hr class="half-width"><ol style="list-style-type: decimal"><li>Click a notebook link in the table in the Census or Geocoding
+episode. It opens in Colab.</li>
 <li>Click <strong>File &gt; Save a copy in Drive</strong> so your
 changes are kept.</li>
 <li>Paste your Census API key where the notebook asks for it.</li>
@@ -539,8 +512,10 @@ changes are kept.</li>
 Enter</strong>.</li>
 <li>If Colab warns that the notebook was not written by Google, click
 <strong>Run anyway</strong>.</li>
-</ol><p>The notebooks read all their data straight from the Census Bureau’s
-website, so you never need to download anything.</p>
+</ol><p>The notebooks read all their data straight from the web (the Census
+Bureau’s website, the Census Geocoder, OpenStreetMap and this lesson’s
+repository), so you never need to download anything. The geocoding
+notebooks do not need a Census API key.</p>
 </section><section><h2 class="section-heading" id="part-3-install-qgis">Part 3: Install QGIS<a class="anchor" aria-label="anchor" href="#part-3-install-qgis"></a></h2>
 <hr class="half-width"><p><strong>QGIS</strong> is a free, open source Geographic Information
 System (GIS) for viewing, analyzing and mapping spatial data.</p>
@@ -564,9 +539,8 @@ distribution on the QGIS download page</li>
 </ol><p>If you are new to QGIS, the Data Visualization module’s “Getting
 Started with QGIS” episode introduces the interface.</p>
 <div class="section level3">
-<h3 id="loading-the-lesson-data-in-qgis">Loading the lesson data in QGIS<a class="anchor" aria-label="anchor" href="#loading-the-lesson-data-in-qgis"></a></h3>
-<p>The network analysis episode reads its data straight from this
-lesson’s repository:</p>
+<h3 id="loading-data-from-a-web-address-in-qgis">Loading data from a web address in QGIS<a class="anchor" aria-label="anchor" href="#loading-data-from-a-web-address-in-qgis"></a></h3>
+<p>The repositories episode loads data straight from the web:</p>
 <ol style="list-style-type: decimal"><li><strong>Layer &gt; Add Layer &gt; Add Vector Layer</strong></li>
 <li>
 <strong>Source Type</strong>: <strong>Protocol: HTTP(S), cloud,
@@ -575,16 +549,10 @@ etc.</strong>
 <li>Paste the address given in the episode into <strong>URI</strong>,
 then click <strong>Add</strong>
 </li>
-</ol></div>
-</section><section><h2 class="section-heading" id="part-4-optional-qfield">Part 4 (optional): QField<a class="anchor" aria-label="anchor" href="#part-4-optional-qfield"></a></h2>
-<hr class="half-width"><p>To try field data collection yourself:</p>
-<ol style="list-style-type: decimal"><li>Install <strong>QField</strong> from <a href="https://qfield.org/" class="external-link uri">https://qfield.org/</a> (Android and iOS app stores, or
-Windows, macOS and Linux).</li>
-<li>In QGIS, install the <strong>QFieldSync</strong> plugin:
-<strong>Plugins &gt; Manage and Install Plugins</strong>, search for
-QFieldSync, and click <strong>Install Plugin</strong>.</li>
-</ol><p>The QField episode is a demonstration, so this part is not
-required.</p>
+</ol><p>If you want to try field data collection with
+<strong>QField</strong>, see the setup page of the <a href="https://spatialturn.github.io/CaseStudyFoodDesert/" class="external-link">Case Studies
+module</a>, where the QField demonstration lives.</p>
+</div>
 </section><section><h2 class="section-heading" id="troubleshooting">Troubleshooting<a class="anchor" aria-label="anchor" href="#troubleshooting"></a></h2>
 <hr class="half-width"><table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Problem</th>
 <th>Fix</th>
@@ -601,9 +569,12 @@ before</strong>
 </tr><tr><td>A layer loaded from a web address shows nothing</td>
 <td>Right-click the layer and choose <strong>Zoom to Layer</strong>;
 check that the address was pasted completely</td>
-</tr><tr><td>Network analysis costs look tiny (such as 0.04)</td>
-<td>Set the project coordinate system to EPSG:26916 (bottom-right corner
-of the QGIS window)</td>
+</tr><tr><td>The Census Geocoder returns no match</td>
+<td>Check the address has a street number; campus and landmark addresses
+are often missing, so try Nominatim (notebook 2c)</td>
+</tr><tr><td>An OpenStreetMap or Nominatim request times out</td>
+<td>The free server is busy or rate limited; wait a minute and rerun the
+cell</td>
 </tr></tbody></table><!--
 Links listed here can be reused across pages as [text][name].
 Add reference-style links below as needed.
@@ -652,7 +623,7 @@ Add reference-style links below as needed.
   "inLanguage": "en",
   "dct:conformsTo": "https://bioschemas.org/profiles/LearningResource/1.0-RELEASE",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
-  "keywords": "GIS, data collection, U.S. Census, American Community Survey, Census API, satellite imagery, QField, network analysis, FAIR, social science",
+  "keywords": "GIS, data collection, U.S. Census, American Community Survey, Census API, geocoding, OpenStreetMap, satellite imagery, QField, FAIR, social science",
   "name": "GIS Data Collection for Social Scientists",
   "creativeWorkStatus": "active",
   "url": "https://SpatialTurn.github.io/DataCollection/instructor/index.html",

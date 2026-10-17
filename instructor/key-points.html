@@ -281,7 +281,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="imagery.html">4. Acquiring Imagery: Scanned Maps and Satellite Data</a>
+        <a href="geocoding.html">4. Geocoding and Adding Spatial Context</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -293,7 +293,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="field.html">5. Collecting Data in the Field</a>
+        <a href="imagery.html">5. Acquiring Imagery: Scanned Maps and Satellite Data</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -305,19 +305,7 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="qfield.html">6. QField Demonstration: Mapping Grocery Stores</a>
-    </div>
-<!--/div.accordion-header-->
-
-  </div>
-<!--/div.accordion-item-->
-</div>
-<!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush8">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading8">
-        <a href="qfield-network.html">7. Network Analysis for Grocery Access in QGIS</a>
+        <a href="field.html">6. Collecting Data in the Field</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -432,6 +420,17 @@ a yearly survey with many topics and margins of error</li>
 of error</li>
 <li>The Census API needs a free key and lets you request exactly the
 variables and places you need</li>
+</ul></section><section id="geocoding"><h2 class="section-heading"><a href="geocoding.html">Geocoding and Adding Spatial Context</a></h2>
+<hr class="half-width">
+<ul>
+<li>Geocoding converts text addresses into coordinates</li>
+<li>The U.S. Census Geocoder is free and works best with complete U.S.
+street addresses</li>
+<li>Always check match rates and inspect failed addresses</li>
+<li>OpenStreetMap tags (<code>key=value</code>) let you download context
+layers such as stores or schools</li>
+<li>Reproject to a meter based CRS before buffering or measuring
+distance</li>
 </ul></section><section id="imagery"><h2 class="section-heading"><a href="imagery.html">Acquiring Imagery: Scanned Maps and Satellite Data</a></h2>
 <hr class="half-width">
 <ul>
@@ -455,29 +454,6 @@ much worse near buildings and trees; record accuracy</li>
 <li>Plan for consent, privacy and safety before collecting data about
 people and places</li>
 <li>Check data the same day it is collected</li>
-</ul></section><section id="qfield"><h2 class="section-heading"><a href="qfield.html">QField Demonstration: Mapping Grocery Stores</a></h2>
-<hr class="half-width">
-<ul>
-<li>A clear scenario and a consistent schema make field data
-analyzable</li>
-<li>Prepare the project and form in QGIS before going out, and package
-it with QFieldSync</li>
-<li>Place points by a fixed rule, record GPS accuracy, and use “Unknown”
-instead of guessing</li>
-<li>Check the data in QGIS as soon as possible after collection</li>
-</ul></section><section id="qfield-network"><h2 class="section-heading"><a href="qfield-network.html">Network Analysis for Grocery Access in QGIS</a></h2>
-<hr class="half-width">
-<ul>
-<li>Grocery store points become far more useful for access questions
-when combined with a road network</li>
-<li>Reproject layers and set the project CRS to a projected system so
-that costs are in meters</li>
-<li>Shortest path tools compare routes; service area tools show which
-streets are within reach</li>
-<li>Network distance is longer than straight-line distance, sometimes by
-much more than expected</li>
-<li>Clipping a network to an irregular boundary can break routes; check
-for unreachable destinations</li>
 </ul></section>
 </div>
     </main>
@@ -522,7 +498,7 @@ for unreachable destinations</li>
   "inLanguage": "en",
   "dct:conformsTo": "https://bioschemas.org/profiles/LearningResource/1.0-RELEASE",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
-  "keywords": "GIS, data collection, U.S. Census, American Community Survey, Census API, satellite imagery, QField, network analysis, FAIR, social science",
+  "keywords": "GIS, data collection, U.S. Census, American Community Survey, Census API, geocoding, OpenStreetMap, satellite imagery, QField, FAIR, social science",
   "name": "Key Points",
   "creativeWorkStatus": "active",
   "url": "https://SpatialTurn.github.io/DataCollection/instructor/key-points.html",

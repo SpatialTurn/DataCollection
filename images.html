@@ -280,7 +280,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="imagery.html">4. Acquiring Imagery: Scanned Maps and Satellite Data</a>
+        <a href="geocoding.html">4. Geocoding and Adding Spatial Context</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -292,7 +292,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="field.html">5. Collecting Data in the Field</a>
+        <a href="imagery.html">5. Acquiring Imagery: Scanned Maps and Satellite Data</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -304,19 +304,7 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="qfield.html">6. QField Demonstration: Mapping Grocery Stores</a>
-    </div>
-<!--/div.accordion-header-->
-
-  </div>
-<!--/div.accordion-item-->
-</div>
-<!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush8">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading8">
-        <a href="qfield-network.html">7. Network Analysis for Grocery Access in QGIS</a>
+        <a href="field.html">6. Collecting Data in the Field</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -422,29 +410,13 @@
 <p aria-hidden="true">Image 1 of 1: ‘Two choropleth maps of the share of households without a vehicle by census tract, in five classes from light yellow (0 to 3 percent) to dark red (15 to 41 percent). Left, all of Tippecanoe County: rural tracts are light and many are hatched as low reliability. Right, a zoom on Lafayette and West Lafayette: the darkest tracts are near downtown Lafayette and the Purdue campus, such as tracts 4, 55 and 105. Tract 104, on campus, is gray because it has no households.’</p>
 <figure><img src="dc_no_car_tracts.png" alt="Two choropleth maps of the share of households without a vehicle by census tract, in five classes from light yellow (0 to 3 percent) to dark red (15 to 41 percent). Left, all of Tippecanoe County: rural tracts are light and many are hatched as low reliability. Right, a zoom on Lafayette and West Lafayette: the darkest tracts are near downtown Lafayette and the Purdue campus, such as tracts 4, 55 and 105. Tract 104, on campus, is gray because it has no households." class="figure mx-auto d-block"><div class="figcaption">Households without a vehicle by census tract in
 Tippecanoe County.</div>
-</figure><hr></section><section id="imagery"><h2 class="section-heading"><a href="imagery.html">Acquiring Imagery: Scanned Maps and Satellite Data</a></h2>
+</figure><hr></section><section id="geocoding"><h2 class="section-heading"><a href="geocoding.html">Geocoding and Adding Spatial Context</a></h2>
+<hr class="half-width"></section><section id="imagery"><h2 class="section-heading"><a href="imagery.html">Acquiring Imagery: Scanned Maps and Satellite Data</a></h2>
 <hr class="half-width"></section><section id="field"><h2 class="section-heading"><a href="field.html">Collecting Data in the Field</a></h2>
 <hr class="half-width">
 <h3 id="field-figure-1">Figure 1</h3>
 <p aria-hidden="true">Image 1 of 1: ‘A store location in West Lafayette drawn as a black dot, surrounded by three accuracy circles: 3 meters (a good phone fix under open sky), 10 meters (the target), and 30 meters, which reaches toward the road and neighboring lots. A scale bar shows 30 meters.’</p>
 <figure><img src="dc_gps_accuracy.png" alt="A store location in West Lafayette drawn as a black dot, surrounded by three accuracy circles: 3 meters (a good phone fix under open sky), 10 meters (the target), and 30 meters, which reaches toward the road and neighboring lots. A scale bar shows 30 meters." class="figure mx-auto d-block"><div class="figcaption">How far off could a recorded point be?</div>
-</figure><hr></section><section id="qfield"><h2 class="section-heading"><a href="qfield.html">QField Demonstration: Mapping Grocery Stores</a></h2>
-<hr class="half-width"></section><section id="qfield-network"><h2 class="section-heading"><a href="qfield-network.html">Network Analysis for Grocery Access in QGIS</a></h2>
-<hr class="half-width">
-<h3 id="qfield-network-figure-1">Figure 1</h3>
-<p aria-hidden="true">Image 1 of 1: ‘Two maps of Lafayette and West Lafayette. Left: with the full road layer, orange routes run from the origin star in West Lafayette to all 17 supermarkets. Right: with roads clipped to the irregular, dashed city limits, the network is split at the Wabash River and only the 7 supermarkets in West Lafayette are reached; the 10 in Lafayette are marked with red crosses.’</p>
-<figure><img src="dc_clip_problem.png" alt="Two maps of Lafayette and West Lafayette. Left: with the full road layer, orange routes run from the origin star in West Lafayette to all 17 supermarkets. Right: with roads clipped to the irregular, dashed city limits, the network is split at the Wabash River and only the 7 supermarkets in West Lafayette are reached; the 10 in Lafayette are marked with red crosses." class="figure mx-auto d-block"><div class="figcaption">Clipping the roads to the city limits breaks the
-network.</div>
-</figure><hr>
-<h3 id="qfield-network-figure-2">Figure 2</h3>
-<p aria-hidden="true">Image 1 of 1: ‘Two maps of Lafayette and West Lafayette with an origin star at the Purdue Memorial Union and 17 black supermarket points. Left: purple straight lines radiate from the origin to each supermarket, averaging 5.0 kilometers. Right: orange routes follow the streets to the same stores, averaging 5.7 kilometers, crossing the Wabash River on the bridges near downtown Lafayette.’</p>
-<figure><img src="dc_routes_vs_straight.png" alt="Two maps of Lafayette and West Lafayette with an origin star at the Purdue Memorial Union and 17 black supermarket points. Left: purple straight lines radiate from the origin to each supermarket, averaging 5.0 kilometers. Right: orange routes follow the streets to the same stores, averaging 5.7 kilometers, crossing the Wabash River on the bridges near downtown Lafayette." class="figure mx-auto d-block"><div class="figcaption">Straight-line distance compared with network
-distance.</div>
-</figure><hr>
-<h3 id="qfield-network-figure-3">Figure 3</h3>
-<p aria-hidden="true">Image 1 of 1: ‘Map of Lafayette and West Lafayette roads in light gray, with green street segments around each of the 17 supermarkets showing the streets within 800 meters along the network. The green areas are small clusters around stores, mostly along the commercial corridors; most streets, including downtown Lafayette and much of the Purdue campus area, are gray.’</p>
-<figure><img src="dc_service_area.png" alt="Map of Lafayette and West Lafayette roads in light gray, with green street segments around each of the 17 supermarkets showing the streets within 800 meters along the network. The green areas are small clusters around stores, mostly along the commercial corridors; most streets, including downtown Lafayette and much of the Purdue campus area, are gray." class="figure mx-auto d-block"><div class="figcaption">Streets within 800 meters of a
-supermarket.</div>
 </figure><hr></section>
 </div>
     </main>
@@ -489,7 +461,7 @@ supermarket.</div>
   "inLanguage": "en",
   "dct:conformsTo": "https://bioschemas.org/profiles/LearningResource/1.0-RELEASE",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
-  "keywords": "GIS, data collection, U.S. Census, American Community Survey, Census API, satellite imagery, QField, network analysis, FAIR, social science",
+  "keywords": "GIS, data collection, U.S. Census, American Community Survey, Census API, geocoding, OpenStreetMap, satellite imagery, QField, FAIR, social science",
   "name": "All Images",
   "creativeWorkStatus": "active",
   "url": "https://SpatialTurn.github.io/DataCollection/images.html",
