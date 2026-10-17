@@ -1,163 +1,246 @@
 ---
-title: "Acquiring Raster Data using Imagery Databases"
+title: "Acquiring Imagery: Scanned Maps and Satellite Data"
 teaching: 30
-exercises: 10
+exercises: 20
 ---
 
-::::::::::::::::::::::::::::::::::: questions
+:::::::::::::::::::::::::::::::::::::: questions
 
-- Where can I access raster and satellite imagery datasets?
-- How do I download and use CORONA and Sentinel Imagery?
-- What tools and platforms are commonly used for data collection in the field?
+- Where can I find historic maps and satellite imagery?
+- What is the difference between a scanned map and a georeferenced image?
+- How do I find and download declassified CORONA and Sentinel-2 imagery?
 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-:::::::::::::::::::::::::::::::::: objectives
+::::::::::::::::::::::::::::::::::::::::::::::::
 
-- Learn how to download pre-scanned maps from public and academic websites
-- Learn how to acquire historic satellite imagery  
+::::::::::::::::::::::::::::::::::::: objectives
 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+- Explain spatial, spectral and temporal resolution
+- Download a scanned historic map from a library collection
+- Search for and download CORONA imagery from the CAST atlas and USGS EarthExplorer
+- Search for and download Sentinel-2 imagery from the Copernicus Browser
+- Open a downloaded image in QGIS
+
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Introduction
 
-Hard copies of maps, air photos, and other hardcopy images scanned at a high resolution are often georeferenced to provide useful context for other data layers in a GIS. Details of these raster background layers can also be digitized into separate vector layers for further analysis.
+Paper maps, air photos and other images scanned at high resolution are often **georeferenced** (given real
+coordinates) so they can sit under other layers in a GIS. Features in them, such as old buildings, roads or
+field boundaries, can then be **digitized** into vector layers for analysis. Satellite images add a view of
+the whole landscape, often repeated over time.
 
+Many websites offer this kind of raster data for free:
 
-## Beginner - Downloading Pre-scanned Maps
+- **Scanned historic maps** are usually plain images with no coordinates. You must georeference them
+  before use. (See the section on georeferencing in the Data Management module.)
+- **Modern satellite imagery** is already georeferenced and can be opened directly.
+- Some sources are offered as **web services** that QGIS can display without downloading anything.
 
-Several public and academic websites provide raster data, such as scanned historic maps, aerial and satellite images, and other media available to download at no cost. Scanned paper maps are usually downloaded as spatially “unintelligent” images, meaning they are simply scanned media that need to be georeferenced prior to use in a GIS. Other raster sources, such as imagery collected by modern satellites are already georeferenced. Additional sources of raster data are made available as direct-use services without downloading the data at all. Below, we provide some common raster data sources of different types. Explore them on your own to get a sense of the types of media they offer; the “About” page for each source is often a good place to start. In the next module, we’ll examine the search and download features in a few of these sources in more detail.
+## Resolution: three kinds
 
-:::::::::::::::::::::::::::::::: spoiler
+| Kind | Question it answers | Example |
+|---|---|---|
+| **Spatial** resolution | How large is one pixel on the ground? | Sentinel-2: 10 m; Landsat color bands: 30 m; best CORONA: about 2 m (6 feet) |
+| **Spectral** resolution | How many wavelength bands, and which? | A photograph has 3 (red, green, blue); Sentinel-2 has 13, including near-infrared |
+| **Temporal** resolution | How often is the same place imaged? | Sentinel-2: about every 5 days; CORONA: occasional missions from 1960 to 1972 |
 
-### Scanned Historic Maps
+Higher spatial resolution shows smaller objects; more spectral bands help tell vegetation, water, soil and
+buildings apart; frequent revisits let you track change.
 
-- [Perry-Castañeda Library Map Collection](https://legacy.lib.utexas.edu/maps/)
-- [National Library of Australia Trove](https://trove.nla.gov.au/)
-- [Old Maps Online](https://www.oldmapsonline.org/)
+## Sources
 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::: spoiler
 
-::::::::::::::::::::::::::::::: spoiler
+### Scanned historic maps
 
-### Satellite imagery and digital elevation models (most sources require creating a user account):
+- [Perry-Castañeda Library Map Collection, University of Texas](https://maps.lib.utexas.edu/maps/): thousands of scanned maps, free to download
+- [Old Maps Online](https://www.oldmapsonline.org/): a search engine across many map libraries, by place and date
+- [National Library of Australia Trove](https://trove.nla.gov.au/): digitized maps, photographs and newspapers
+- University library collections, such as those found through the [Big Ten Academic Alliance Geoportal](https://geo.btaa.org/)
 
-- [USGS Earth Explorer](https://earthexplorer.usgs.gov/)
-- [European Space Agency Copernicus Browser](https://browser.dataspace.copernicus.eu/)
-- SRTM 30m DEM
+::::::::::::::::::::::::::::::::::::::::::::::::
 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::: spoiler
 
-In the following modules you will locate and download examples of historical maps and satellite imagery (i.e., raster data) prior to using them in QGIS. (If needed, review the section on Georeferencing and Digitizing Points on raster images in the Data Management module.)
+### Satellite imagery and elevation (most require a free account)
 
-### Download Historical Maps
+- [USGS EarthExplorer](https://earthexplorer.usgs.gov/): Landsat, declassified CORONA imagery, aerial photos and elevation data, including the SRTM 30 m elevation model
+- [Copernicus Browser](https://browser.dataspace.copernicus.eu/): Sentinel-1, Sentinel-2 and other European satellite data
+- [CORONA Atlas, University of Arkansas CAST](https://corona.cast.uark.edu/): CORONA images that have already been georeferenced
+- [OpenTopography](https://www.opentopography.org/): elevation data, including SRTM and high-resolution lidar
 
-Several websites offer scanned maps, but the repository we’ll focus on for this tutorial is the University of Texas Perry-Castañeda Library (PCL) Map Collection, which hosts thousands of scanned paper maps available for free download. The maps are organized geographically by region and country. In your web browser go to: https://legacy.lib.utexas.edu/maps/
+::::::::::::::::::::::::::::::::::::::::::::::::
 
-- Scroll down and click on **Historical**
-- Browse the topics until you find a useful map (feel free to browse the other geographic headings as well). Sometimes large map series, like military topographic maps, will have index maps that can help you find a specific area of interest
-- To save a map, right click on it and select **Save Image As** and save it in your project folder. Follow a similar process to explore and download scanned maps form the other sources listed above. 
+## Part 1: Download a historic map (beginner)
 
-## Intermediate - Acquiring satellite imagery
+The University of Texas Perry-Castañeda Library (PCL) Map Collection hosts thousands of scanned paper maps,
+organized by region and country.
 
-Another important source of historic raster imagery is from declassified spy satellite imagery developed in the mid-20th century. In this tutorial, we will learn to search for historic satellite imagery on the CAST and USGS websites, which require a few more steps than downloading a scanned map. With advances in orbital space flight during the Cold War, the US developed a series of classified space-borne optical imaging satellites for intelligence gathering purposes. The [CORONA program (1960-1972)](https://www.usgs.gov/centers/eros/science/usgs-eros-archive-declassified-data-declassified-satellite-imagery-1) was the United States’ earliest photo reconnaissance satellite program producing over 860,000 black-and-white images, comprising the first high-resolution (up to ~2m) stereo images of the earth’s surface. The images were declassified by the Clinton administration in 1995. The highest resolution CORONA images, produced by the KH-4B series of satellites between 1967 and 1972, were collected by a panoramic camera on long, narrow film strips, each covering a land area of about 8.6 × 117 km. High-resolution scans of original CORONA negatives are available to download from the USGS EarthExplorer website for free at a maximum resolution of 3600 dpi (7 microns), or for $30 per frame for scenes that require a new scan. Since they became available to the public, CORONA images have played an important role in the study of historic landscapes to identify archaeological sites, old land tenure systems, and landscape features now obscured or destroyed in recent decades by industrialization, urban expansion, and agricultural intensification. 
+1. Go to <https://maps.lib.utexas.edu/maps/>.
+2. Open the **Historical Maps** section (or browse a region).
+3. Browse until you find a useful map. Large series, such as military topographic maps, often have
+   **index maps** that help you find the sheet for a particular area.
+4. To save a map, right-click it and choose **Save Image As**, and save it in your project folder.
+5. Note where the map came from: title, date, publisher and the page address. You will need these to
+   cite it.
 
-### Search Georectified CORONA imagery on CAST website
+The saved file is an ordinary image. To use it with other layers, you must georeference it in QGIS
+(**Layer > Georeferencer**) by matching points on the map to known coordinates.
 
-In many cases, CORONA imagery requires georeferencing to be used in a GIS. However, some georeferenced Corona imagery is already available to view and download on the CORONA Atlas and Referencing System, an interactive web map at the University of Arkansas’ Center for Advanced Spatial Technologies [(CAST)]((https://cast.uark.edu/research/corona.php) for downloading previously georeferenced scenes free of charge. This Beginner level tutorial will show you where to find it, and in the Intermediate level tutorial that follows you will search for a wider database of imagery on the USGS EarthExplorer site that will require georeferencing. While not all the Corona imagery available elsewhere is on it, it is nevertheless a good first place to look for Corona images in your area of interest.
+## Part 2: Declassified CORONA imagery (intermediate)
 
-- In your web browser go to https://corona.cast.uark.edu/
-- Click **Explore Atlas**
+During the Cold War, the United States ran a series of secret photo reconnaissance satellites. The
+**CORONA** program (1960 to 1972) produced more than 860,000 black-and-white images, the first satellite
+photographs of much of the Earth's surface. The images were declassified in 1995. The best of them, from the
+KH-4B cameras (1967 to 1972), show objects as small as about 6 feet (2 m), and were taken as overlapping
+stereo pairs on long, narrow film strips, each covering a strip of ground well over 100 km long.
 
-The red rectangles show the different Corona missions that were carried out and that are available to view and download on the CAST website.
+CORONA images have become a valuable record of landscapes before modern urban growth, dam building and
+industrial farming. Archaeologists, historians and geographers use them to find ancient sites, old field
+systems, and settlements that have since disappeared.
 
-- In order to view the available imagery, zoom in to one of these red boxes
-- You can use the slider tool at the bottom of the screen to view CORONA and modern satellite imagery side by side
-- You can move the slider next **Corona Imagery** to make it partially transparent
-- Expand the **Corona Imagery** layer by presing the (+) button to see the details of the different images being displayed 
+### 2a. Georeferenced CORONA images from CAST
 
-:::::::::::::::::::::::::::::::: callout
+The **CORONA Atlas & Referencing System**, run by the University of Arkansas Center for Advanced Spatial
+Technologies (CAST), offers CORONA images that have already been georeferenced, free of charge. It does not
+cover the whole world, but it is a good first place to look.
 
-It is from this list of Corona Imagery that we can download imagery from the site
+1. Go to <https://corona.cast.uark.edu/> and click **Explore Atlas**.
+2. Red outlines show the areas covered by CORONA missions in the atlas. Zoom in to one of them.
+3. Use the slider at the bottom of the screen to compare CORONA with modern imagery side by side.
+4. Expand the **Corona Imagery** layer with the **+** button to see the images being displayed. As you zoom
+   in, the list gets shorter.
+5. Turn images on and off to choose the one you want, then click the blue **down-arrow** next to it to
+   download it. The files are large, so this can take a while.
+6. Move the file from your Downloads folder to a project folder, for example `GIS/CORONA`.
+7. In QGIS, go to **Layer > Add Layer > Add Raster Layer**, browse to the file and click **Add**.
 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+### 2b. Raw CORONA scans from USGS EarthExplorer
 
-- Zoom close into your area of interest
+USGS EarthExplorer holds the complete CORONA collection. Its images are not georeferenced, and the interface
+takes some getting used to, but it covers far more of the world.
 
-:::::::::::::::::::::::::::::::: callout
+1. Log in, or create a free account, at <https://earthexplorer.usgs.gov/>.
+2. In the map on the right, navigate to your area of interest. Either click to draw a polygon around it,
+   or zoom to it and press **Use Map** in the **Search Criteria** tab.
+3. In the **Data Sets** tab, expand **Declassified Data** and check **Declass 1 (1996)**.
+4. In the **Additional Criteria** tab, set **Camera Resolution** to **Stereo High**. This keeps only the
+   high-quality KH-4B images.
+5. Optionally, set **Download Availability** to **Yes** to show only images that are already scanned. Unscanned
+   frames can be scanned on request for a fee ($30 per frame at the time of writing).
+6. Click **Results**.
+7. Use the **Footprint** and **Image Overlay** icons to see where each image falls. The **Show Metadata and
+   Browse** icon opens a preview, where you can check for clouds and clarity.
+8. When you have chosen an image, click the **Download Options** icon and download it.
 
-You will notice the number of visible CORONA missions listed will decrease as you zoom in.
+The download is a compressed archive (`.tgz`). Extract it (on Windows, with a tool such as 7-Zip, you may need
+to extract twice: first the `.tgz`, then the `.tar` inside it). Because each film strip is so long, the image
+is usually split into several `.tif` files ending in `a`, `b`, `c` and `d`. You will need to georeference them
+before use.
 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+## Part 3: Sentinel-2 multispectral imagery (intermediate)
 
-- Expand each of the missions by pressing the (+) button next to them
-- Turn off each image in turn in order to decide which is the one you want to download, and then click the blue dowload button (V) next to it
-- Click **Download GeoTiff**, this will start the download - it is a big file so it will take some time
-- Once it has completed, move the image from the Downloads folder to a new folder (e.g. CORONA) in yoiur GIS folder
-- Open QGIS and click the Open Data Source Manager button on the toolbar
-- Click the **Raster** tab, click the browse button and find your CORONA image
-- Click on it, then **Open**, **Add** and **Close**
+**Sentinel-2** is part of the European Union's Copernicus Earth observation program. Since 2015 its satellites
+(Sentinel-2A and 2B, joined by 2C, launched in 2024) have imaged all land surfaces about every 5 days in **13 spectral
+bands**, at 10 m, 20 m and 60 m resolution. They are used to map land cover, crops, forests, water, urban
+growth and disaster damage. The data is free.
 
-::::::::::::::::::::::::::::::: challenge
+Compared with the 30 m color bands of Landsat, Sentinel-2's 10 m bands show much more detail. Commercial
+imagery (such as that in Google Earth) can be sharper still, but Sentinel-2's extra bands, especially
+near-infrared, and its frequent revisits make it well suited to studying change over time.
 
-Download a Corona image in your area of interest, or of a famous landmark, from the CAST website.
+### Find and preview imagery
 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+1. Open the [Copernicus Browser](https://browser.dataspace.copernicus.eu/) and log in, or create a free
+   account with the **Register** button.
+2. Zoom the map to your area of interest.
+3. The panel on the left has two tabs, **Visualize** and **Search**. In **Visualize**, choose a date (days
+   with imagery are highlighted in the calendar) or click **Show latest date**, and limit cloud cover with
+   the slider.
+4. Choose a **layer**, such as **True color**, **False color** (vegetation shows red) or **NDVI** (a
+   vegetation index), to view different band combinations.
 
-### Searching and Download raw CORONA imagery from USGS EarthExplorer
+### Search and download
 
-While the CAST website is a convenient first place to look for CORONA imagery, you may not find coverage in your area of interest. Since large areas are not covered in the CAST catalog, we are going to search for Corona imagery from the USGS EarthExplorer website which hosts the complete collection of CORONA imagery. The interface of EarthExplorer is not very user friendly which can make finding the right CORONA scenes a bit challenging, so this tutorial will assist you in locating the best available imagery for your study area.  
+1. Open the **Search** tab. Choose **Sentinel-2**, then **MSI**, then **L2A** (surface reflectance, already
+   corrected for the atmosphere).
+2. Set a **time range** and click **Search**. Each result is shown as an outline on the map; hovering over a
+   result highlights it.
+3. Click the **i** button on a result to see its details, including cloud cover.
+4. To download, click the **download** icon next to the result. The file size is shown, and large products
+   can take a while.
 
-- Begin by logging in or creating a free login account at the USGS EarthExplorer website: https://earthexplorer.usgs.gov/
-- After logging in, the interface screen will have a map navigator on the right and a space for entering imagery search parameters on the left.
-- In the map window, navigate to your area of interest. Use the mouse to click the corners of a polygon to define the area you'd like to search for imagery. Alternatively, zoom to your area of interest, and hit the **Use Map** button in the search Criteria pane. In both cases, your search interest will appear as a semi-transparent red polygon.
-- Under the **Data Sets** tab, select **Declassified Data** > **Declass 1 (1996).**
-- Select the **Additional Criteria** tab, then expand **Camera Resolution** and select **Stereo High**. This will limit the search to only the high quality KH-4B imagery. 
-- Optionally, expand **Download Availability** and select Yes to only show images that have been scanned and downloadable. (Some of the CORONA negatives are not yet scanned, but can be ordered for the price of $30. Leave this field blank to show the complete coverage.) 
-- Run the search by pressing the **Results** button, which will open the final "Results" tab.
-- In the list of available images in the Data Set pane, use the “Footprint” and “Image Overlay” icons for some of the images to explore your results. To see all of the footprints at once, expand the Show Browse/Footprint Controls button and check **Show All Footprints from Current Page**. 
-- Next, for one of the images listed click the **Show Metadata and Browse** button (hint: hover your mouse over the center icon resembling a sheet of paper) to find out more about a particular image, such as its Mission Number; in the pop-up metadata window, click on the image preview to see it in greater detail. This is a good way to preview the image for cloud cover and clarity.
-- Once you have decided on an image to download, click on the **Download Options** button (the hard disk icon with the green down arrow) and select **Download**. These are large files so they may take time to download.
+The download is a `.SAFE.zip` file. Unzip it; the individual bands are stored as `.jp2` image files inside the
+`GRANULE/.../IMG_DATA` folders, and QGIS can open them with **Add Raster Layer**.
 
-:::::::::::::::::::::::::::::: callout
+::::::::::::::::::::::::::::::::::::: callout
 
-Having downloaded our Corona imagery, you will need to unzip the folder and examine the files. This will also prepare for the later step of georeferencing the images in QGIS, or other GIS software.
+## Too big to download?
 
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+A single Sentinel-2 product is often 500 MB to 1 GB. Download only what you need: in the Copernicus Browser
+you can also download a single band file, or export just the visible area as an image. The Data Analysis
+module's NDVI notebooks show how to work with satellite bands in Python.
 
-- Navigate to your downloaded .tzg file and move it to your project folder
-- Right click it and select **7-Zip > Extract Here**
-- Right click the new .tar file and select **7-Zip > Extract Here**
-This will produce four new .tif files: the original image that has been split into four separate files ending in a, b, c and d.
+::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Acquiring Sentinel-2 multispectral satellite imagery
+::::::::::::::::::::::::::::::::::::: challenge
 
-The Sentinel-2 satellite program was launched in 2015 for the purposes of land-cover map production, soils and forestry research, disaster relief management, and other land surface monitoring goals as part of the European Union (EU) and European Space Agency’s (ESA) Copernicus Earth observation program (https://www.copernicus.eu/en). Since then, the twin Sentinel-2 satellites (2A and 2B) have provided the earth science and heritage communities with high-resolution, multispectral optical imagery across 13 spectral bands with a short revisit rate of about 5 days (referring to the period between passes over a site). Prior to Sentinel, the highest-resolution true-color imagery available to the public was 15m Landsat-8 data, so the sharper 10m Sentinel data offers a remarkable improvement. Sentinel imagery has been slower to catch on with some science communities due to its lower spatial resolution relative to commercial imagery (some of which available for free on Google Earth). Nevertheless, despite having a lower spatial resolution than commercial imagery, the high spectral resolution (in the form of multiple band combinations) and high temporal resolution (meaning rapid return rates) of Sentinel-2 imagery carries high potential value for social science studies of land cover analysis, human-environmental interaction, and heritage landscape monitoring applications. This tutorial will introduce you to the ESA Copernicus portal interface and guide you through the steps of searching and downloading Sentinel-2 imagery. 
+## Find a historic map
 
-#### Navigating Sentinel Imagery from the European Space Agency Copernicus Browser website
+Using the PCL Map Collection or Old Maps Online, find a map of your hometown (or of Lafayette, Indiana)
+made before 1950. Note its title, date, scale and publisher.
 
--	To gain free access to the ESA’s Sentinel data, begin by logging in or creating a free login account using the **Register** button on the Copernicus homepage: https://identity.dataspace.copernicus.eu/.
-- You will then be redirected to the Copernicus Browser page (or navigate to it with this link: https://browser.dataspace.copernicus.eu/)
-- Customize the language settings using the pull-down menu near the top-left corner of the screen.
-- Use your mouse in the map pane to navigate and zoom to an area of interest
+:::::::::::::::: solution
 
-#### Downloading Sentinel Imagery from the European Space Agency Copernicus Browser website
+Answers will vary. A good record of a map includes its title, date, scale (for example 1:24,000), publisher,
+the collection that holds it, and the web address. Old Maps Online lets you filter by date with a slider, and
+shows each map's footprint on a modern map.
 
-- If necessary, log back into the Copernicus Browser page  (https://browser.dataspace.copernicus.eu/) 
-- In the left pane, there are two tabs (**Visualize** and **Search**) with tools that allow you to filter and preview your Sentinel images in different ways prior to downloading them.
-- With the **Visualize** tab activated, you can adjust the following criteria to search from (starting at the top and moving down): 
-  - select the **date** or **date range** of imagery needed (or simply click “show latest data”). Days for which imagery is available in your area of interest are highlighted with a blue box.
-  - limit acceptable **cloud cover** with the slider bar (e.g., 10%)
-  - specify which Sentinel **satellite** you want data from (e.g., Sentinel-2, which will be the most useful for us here)
-  - in the “layers” section, select from several popular **band combinations** available for download (e.g., true color, NDVI, land cover classes, etc.)
-- With your preferred criteria defined, click the **Find products for current view** link. This opens the **Search** tab and shows the specific scenes available in your AOI that meet your criteria and available for download. Each Sentinel scene listed in the Search pane corresponds to a green square in the map pane that is highlighted when you hover the mouse over the listed scenes. Detailed Information about each scene is available by clicking the **i button** for each listed scene, or selecting a green square on the map.
-- The **crosshairs icon** for each listed scene will also zoom to that scene on the map.
-- You can explore a scene further by clicking the **Visualize** button below a scene’s thumbnail image, which opens it in the Visualize tab, allowing you to explore the different band combinations.
-- To change the date range, or refine the months in your search (e.g., to remove snowy winter months), return to the Search pane, click **Go to search** at the top of the pane, adjust your criteria as needed and click **Search** again.
+:::::::::::::::::::::::::
 
-To download an image, simply select the Download button on the right side of its listing. The size of the image is listed above the Download button, so it may take time depending on your connection speed. When it has finished downloading, you will find a SAFE.ZIP file in your specified folder, which can be extracted and imported to a GIS software for further visualization.
+::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::: keypoints
+::::::::::::::::::::::::::::::::::::: challenge
 
-placeholder
+## Download a CORONA image
 
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+Find a CORONA image of your area of interest, or of a famous landmark, in the CAST atlas. If the atlas does
+not cover it, search EarthExplorer instead. Then open the image in QGIS.
+
+:::::::::::::::: solution
+
+The CAST atlas does not cover every area; if yours is missing, EarthExplorer holds the complete collection. An image from CAST lines up with
+other layers immediately; an image from EarthExplorer appears without coordinates until you georeference it.
+
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+## Which source?
+
+Which imagery source would you use for each task?
+
+1. Comparing farmland around a Middle Eastern village in 1968 and today
+2. Mapping where crops were stressed by drought in Indiana last summer
+3. Showing what downtown Lafayette looked like in 1900
+
+:::::::::::::::: solution
+
+1. **CORONA** for 1968 (try CAST first), and **Sentinel-2** or modern high-resolution imagery for today
+2. **Sentinel-2**: frequent revisits and a near-infrared band for vegetation indices such as NDVI
+3. A **scanned historic map**, such as a Sanborn fire insurance map, from a library collection
+
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: keypoints
+
+- Raster data includes scanned maps (which need georeferencing) and satellite images (already georeferenced)
+- Consider spatial, spectral and temporal resolution when choosing imagery
+- Declassified CORONA images (1960 to 1972) are a free historical record; CAST offers georeferenced copies
+- Sentinel-2 provides free 10 m multispectral imagery about every 5 days, from the Copernicus Browser
+
+::::::::::::::::::::::::::::::::::::::::::::::::

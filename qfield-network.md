@@ -1,320 +1,368 @@
 ---
-title: 'Network Analysis for Grocery Access in QGIS'
-teaching: 70
-exercises: 35
+title: "Network Analysis for Grocery Access in QGIS"
+teaching: 45
+exercises: 30
 ---
 
 ::::::::::::::::::::::::::::::::::::: questions
 
-- How can we move from collected grocery store points to a road-based accessibility analysis?
-- How do shortest path and service area tools in QGIS answer different questions about grocery access?
+- How do we move from grocery store points to an analysis of travel along roads?
+- How do shortest path and service area tools in QGIS answer different questions about access?
 - Why is network distance often better than straight-line distance for access studies?
 
 :::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
-- Load and inspect grocery store points collected in QField
-- Prepare a road network and confirm that all layers use an appropriate projected CRS.
-- Calculate shortest paths from a selected origin to multiple grocery stores.
-- Generate service areas from grocery stores to estimate walkable or drivable access.
-- Interpret the outputs as part of a reproducible grocery access workflow.
+
+- Load grocery store, road and study area layers into QGIS from the web
+- Reproject layers to a projected coordinate system so that distances are in meters
+- Calculate shortest paths from one origin to every supermarket
+- Generate service areas that show which streets are within walking distance of a supermarket
+- Recognize data problems that break network analysis
+
 :::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Overview
 
-In the previous lesson, learners simulated a collection of grocery store locations in the field using QField. In this lesson, learners will use those observation in QGIS to ask a new question:
+In the previous episode, a team mapped grocery stores in the field with QField. In this episode, we use
+grocery store points with a road network to ask a new question:
 
-**How accessible are grocery stores when movement is constrained by the road network?**
+**How accessible are grocery stores when movement is limited to the road network?**
 
-This episode shifts away from field **data collection** to **spatial analysis**. Instead of treating distance as a straight line, learners will use the street network to calculate routes. 
+This episode moves from **data collection** to **analysis**. Instead of treating distance as a straight line,
+we measure routes along streets.
 
-:::::::::::::::::::::::::::::::::::::::: prereq
-## Before we begin
+Imagine that a class, a community partner or a student group wants to know how easy it is to reach a
+supermarket from a residence hall, an apartment complex or a neighborhood. We will:
 
-Learners should have downloaded:
+1. prepare the grocery store and road data
+2. calculate routes from one starting point to every supermarket
+3. create service areas showing the streets within a chosen distance of a supermarket
 
-- A point layer of grocery store locations (download link)
-- a road layer for the study area (lesson link)
-- study area boundary (lesson link)
-- basic familiarity with QGIS (lesson link)
-::::::::::::::::::::::::::::::::::::::::::::::::
+## The data
 
-## Lesson goals and scenario 
+Three small files are stored in this lesson's repository. You do not need to download them; QGIS reads them
+straight from the web.
 
-Imagine that a local class, community partner, or student groups wants to understand how easy/accessible it is to reach grocery stores from a particular residence hall, apartment area, or neighborhood. 
+| Layer | Contents | Source |
+|---|---|---|
+| `grocery_stores` | 64 food stores in and around Lafayette and West Lafayette: 17 supermarkets, 2 wholesale stores and 45 convenience stores | OpenStreetMap contributors (Open Database License), October 2026 |
+| `roads` | 3,466 road segments covering both cities and a margin around them | U.S. Census Bureau, TIGER/Line 2024 |
+| `study_area` | The city limits of Lafayette and West Lafayette | U.S. Census Bureau, 2024 cartographic boundary files |
 
-In this lesson, we will complete three related tasks:
+The store points stand in for data collected with QField. In a real project, the team would have verified
+them in the field first.
 
-1. prepare the grocery and road data
-2. calculate routes from one origin to multiple stores
-3. create service areas that estimate the streets reachable within chosen travel cost
+::::::::::::::::::::::::::::::::::::: prereq
 
-## Data setup
+## Before you begin
 
-You should have the following layers ready to open in QGIS:
+- QGIS installed (see [Setup](../learners/setup.md))
+- Basic familiarity with the QGIS interface, for example from the Data Visualization module's
+  "Getting Started with QGIS" episode
 
-- 'grocery_stores' - point layer "collected" in QField
-- 'roads' - line layer representing the street network
-- 'study_area' - boundary polygon for the lesson extent
-
-::::::::::::::::::::::::::::::::::::::: callout
-## Teaching note
-
-For a workshop or classroom lesson/setting, use a small instructional sample instead of the full county data. A small area will run faster for your class, makes outputs and maps easier to read, and ensures your learners have a clear idea of the basics of network analysis
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Step 1: Load and inspect the layers
 
-1. Open QGIS.
-2. Add the grocery store points, road netowrk, and study area boundary.
-3. Open the attribute table for 'grocery_stores'.
-4. confirm that the layer contains the fields we will be working with:
-  - store name
-  - store type
-  - verification status
-5. Visually inspect the grocery store points on top of the road network
+1. Open QGIS and start a new project.
+2. Go to **Layer > Add Layer > Add Vector Layer**.
+3. For **Source Type**, choose **Protocol: HTTP(S), cloud, etc.** and leave **Type** as **HTTP/HTTPS/FTP**.
+4. Paste the first address into **URI**, click **Add**, and repeat for the other two:
 
-Look and identify any obvious problems
+   ```
+   https://raw.githubusercontent.com/SpatialTurn/DataCollection/main/data/grocery_stores.geojson
+   https://raw.githubusercontent.com/SpatialTurn/DataCollection/main/data/roads.geojson
+   https://raw.githubusercontent.com/SpatialTurn/DataCollection/main/data/study_area.geojson
+   ```
+
+5. Click **Close**. In the **Layers** panel, drag `grocery_stores` to the top so the points draw above the
+   roads.
+6. Right-click `grocery_stores` and choose **Open Attribute Table**. Look at the fields: `store_name`,
+   `store_type`, `address`, `city`, `osm_id`, `source` and `verification`.
+
+Before analyzing anything, look for problems:
 
 - duplicate points
-- points outside the study area
-- stores placed in parking lots instead of near the entrance or parcel frontage
-- roads that appear disconnected
+- stores outside the study area
+- stores with no name or address
+- roads that look disconnected from the rest
 
-:::::::::::::::::::::::::::::::::::::: challenge
+::::::::::::::::::::::::::::::::::::: challenge
+
 ## Quick inspection
 
-What kinds of data quality problems would most directly affect a network analysis?
+Look at the map and the attribute table. What do you notice? Which kinds of data problems would most directly
+affect a network analysis?
 
-:::::::::::::::::::::::: solution
-Problems that affect where a route starts or ends are especially important. For example:
+:::::::::::::::: solution
 
-- a grocery point placed far from the road network
-- duplicate stores that inflate the number of destinations
-- disconnected road segments that break routing
-- a mismatched CRS that makes layers appear in the wrong place
-:::::::::::::::::::::::::::::::::
-:::::::::::::::::::::::::::::::::::::::::::::::
+You may notice that six convenience stores, such as a Love's travel stop, lie **just outside the city
+limits**. Stores like these should usually stay in an analysis, because city residents shop there too. (All 17
+supermarkets are inside the city limits.) A few convenience stores have **no
+name**, and several stores have **no address**. Two **Fresh Thyme** points might look like duplicates, but they
+are two different stores, one in each city; check before deleting anything.
 
-## Step 2: Reproject the data
+The problems that most directly affect a network analysis are those that affect where a route starts or ends:
 
-Network analysis should be done in a projected CRS so that distances are measured in meaningful linear units like meters or feet.
+- a store point placed far from any road
+- duplicate stores, which inflate the number of destinations
+- disconnected road segments, which break routes
+- layers in different coordinate systems, which appear in the wrong place
 
-For Lafayette / West Lafayette, choose an appropriate projected CRS for Indiana and your lesson goals such as NAD 1983/UTM 16N.
+:::::::::::::::::::::::::
 
-1. Right-click `grocery_stores`.
-2. Choose **Export -> Save Features As...**
-3. Save a projected copy named `grocery_stores_projected`.
-4. Repeat for `roads` and `study_area` if needed.
-5. Confirm that all projected layers align correctly.
-
-:::::::::::::::::::::::::::::::::::::: caution
-## CRS warning
-
-Do not assume that layers are ready for analysis just because they draw in the same place on the map. Learners shoudl verify the CRS of each layer and make a projected copy when necessary.
-:::::::::::::::::::::::::::::::::::::::::::::::
-
-## Step 3: Clip to the study area
-
-To reduce processing time and simplify the map, clip the road layer to the study area.
-
-1. Open the **Processing Toolbox**.
-2. Search for **Clip**.
-3. Use:
-   - **Input layer**: `roads_projected`
-   - **Overlay layer**: `study_area_projected`
-4. Save the output as `roads_clip`.
-
-Optional: if the grocery layer includes stores outside the intended teaching extent, clip or filter that layer as well.
-
-## Step 4: Create or choose an origin
-
-You need a start point for route analysis.
-
-- a manually created point representing a residence hall or apartment complex
-- one point chosen from a learner-collected housing layer
-- one point placed at a central campus location
-
-To create an origin manually:
-
-1. Create a new temporary point layer called `origin_point`.
-2. Add one feature at the chosen starting location.
-3. Save the layer if you want it to persist beyond the session.
-
-:::::::::::::::::::::::::::::::::::::: discussion
-## Why one origin first?
-
-Why might it be better to start with a single origin before scaling up to many housing points or neighborhoods?
-:::::::::::::::::::::::::::::::::::::::::::::::
-
-A single origin keeps the first analysis legible. Learners can more easily inspect the routes, compare store access, and troubleshoot snapping or connectivity issues before moving to a more complex multi-origin workflow.
-
-## Step 5: Run shortest path analysis to multiple stores
-
-Now we will calculate routes from one origin to every grocery store.
-
-In the Processing Toolbox, search for:
-
-**Shortest path (point to layer)**
-
-Set the parameters as follows:
-
-- **Vector layer representing network**: `roads_clip`
-- **Path type to calculate**: `Shortest`
-- **Start point**: your chosen origin location
-- **Vector layer with end points**: `grocery_stores_projected`
-- **Shortest path**: save as `routes_to_grocery`
-- **Non-routable features**: save as `non_routable_grocery` or create a temporary layer
-
-Run the tool.
-
-You should now have a line layer showing one route from the origin to each grocery store destination.
-
-:::::::::::::::::::::::::::::::::::::: callout
-## Why save the non-routable output? 
-
-This layer is useful for teaching because it identifies destinations that could not be reached through the network. Those failures often reveal data quality problems, such as points too far from the road layer or disconnected network segments.
-:::::::::::::::::::::::::::::::::::::::::::::::
-
-## Step 6: Symbolize and inspect the routes
-
-1. Style `routes_to_grocery` with a bold line color.
-2. Style grocery stores with a distinct point symbol.
-3. Style the origin point with a larger marker.
-4. Zoom to the study area and inspect the output.
-
-- Which stores appear easiest to reach?
-- Are any routes unexpectedly long?
-- Are any stores missing from the routed output?
-
-If the output contains several nearly overlapping lines, filter to a subset of stores or select a smaller study area for demonstration.
-
-## Step 7: Measure travel cost and identify the nearest options
-
-1. Open the attribute table for `routes_to_grocery`.
-2. Open the **Field Calculator**.
-3. Create a field named `route_m` using `$length`.
-4. Create another field named `route_km` using `$length / 1000` if desired.
-5. Sort the attribute table by `route_m` in ascending order.
-
-This lets learners identify which stores are nearest by network distance instead of by straight-line distance.
-
-:::::::::::::::::::::::::::::::::::::: challenge
-## Interpreting route results
-
-A store appears close on the map, but its route distance is much longer than expected. Name two possible reasons.
-
-:::::::::::::::::::::::: solution
-Possible reasons include:
-
-- the street network requires a detour because there is no direct connecting road
-- the point is snapped to a road segment that is not the one learners expected
-- barriers such as limited crossings or cul-de-sacs increase network travel distance
-- the grocery point or origin point is placed slightly off the true access location
-:::::::::::::::::::::::::::::::::
-:::::::::::::::::::::::::::::::::::::::::::::::
-
-## Step 8: Create service areas from grocery stores
-
-Shortest routes answer the question, **how do I get from one place to a store?**
-
-Service areas answer a different question, **how far along the network can I travel from each store within a given distance or time?**
-
-In the Processing Toolbox, search for:
-
-**Service area (from layer)**
-
-Use these parameters:
-
-- **Vector layer representing network**: `roads_clip`
-- **Vector layer with start points**: `grocery_stores_projected`
-- **Path type to calculate**: `Shortest`
-- **Travel cost**: choose a value appropriate for your lesson, such as `800` meters for an approximate short walk or another value that matches your teaching goals
-- save the output as `grocery_service_area`
-
-Run the tool.
-
-The resulting output shows the network segments reachable from each grocery store within the chosen cost threshold.
-
-## Step 9: Interpret the service area
-
-Service areas can support discussion questions such as:
-
-- Which parts of the study area appear well served by the current store network?
-- Which neighborhoods or campus zones appear less connected?
-- How does the answer change if the travel cost is 400 m, 800 m, or 1600 m?
-
-At this stage, remind learners that the output is only as good as the network and assumptions behind it.
-
-For example:
-
-- a road centerline layer does not necessarily represent sidewalks
-- a driving-oriented network may not be ideal for pedestrian access
-- field-collected store points improve destination quality, but they do not fix a poor road dataset
-
-:::::::::::::::::::::::::::::::::::::: discussion
-## Reflection
-
-What kinds of real-world access are still missing from this analysis even after using a network instead of straight-line distance?
-:::::::::::::::::::::::::::::::::::::::::::::::
-
-Possible answers include sidewalk quality, crosswalks, traffic safety, store hours, prices, food quality, disability access, and whether the road network is truly walkable.
-
-## Step 10: Save outputs for later episodes
-
-Save the following layers into the lesson geopackage or project folder:
-
-- `grocery_stores_projected`
-- `roads_clip`
-- `origin_point`
-- `routes_to_grocery`
-- `non_routable_grocery`
-- `grocery_service_area`
-
-These outputs can be reused in later episodes on:
-
-- accessibility comparison between neighborhoods
-- joining service areas to census or block data
-- map layout design
-- reproducible analysis in the Processing Model Designer
-- exporting results for a story map or final report
-
-:::::::::::::::::::::::::::::::: instructor
-## Instructor notes
-
-### Suggested pacing
-
-- Introduction and setup: 10 minutes
-- Data inspection and projection: 15 minutes
-- Shortest path analysis: 20 minutes
-- Service area analysis: 15 minutes
-- Discussion and interpretation: 10 minutes
-- Challenge and troubleshooting time: 15 minutes
-
-### Recommended teaching strategy
-
-Keep the lesson focused on one clear idea: network distance differs from straight-line distance. Learners already collected grocery store data in the previous lesson, so the sequel should emphasize analytical payoff.
-
-### Common learner problems
-
-- layers are not projected consistently
-- grocery points do not sit close enough to the road network
-- road network is clipped too tightly and breaks valid routes
-- learners confuse service areas with buffers
-- outputs are saved as temporary layers and then lost
-
-### Good extension ideas
-
-- compare shortest versus fastest paths
-- build a small housing-origin layer and use a many-to-one routing workflow
-- compare service areas across different travel thresholds
-- discuss whether a road network is an appropriate proxy for pedestrian access
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-:::::::::::::::::::::::::::::::::::::: keypoints
-- Grocery points collected in QField become much more analytically useful when paired with a road network.
-- Network analysis answers access questions that straight-line distance cannot.
-- Shortest path tools are useful for route comparison, while service area tools estimate reachable portions of the network.
-- Projected data, clean destination points, and a connected road layer are essential for reliable outputs.
-- Saving routable and non-routable results supports interpretation and troubleshooting.
-:::::::::::::::::::::::::::::::::::::::::::::::
+## Step 2: Keep only the supermarkets
+
+Convenience stores rarely sell a full range of fresh food, so food access studies usually focus on
+supermarkets.
+
+1. Open the **Processing Toolbox** (**Processing > Toolbox**).
+2. Search for **Extract by attribute** and open it.
+3. Set **Input layer** to `grocery_stores`, **Selection attribute** to `store_type`, **Operator** to `=`,
+   and **Value** to `Supermarket`.
+4. Click **Run**. A new layer called **Extracted (attribute)** appears with 17 supermarkets. Rename it
+   `supermarkets` (right-click > **Rename Layer**).
+
+## Step 3: Reproject the data
+
+Network analysis should be done in a **projected** coordinate system, so that distances are measured in
+meters rather than degrees. The files are stored in latitude and longitude (EPSG:4326). For Lafayette, a good
+choice is **NAD83 / UTM zone 16N (EPSG:26916)**.
+
+1. In the Processing Toolbox, search for **Reproject layer** and open it.
+2. Set **Input layer** to `supermarkets` and **Target CRS** to **EPSG:26916**.
+3. Click **Run**, and rename the output `supermarkets_utm`.
+4. Repeat for `roads` (rename the output `roads_utm`) and `study_area` (`study_area_utm`).
+5. Set the **project** coordinate system too: click the CRS button in the bottom-right corner of the QGIS
+   window (it shows something like **EPSG:4326**), search for **26916**, select **NAD83 / UTM zone 16N**, and
+   click **OK**.
+
+::::::::::::::::::::::::::::::::::::: caution
+
+## Why set the project CRS as well?
+
+QGIS's network tools report travel cost in the units of the **project's** coordinate system. If the project is
+still in EPSG:4326, a 4 km route is reported as a cost of about 0.036 (degrees). With the project in
+EPSG:26916, the same route has a cost of about 4,000 (meters).
+
+Do not assume that layers are ready for analysis just because they draw in the same place. Check the CRS of
+each layer (right-click > **Properties > Information**).
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Step 4: Do not clip the roads too tightly
+
+It is tempting to clip the road layer to the city limits to make it smaller. Here, that is a mistake. The
+road file already stops a short distance outside the two cities, and the city limits are irregular: they do
+not even meet each other across the Wabash River. Clipping the roads to them removes the bridges and splits
+the network into pieces.
+
+![Clipping the roads to the city limits breaks the network.](dc_clip_problem.png){alt="Two maps of Lafayette and West Lafayette. Left: with the full road layer, orange routes run from the origin star in West Lafayette to all 17 supermarkets. Right: with roads clipped to the irregular, dashed city limits, the network is split at the Wabash River and only the 7 supermarkets in West Lafayette are reached; the 10 in Lafayette are marked with red crosses."}
+
+With the full road layer, all 17 supermarkets can be reached. With roads clipped to the city limits, only 7
+can. When you do clip a network, clip it to a generous rectangle or buffer around your study area, never to an
+irregular boundary.
+
+## Step 5: Choose a starting point
+
+Our origin is the **Purdue Memorial Union**, in the center of campus. You will set it inside the shortest path
+tool in the next step, either by clicking on the map or by typing its coordinates:
+
+```
+507575, 4474900 [EPSG:26916]
+```
+
+::::::::::::::::::::::::::::::::::::: discussion
+
+## Why start with one origin?
+
+Why might it be better to start with a single origin before moving on to many homes or neighborhoods?
+
+A single origin keeps the first analysis easy to read. You can inspect the routes, compare stores and find
+problems with snapping or connectivity before moving to a more complex workflow with many origins.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Step 6: Shortest paths to every supermarket
+
+1. In the Processing Toolbox, search for **Shortest path (point to layer)** and open it.
+2. Set the parameters:
+   - **Vector layer representing network**: `roads_utm`
+   - **Path type to calculate**: **Shortest**
+   - **Start point (x, y)**: click the **...** button, then click the Purdue Memorial Union on the map, or
+     paste the coordinates from Step 5
+   - **Vector layer with end points**: `supermarkets_utm`
+   - **Shortest path**: leave as a temporary layer
+   - **Non-routable features**: leave as a temporary layer
+3. Click **Run**.
+
+You now have a line layer, **Shortest path**, with one route from the origin to each supermarket. Its `cost`
+field is the route length in meters.
+
+::::::::::::::::::::::::::::::::::::: callout
+
+## When a store cannot be reached
+
+If a store cannot be reached through the network, its route has an empty (**NULL**) cost. Stores that cannot
+be connected to the network at all are listed in the **Non-routable features** layer. Both usually point to a
+data problem: a store far from any road, a gap in the network, or a network clipped too tightly.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Step 7: Compare network and straight-line distance
+
+1. Style the **Shortest path** layer with a bold, bright line, the supermarkets with a distinct point symbol,
+   and the roads in light gray.
+2. Open the attribute table of **Shortest path** and click the **Field Calculator** button (the abacus icon).
+3. Create a new field `route_km` (**Decimal number**) with the expression `"cost" / 1000`.
+4. Create another field `straight_km` with the expression
+   `distance(start_point($geometry), end_point($geometry)) / 1000`. This is the straight-line distance
+   between the two ends of the route.
+5. Create a third field `detour` with the expression `"route_km" / "straight_km"`.
+6. Close the Field Calculator, turn off editing (save the edits), and sort the table by `route_km`.
+
+![Straight-line distance compared with network distance.](dc_routes_vs_straight.png){alt="Two maps of Lafayette and West Lafayette with an origin star at the Purdue Memorial Union and 17 black supermarket points. Left: purple straight lines radiate from the origin to each supermarket, averaging 5.0 kilometers. Right: orange routes follow the streets to the same stores, averaging 5.7 kilometers, crossing the Wabash River on the bridges near downtown Lafayette."}
+
+The nearest supermarket by road is about 1.3 km away. On average, routes are about 14% longer than straight
+lines, and some are much longer: the Walmart Supercenter on Veterans Memorial Parkway is 8.0 km away in a
+straight line but about 10.1 km by road, a detour of about 1.3. The river, the few bridges, railroads and
+cul-de-sacs all force detours.
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+## Interpreting route results
+
+A store looks close on the map, but its route is much longer than expected. Name two possible reasons.
+
+:::::::::::::::: solution
+
+- The street network requires a detour, for example because there is no bridge or direct road
+- The store or the origin snapped to a different road segment than you expected
+- Barriers such as rivers, railroads, highways with few crossings, or cul-de-sacs
+- The store point is slightly off its true entrance, for example in the middle of a large parking lot
+
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Step 8: Service areas around supermarkets
+
+Shortest paths answer the question: **how do I get from one place to each store?**
+
+Service areas answer a different question: **which streets are within a given distance of a store?**
+
+1. In the Processing Toolbox, search for **Service area (from layer)** and open it.
+2. Set the parameters:
+   - **Vector layer representing network**: `roads_utm`
+   - **Vector layer with start points**: `supermarkets_utm`
+   - **Path type to calculate**: **Shortest**
+   - **Travel cost**: `800` (meters, about a 10-minute walk)
+3. Click **Run**.
+
+The output, **Service area (lines)**, shows the parts of the street network you can reach within 800 m of a
+supermarket.
+
+![Streets within 800 meters of a supermarket.](dc_service_area.png){alt="Map of Lafayette and West Lafayette roads in light gray, with green street segments around each of the 17 supermarkets showing the streets within 800 meters along the network. The green areas are small clusters around stores, mostly along the commercial corridors; most streets, including downtown Lafayette and much of the Purdue campus area, are gray."}
+
+Only about 11% of the street length inside the two cities is within an 800 m walk of a supermarket. Most
+supermarkets sit on commercial corridors at the edges of the cities, designed for people who drive.
+
+## Step 9: Interpret the results
+
+Service areas support questions such as:
+
+- Which parts of the study area appear well served by the current supermarkets?
+- Which neighborhoods appear poorly connected?
+- How does the answer change with a travel cost of 400 m, 800 m or 1,600 m?
+
+Combine this with the census map from the Census episode. Of the six census tracts with the highest share of
+households **without a car**, four (tracts 4, 7, 105 and 112, in central Lafayette and around the Purdue campus)
+have almost no streets within 800 m of a supermarket. That is exactly where a food access problem would be
+expected.
+
+Remember that the result is only as good as the network and the assumptions behind it:
+
+- A road centerline layer does not show sidewalks, crosswalks or footpaths
+- Highways appear walkable in the network, but are not
+- Verified store points improve the destinations, but cannot fix a poor road layer
+
+::::::::::::::::::::::::::::::::::::: discussion
+
+## Reflection
+
+What parts of real-world access are still missing from this analysis, even after using a network instead of
+straight-line distance?
+
+Possible answers include sidewalk quality, crosswalks, traffic safety, bus routes, store hours, prices, food
+quality, disability access, and whether a road is really walkable.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+## Change the distance
+
+Run **Service area (from layer)** again with a travel cost of `1600` (about a 20-minute walk). How does the
+picture change?
+
+:::::::::::::::: solution
+
+The share of city streets within reach rises from about 11% to about 40%, and the green areas begin to join
+along the main corridors. But some areas are still left out: tract 105, beside the Purdue campus, where more
+than 40% of households have no car, has no streets within 1,600 m of a supermarket along the network. Walking 20 minutes each way with groceries is a real burden, which is why access studies also
+consider car ownership and public transit.
+
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Step 10: Save your outputs
+
+Temporary layers disappear when QGIS closes. To keep them, right-click each one and choose
+**Export > Save Features As...**, and save it to a GeoPackage (for example `grocery_access.gpkg`) with a
+different **Layer name** for each:
+
+- `supermarkets_utm`
+- `roads_utm`
+- `shortest_paths`
+- `service_area_800m`
+
+Then save the project (**Project > Save**). These outputs can be reused to join service areas to census data,
+to design a map layout, or to compare neighborhoods.
+
+:::::::::::::::::::::::::::::::: instructor
+
+## Instructor notes
+
+**Suggested pacing**: loading and inspection 10 minutes; extracting and reprojecting 15; shortest paths 15;
+comparing distances 10; service areas 15; discussion and challenges 15.
+
+**Teaching strategy**: keep the lesson focused on one idea: network distance differs from straight-line
+distance. Connect it to the census episode's map of households without a car.
+
+**Common learner problems**:
+
+- the project CRS is left in EPSG:4326, so costs appear in degrees
+- layers are not reprojected consistently
+- the road network is clipped too tightly (show the clipping figure)
+- learners confuse service areas with buffers (a buffer ignores roads)
+- outputs are left as temporary layers and lost
+
+**Extensions**: compare shortest and fastest paths; build a layer of several origins (residence halls or
+apartment complexes); convert service area lines to polygons with the **Concave hull** tool; join service
+areas to census tracts.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: keypoints
+
+- Grocery store points become far more useful for access questions when combined with a road network
+- Reproject layers and set the project CRS to a projected system so that costs are in meters
+- Shortest path tools compare routes; service area tools show which streets are within reach
+- Network distance is longer than straight-line distance, sometimes by much more than expected
+- Clipping a network to an irregular boundary can break routes; check for unreachable destinations
+
+::::::::::::::::::::::::::::::::::::::::::::::::
