@@ -23,23 +23,23 @@ title: 'GIS Data Collection for Social Scientists'
 created: '2024-08-08'
 
 # Comma-separated list of keywords for the lesson
-keywords: 'GIS, data, FAIR, social science'
+keywords: 'GIS, data collection, U.S. Census, American Community Survey, Census API, satellite imagery, QField, network analysis, FAIR, social science'
 
 # Life cycle stage of the lesson
 # possible values: pre-alpha, alpha, beta, stable
-life_cycle: 'pre-alpha'
+life_cycle: 'alpha'
 
 # License of the lesson materials (recommended CC-BY 4.0)
 license: 'CC-BY 4.0'
 
 # Link to the source repository for this lesson
-source: 'https://github.com/SocialTurn/DataCollection'
+source: 'https://github.com/SpatialTurn/DataCollection'
 
 # Default branch of your lesson
 branch: 'main'
 
 # Who to contact if there are any issues
-contact: 'rkalyanapurdue@gmail.com'
+contact: 'ilindsay@purdue.edu'
 
 # Navigation ------------------------------------------------
 #
@@ -65,25 +65,30 @@ contact: 'rkalyanapurdue@gmail.com'
 
 # Order of episodes in your lesson
 episodes: 
+- introduction.md
+- repositories.md
 - census.md
 - imagery.md
-- imageryvector.md
 - field.md
 - qfield.md
 - qfield-network.md
 
 # Information for Learners
 learners: 
+- setup.md
+- reference.md
 
 # Information for Instructors
 instructors: 
+- instructor-notes.md
 
 # Learner Profiles
 profiles: 
+- learner-profiles.md
 
 # Customisation ---------------------------------------------
 #
 # This space below is where custom yaml items (e.g. pinning
 # sandpaper and varnish versions) should live
 
-carpentry_description: GIS Data Collection for Social Scientists
+carpentry_description: 'GIS Data Collection for Social Scientists'

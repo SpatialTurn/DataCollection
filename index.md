@@ -2,24 +2,45 @@
 site: sandpaper::sandpaper_site
 ---
 
-One of the primary challenges with the utilization of digital datasets in the social sciences is a lack of data literacy skills in collecting data. 
-This includes both data collection from existing data repositories and field-based data collections such as observation data, interviews, and surveys. 
-This module will provide learning materials on both sides to prepare the researchers with data collection skills at beginner, intermediate, and expert levels.
+One of the main challenges in using digital data in the social sciences is knowing how to **collect** it:
+where to find existing data, how to judge whether it can be trusted, and how to gather original data when
+nothing suitable exists. This module covers both sides, from data repositories and the U.S. Census Bureau to
+satellite imagery and field data collection with a phone.
 
-::::::::::::::::::::::::::::::::::::::::::  prereq
+| Episode | What you will learn | Tools |
+|---|---|---|
+| Introduction to Data Collection | When to use existing data or collect your own; vector and raster data; judging data quality; FAIR data | Concepts |
+| Finding Data in Repositories | Where to find free vector data, how to read metadata, and how to load data from the web | Web browser, QGIS |
+| Data from the U.S. Census Bureau | Census geography, the Decennial Census and the ACS, margins of error, and the Census API | Web browser, Python notebooks |
+| Acquiring Imagery | Scanned historic maps, declassified CORONA imagery and Sentinel-2 satellite data | Web browser, QGIS |
+| Collecting Data in the Field | Methods and apps, designing a schema, GPS accuracy, ethics and quality checks | Concepts |
+| QField Demonstration | A complete field workflow for mapping grocery stores | QField, QGIS |
+| Network Analysis for Grocery Access | Shortest paths and service areas along the road network | QGIS |
 
-## Getting Started
+The Census, QField and network analysis episodes share one example: **access to grocery stores in
+Lafayette and West Lafayette, Indiana**.
 
-These modules are intended to be hands-on through the use of Jupyter notebooks. No prior experience is assumed in order to use these materials.
+::::::::::::::::::::::::::::::::::::::::::: prereq
+
+## Prerequisites
+
+- A Google account, to open the notebooks in Google Colab
+- A free Census API key (see Setup below)
+- QGIS installed on your computer (see Setup below)
+- For the notebooks: basic Python, such as running cells and working with a `pandas` DataFrame
+- No prior GIS experience is needed
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- learn how to access different common repositories of existing tabular and imagery datasets relevant to the social science using desktop and API interfaces
-- learn about common methods and software options for capturing original data in the field
-- reflect on the steps for designing a data collection workflow using existing or original geospatial data
-- build a basic GIS project file and data collection system and QGIS geopackage based on an example use case 
+- Find, evaluate and cite existing geospatial datasets
+- Download census boundaries and statistics with the Census API, and judge their reliability
+- Find and download historic maps and satellite imagery
+- Design a field data collection workflow with consistent, well-documented data
+- Use collected data in a network analysis of access
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
+
+This module is part of [Enabling the Geospatial Turn in the Social Sciences](https://spatialturn.github.io/),
+a set of training modules developed at Purdue University with support from the National Science Foundation.
