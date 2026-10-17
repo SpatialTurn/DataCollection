@@ -43,13 +43,13 @@
         <a href="index.html">
         <img id="incubator-logo" alt="GIS Data Collection for Social Scientists" src="assets/images/incubator-logo.svg"></a>
 
-        <span class="badge text-bg-danger">
-          <abbr title="This lesson is in the pre-alpha phase, which means that it is in early development, but has not yet been taught.">
+        <span class="badge text-bg-warning">
+          <abbr title="This lesson is in the alpha phase, which means that it has been taught once and lesson authors are iterating on feedback.">
             <a href="https://docs.carpentries.org/resources/curriculum/lesson-life-cycle.html" class="external-link alert-link">
-              <i aria-hidden="true" class="icon" data-feather="alert-octagon" style="border-radius: 5px"></i>
-              Pre-Alpha
+              <i aria-hidden="true" class="icon" data-feather="alert-triangle" style="border-radius: 5px"></i>
+              Alpha
             </a>
-            <span class="visually-hidden">This lesson is in the pre-alpha phase, which means that it is in early development, but has not yet been taught.</span>
+            <span class="visually-hidden">This lesson is in the alpha phase, which means that it has been taught once and lesson authors are iterating on feedback.</span>
           </abbr>
         </span>
 
@@ -244,7 +244,7 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="census.html">1. Data from U.S. Census Bureau</a>
+        <a href="introduction.html">1. Introduction to Data Collection</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -256,7 +256,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="imagery.html">2. Acquiring Raster Data using Imagery Databases</a>
+        <a href="repositories.html">2. Finding Data in Repositories</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -268,7 +268,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="imageryvector.html">3. Acquiring Vector Datasets from Data Repositories</a>
+        <a href="census.html">3. Data from the U.S. Census Bureau</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -280,7 +280,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="field.html">4. Field-based Data Collection</a>
+        <a href="imagery.html">4. Acquiring Imagery: Scanned Maps and Satellite Data</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -292,7 +292,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="qfield.html">5. QField Training: Mapping Grocery Stores to Identify Potential Food Deserts</a>
+        <a href="field.html">5. Collecting Data in the Field</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -304,7 +304,19 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="qfield-network.html">6. Network Analysis for Grocery Access in QGIS</a>
+        <a href="qfield.html">6. QField Demonstration: Mapping Grocery Stores</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush8">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading8">
+        <a href="qfield-network.html">7. Network Analysis for Grocery Access in QGIS</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -387,14 +399,170 @@
         <h1>Instructor Notes</h1>
         
 
-<p>This is a placeholder file. Please add content here.</p>
+<section><h2 class="section-heading" id="overall-approach">Overall approach<a class="anchor" aria-label="anchor" href="#overall-approach"></a>
+</h2>
+<hr class="half-width">
+<ul>
+<li>The module follows one thread: find existing data, judge it, fill
+the gaps with field data, and use the result. The grocery access case
+(Lafayette and West Lafayette) ties the Census, QField and network
+analysis episodes together.</li>
+<li>
+<strong>Census API keys</strong> are the most common delay. Ask
+learners to request and activate a key before the session (see Setup);
+activation requires clicking a link in an email.</li>
+<li>All lesson data is read from the web: the notebooks read Census
+files directly, and QGIS loads the network analysis files from this
+repository’s <code>data/</code> folder by URL. Imagery episodes do
+involve downloads, because finding and downloading imagery is the skill
+being taught.</li>
+<li>Suggested timing for a full day: Introduction 25 min; Repositories
+35 min; Census 65 min (including notebook 1a or 1b); Imagery 50 min;
+Field data 40 min; QField demonstration 45 min; Network analysis 75 min.
+Notebook 1c works well as take-home practice.</li>
+</ul></section><section><h2 class="section-heading" id="episode-by-episode">Episode by episode<a class="anchor" aria-label="anchor" href="#episode-by-episode"></a>
+</h2>
+<hr class="half-width">
+<div class="section level3">
+<h3 id="introduction-to-data-collection">Introduction to Data Collection<a class="anchor" aria-label="anchor" href="#introduction-to-data-collection"></a>
+</h3>
+<ul>
+<li>The “existing data or new data?” challenge works well as a pair
+discussion. Ask learners to bring a question from their own
+research.</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="finding-data-in-repositories">Finding Data in Repositories<a class="anchor" aria-label="anchor" href="#finding-data-in-repositories"></a>
+</h3>
+<ul>
+<li>Purdue is a member of the Big Ten Academic Alliance, so the BTAA
+Geoportal search for “Tippecanoe” gives local results.</li>
+<li>Loading Natural Earth by URL in QGIS is a good first QGIS task, and
+it prepares learners for the network episode.</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="data-from-the-u-s--census-bureau">Data from the U.S. Census Bureau<a class="anchor" aria-label="anchor" href="#data-from-the-u-s--census-bureau"></a>
+</h3>
+<ul>
+<li>Have everyone open one API address in a browser before running
+Python; seeing the raw JSON makes the notebooks easier to follow.</li>
+<li>The margin of error figure is a good discussion starter: why are
+small counties less certain? Why is LaGrange County so different?</li>
+<li>Tract 104 (Purdue’s west campus) returns <code>-666666666</code> for
+median household income and has no households, because almost everyone
+there lives in residence halls. Learners from Purdue usually recognize
+it.</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="acquiring-imagery">Acquiring Imagery<a class="anchor" aria-label="anchor" href="#acquiring-imagery"></a>
+</h3>
+<ul>
+<li>EarthExplorer and the Copernicus Browser both need accounts; ask
+learners to register in advance if you plan a live download.</li>
+<li>Satellite downloads are large. In a classroom, demonstrate the
+search and download steps, and let learners download a small product or
+a single band.</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="collecting-data-in-the-field">Collecting Data in the Field<a class="anchor" aria-label="anchor" href="#collecting-data-in-the-field"></a>
+</h3>
+<ul>
+<li>Use the “Spot the problems” table to start a discussion about
+schemas before showing QField.</li>
+<li>If you have IRB-approved projects in your department, mention how
+they handled consent and location privacy.</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="qfield-demonstration">QField Demonstration<a class="anchor" aria-label="anchor" href="#qfield-demonstration"></a>
+</h3>
+<ul>
+<li>This is a demonstration. If time and devices allow, a short walk to
+map a few campus locations with a prepared QField project makes it
+memorable.</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="network-analysis-for-grocery-access">Network Analysis for Grocery Access<a class="anchor" aria-label="anchor" href="#network-analysis-for-grocery-access"></a>
+</h3>
+<ul>
+<li>The most important setting is the <strong>project CRS</strong>
+(EPSG:26916). If learners see costs around 0.04, their project is still
+in EPSG:4326.</li>
+<li>Do <strong>not</strong> clip the roads to the city limits; the
+episode shows why. All 17 supermarkets are reachable with the provided
+road layer.</li>
+<li>With the full layer, routes from the Purdue Memorial Union to the 17
+supermarkets average about 5.7 km by road against 5.0 km in a straight
+line. About 11% of city street length is within 800 m of a supermarket
+along the network, and about 40% within 1,600 m.</li>
+<li>The grocery store data comes from OpenStreetMap (October 2026) and
+is not field verified; say so when presenting results.</li>
+</ul>
+</div>
+</section><section><h2 class="section-heading" id="common-problems">Common problems<a class="anchor" aria-label="anchor" href="#common-problems"></a>
+</h2>
+<hr class="half-width">
+<table class="table">
+<colgroup>
+<col width="33%">
+<col width="33%">
+<col width="33%">
+</colgroup>
+<thead><tr>
+<th>Symptom</th>
+<th>Likely cause</th>
+<th>Fix</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Census API shows “Missing Key”</td>
+<td>No key, or it was not pasted</td>
+<td>Add <code>&amp;key=</code> and the key to the address, or paste it
+in the notebook</td>
+</tr>
+<tr>
+<td>Census API shows “Invalid Key”</td>
+<td>Key not activated, or mistyped</td>
+<td>Click the activation link in the email; copy the key again</td>
+</tr>
+<tr>
+<td><code>error: unknown variable</code></td>
+<td>Variable code misspelled, or wrong dataset path</td>
+<td>Profile variables (DP) need <code>/profile</code> in the dataset
+path; check case</td>
+</tr>
+<tr>
+<td>A join gives no matches</td>
+<td>GEOID stored as a number, or different years</td>
+<td>Keep GEOIDs as text; use boundaries and data from compatible
+years</td>
+</tr>
+<tr>
+<td>Network costs are tiny</td>
+<td>Project CRS is EPSG:4326</td>
+<td>Set the project CRS to EPSG:26916</td>
+</tr>
+<tr>
+<td>Some routes have a NULL cost</td>
+<td>Network broken, often by clipping</td>
+<td>Use the full road layer</td>
+</tr>
+<tr>
+<td>A web layer loads but nothing appears</td>
+<td>Off screen or under another layer</td>
+<td>Right-click &gt; <strong>Zoom to Layer</strong>; reorder layers</td>
+</tr>
+</tbody>
+</table>
 <!--
-Place links that you need to refer to multiple times across pages here. Delete
-any links that you are not going to use.
- -->
-
-
-      <section id="aggregate-instructor-notes"></section>
+Links listed here can be reused across pages as [text][name].
+Add reference-style links below as needed.
+--></section><section id="aggregate-instructor-notes"></section>
 </div>
     </main>
 </div>
@@ -407,14 +575,14 @@ any links that you are not going to use.
         <p>This lesson is subject to the <a href="CODE_OF_CONDUCT.html">Code of Conduct</a></p>
         <p>
 
-        <a href="https://github.com/SocialTurn/DataCollection/edit/main/README.md" class="external-link">Edit on GitHub</a>
+        <a href="https://github.com/SpatialTurn/DataCollection/edit/main/README.md" class="external-link">Edit on GitHub</a>
 
 	
-        | <a href="https://github.com/SocialTurn/DataCollection/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
-        | <a href="https://github.com/SocialTurn/DataCollection/" class="external-link">Source</a></p>
+        | <a href="https://github.com/SpatialTurn/DataCollection/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
+        | <a href="https://github.com/SpatialTurn/DataCollection/" class="external-link">Source</a></p>
         <p>
         <a href="citation.html">Cite</a>
-        | <a href="mailto:rkalyanapurdue@gmail.com">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
+        | <a href="mailto:ilindsay@purdue.edu">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 		</div>
 		<div class="col-md-6">
 
@@ -434,18 +602,18 @@ any links that you are not going to use.
     {
   "@context": "https://schema.org",
   "@type": "LearningResource",
-  "@id": "https://SocialTurn.github.io/DataCollection/instructor-notes.html",
+  "@id": "https://SpatialTurn.github.io/DataCollection/instructor-notes.html",
   "inLanguage": "en",
   "dct:conformsTo": "https://bioschemas.org/profiles/LearningResource/1.0-RELEASE",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
-  "keywords": "GIS, data, FAIR, social science",
+  "keywords": "GIS, data collection, U.S. Census, American Community Survey, Census API, satellite imagery, QField, network analysis, FAIR, social science",
   "name": "Instructor Notes",
   "creativeWorkStatus": "active",
-  "url": "https://SocialTurn.github.io/DataCollection/instructor-notes.html",
-  "identifier": "https://SocialTurn.github.io/DataCollection/instructor-notes.html",
+  "url": "https://SpatialTurn.github.io/DataCollection/instructor-notes.html",
+  "identifier": "https://SpatialTurn.github.io/DataCollection/instructor-notes.html",
   "dateCreated": "2024-08-08",
-  "dateModified": "2026-10-13",
-  "datePublished": "2026-10-13"
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17"
 }
 
   </script><script>

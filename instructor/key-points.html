@@ -43,13 +43,13 @@
         <a href="index.html">
         <img id="incubator-logo" alt="GIS Data Collection for Social Scientists" src="../assets/images/incubator-logo.svg"></a>
 
-        <span class="badge text-bg-danger">
-          <abbr title="This lesson is in the pre-alpha phase, which means that it is in early development, but has not yet been taught.">
+        <span class="badge text-bg-warning">
+          <abbr title="This lesson is in the alpha phase, which means that it has been taught once and lesson authors are iterating on feedback.">
             <a href="https://docs.carpentries.org/resources/curriculum/lesson-life-cycle.html" class="external-link alert-link">
-              <i aria-hidden="true" class="icon" data-feather="alert-octagon" style="border-radius: 5px"></i>
-              Pre-Alpha
+              <i aria-hidden="true" class="icon" data-feather="alert-triangle" style="border-radius: 5px"></i>
+              Alpha
             </a>
-            <span class="visually-hidden">This lesson is in the pre-alpha phase, which means that it is in early development, but has not yet been taught.</span>
+            <span class="visually-hidden">This lesson is in the alpha phase, which means that it has been taught once and lesson authors are iterating on feedback.</span>
           </abbr>
         </span>
 
@@ -245,7 +245,7 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="census.html">1. Data from U.S. Census Bureau</a>
+        <a href="introduction.html">1. Introduction to Data Collection</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -257,7 +257,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="imagery.html">2. Acquiring Raster Data using Imagery Databases</a>
+        <a href="repositories.html">2. Finding Data in Repositories</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -269,7 +269,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="imageryvector.html">3. Acquiring Vector Datasets from Data Repositories</a>
+        <a href="census.html">3. Data from the U.S. Census Bureau</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -281,7 +281,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="field.html">4. Field-based Data Collection</a>
+        <a href="imagery.html">4. Acquiring Imagery: Scanned Maps and Satellite Data</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -293,7 +293,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="qfield.html">5. QField Training: Mapping Grocery Stores to Identify Potential Food Deserts</a>
+        <a href="field.html">5. Collecting Data in the Field</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -305,7 +305,19 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="qfield-network.html">6. Network Analysis for Grocery Access in QGIS</a>
+        <a href="qfield.html">6. QField Demonstration: Mapping Grocery Stores</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush8">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading8">
+        <a href="qfield-network.html">7. Network Analysis for Grocery Access in QGIS</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -388,58 +400,84 @@
     <main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Key Points</h1>
         
-<section id="census"><h2 class="section-heading"><a href="census.html">Data from U.S. Census Bureau</a></h2>
+<section id="introduction"><h2 class="section-heading"><a href="introduction.html">Introduction to Data Collection</a></h2>
 <hr class="half-width">
 <ul>
-<li>Census data can be used for planning services for certain population
-groups</li>
-<li>It can be used for site selection for new businesses or service
-facilities</li>
-<li>Public policy analysis</li>
-<li>Spatial analysis of hazard impact, epidemiological models, etc.</li>
-</ul>
-<ul>
-<li>The Census API gives you flexible, precise access to ACS data</li>
-<li>You can combine multiple variables in a single API call</li>
-<li>
-<code>&amp;descriptive=true</code> adds plain-language descriptions
-for each variable</li>
-<li>
-<code>&amp;outputFormat=csv</code> makes the data easy to open in
-Excel or import into Python</li>
-</ul></section><section id="imagery"><h2 class="section-heading"><a href="imagery.html">Acquiring Raster Data using Imagery Databases</a></h2>
-<hr class="half-width">
-<p>placeholder</p></section><section id="imageryvector"><h2 class="section-heading"><a href="imageryvector.html">Acquiring Vector Datasets from Data Repositories</a></h2>
-<hr class="half-width"></section><section id="field"><h2 class="section-heading"><a href="field.html">Field-based Data CollectionModule Overview<a class="anchor" aria-label="anchor" href="#module-overview"></a></a></h2>
+<li>Start every project by asking whether suitable data already
+exists</li>
+<li>Vector data stores discrete features; raster data stores values in a
+grid of cells</li>
+<li>Check who made a dataset, when, how, at what detail, with what
+accuracy, and under what license</li>
+<li>Make the data you collect FAIR: findable, accessible, interoperable
+and reusable</li>
+</ul></section><section id="repositories"><h2 class="section-heading"><a href="repositories.html">Finding Data in Repositories</a></h2>
 <hr class="half-width">
 <ul>
-<li>Census data can be used for planning services for certain population
-groups</li>
-<li>It can be used for site selection for new businesses or service
-facilities</li>
-<li>Public policy analysis</li>
-<li>Spatial analysis of hazard impact, epidemiological models, etc.</li>
-</ul></section><section id="qfield"><h2 class="section-heading"><a href="qfield.html">QField Training: Mapping Grocery Stores to Identify Potential Food Deserts</a></h2>
+<li>Search existing repositories before creating data from scratch</li>
+<li>Different repositories serve different needs: official statistics,
+local data, research collections, global layers</li>
+<li>Read the metadata and the license before you use a dataset</li>
+<li>QGIS can open data directly from a web address, so you do not need
+to download files</li>
+</ul></section><section id="census"><h2 class="section-heading"><a href="census.html">Data from the U.S. Census Bureau</a></h2>
 <hr class="half-width">
 <ul>
-<li>A clear scenarion and consistent schema makes field data
+<li>Census boundary files provide the shapes; the Decennial Census and
+the ACS provide the numbers</li>
+<li>GEOIDs link tables to shapes; keep them as text</li>
+<li>The Decennial Census is a full count with few questions; the ACS is
+a yearly survey with many topics and margins of error</li>
+<li>Use 5-year ACS estimates for small areas, and always check margins
+of error</li>
+<li>The Census API needs a free key and lets you request exactly the
+variables and places you need</li>
+</ul></section><section id="imagery"><h2 class="section-heading"><a href="imagery.html">Acquiring Imagery: Scanned Maps and Satellite Data</a></h2>
+<hr class="half-width">
+<ul>
+<li>Raster data includes scanned maps (which need georeferencing) and
+satellite images (already georeferenced)</li>
+<li>Consider spatial, spectral and temporal resolution when choosing
+imagery</li>
+<li>Declassified CORONA images (1960 to 1972) are a free historical
+record; CAST offers georeferenced copies</li>
+<li>Sentinel-2 provides free 10 m multispectral imagery about every 5
+days, from the Copernicus Browser</li>
+</ul></section><section id="field"><h2 class="section-heading"><a href="field.html">Collecting Data in the Field</a></h2>
+<hr class="half-width">
+<ul>
+<li>Collect your own data when what you need does not exist or cannot be
+trusted</li>
+<li>Design the schema first: clear fields, dropdowns, an “Unknown”
+option and a placement rule</li>
+<li>Phone GPS is typically accurate to a few meters under open sky, and
+much worse near buildings and trees; record accuracy</li>
+<li>Plan for consent, privacy and safety before collecting data about
+people and places</li>
+<li>Check data the same day it is collected</li>
+</ul></section><section id="qfield"><h2 class="section-heading"><a href="qfield.html">QField Demonstration: Mapping Grocery Stores</a></h2>
+<hr class="half-width">
+<ul>
+<li>A clear scenario and a consistent schema make field data
 analyzable</li>
-<li>Demonstrations should highlight <em>why</em> each step exists, not
-just which buttons to press.</li>
-<li>QA is part of collection, not a separate afterthought</li>
+<li>Prepare the project and form in QGIS before going out, and package
+it with QFieldSync</li>
+<li>Place points by a fixed rule, record GPS accuracy, and use “Unknown”
+instead of guessing</li>
+<li>Check the data in QGIS as soon as possible after collection</li>
 </ul></section><section id="qfield-network"><h2 class="section-heading"><a href="qfield-network.html">Network Analysis for Grocery Access in QGIS</a></h2>
 <hr class="half-width">
 <ul>
-<li>Grocery points collected in QField become much more analytically
-useful when paired with a road network.</li>
-<li>Network analysis answers access questions that straight-line
-distance cannot.</li>
-<li>Shortest path tools are useful for route comparison, while service
-area tools estimate reachable portions of the network.</li>
-<li>Projected data, clean destination points, and a connected road layer
-are essential for reliable outputs.</li>
-<li>Saving routable and non-routable results supports interpretation and
-troubleshooting.</li>
+<li>Grocery store points become far more useful for access questions
+when combined with a road network</li>
+<li>Reproject layers and set the project CRS to a projected system so
+that costs are in meters</li>
+<li>Shortest path tools compare routes; service area tools show which
+streets are within reach</li>
+<li>Network distance is longer than straight-line distance, sometimes by
+much more than expected</li>
+<li>Clipping a network to an irregular boundary can break routes; check
+for unreachable destinations</li>
 </ul></section>
 </div>
     </main>
@@ -453,14 +491,14 @@ troubleshooting.</li>
         <p>This lesson is subject to the <a href="CODE_OF_CONDUCT.html">Code of Conduct</a></p>
         <p>
 
-        <a href="https://github.com/SocialTurn/DataCollection/edit/main/README.md" class="external-link">Edit on GitHub</a>
+        <a href="https://github.com/SpatialTurn/DataCollection/edit/main/README.md" class="external-link">Edit on GitHub</a>
 
 	
-        | <a href="https://github.com/SocialTurn/DataCollection/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
-        | <a href="https://github.com/SocialTurn/DataCollection/" class="external-link">Source</a></p>
+        | <a href="https://github.com/SpatialTurn/DataCollection/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
+        | <a href="https://github.com/SpatialTurn/DataCollection/" class="external-link">Source</a></p>
         <p>
         <a href="../citation.html">Cite</a>
-        | <a href="mailto:rkalyanapurdue@gmail.com">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
+        | <a href="mailto:ilindsay@purdue.edu">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 		</div>
 		<div class="col-md-6">
 
@@ -480,18 +518,18 @@ troubleshooting.</li>
     {
   "@context": "https://schema.org",
   "@type": "LearningResource",
-  "@id": "https://SocialTurn.github.io/DataCollection/instructor/key-points.html",
+  "@id": "https://SpatialTurn.github.io/DataCollection/instructor/key-points.html",
   "inLanguage": "en",
   "dct:conformsTo": "https://bioschemas.org/profiles/LearningResource/1.0-RELEASE",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
-  "keywords": "GIS, data, FAIR, social science",
+  "keywords": "GIS, data collection, U.S. Census, American Community Survey, Census API, satellite imagery, QField, network analysis, FAIR, social science",
   "name": "Key Points",
   "creativeWorkStatus": "active",
-  "url": "https://SocialTurn.github.io/DataCollection/instructor/key-points.html",
-  "identifier": "https://SocialTurn.github.io/DataCollection/instructor/key-points.html",
+  "url": "https://SpatialTurn.github.io/DataCollection/instructor/key-points.html",
+  "identifier": "https://SpatialTurn.github.io/DataCollection/instructor/key-points.html",
   "dateCreated": "2024-08-08",
-  "dateModified": "2026-10-13",
-  "datePublished": "2026-10-13"
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17"
 }
 
   </script><script>

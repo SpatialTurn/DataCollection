@@ -27,13 +27,13 @@
         <a href="index.html">
         <img id="incubator-logo" alt="GIS Data Collection for Social Scientists" src="../assets/images/incubator-logo.svg"></a>
 
-        <span class="badge text-bg-danger">
-          <abbr title="This lesson is in the pre-alpha phase, which means that it is in early development, but has not yet been taught.">
+        <span class="badge text-bg-warning">
+          <abbr title="This lesson is in the alpha phase, which means that it has been taught once and lesson authors are iterating on feedback.">
             <a href="https://docs.carpentries.org/resources/curriculum/lesson-life-cycle.html" class="external-link alert-link">
-              <i aria-hidden="true" class="icon" data-feather="alert-octagon" style="border-radius: 5px"></i>
-              Pre-Alpha
+              <i aria-hidden="true" class="icon" data-feather="alert-triangle" style="border-radius: 5px"></i>
+              Alpha
             </a>
-            <span class="visually-hidden">This lesson is in the pre-alpha phase, which means that it is in early development, but has not yet been taught.</span>
+            <span class="visually-hidden">This lesson is in the alpha phase, which means that it has been taught once and lesson authors are iterating on feedback.</span>
           </abbr>
         </span>
 
@@ -123,7 +123,7 @@
     <a id="search-button-nav" class="btn btn-primary" href="../instructor/aio.html" role="button" aria-label="Search the All In One page">Search the All In One page</a>
   </div><!--/div.container-fluid -->
 </nav><aside class="col-md-12 lesson-progress"><div class="progress incubator">
-    <div class="progress-bar incubator" role="progressbar" style="width: 76%" aria-valuenow="76" aria-valuemin="0" aria-valuemax="100" aria-label="Lesson Progress">76%</div>
+    <div class="progress-bar incubator" role="progressbar" style="width: 78%" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" aria-label="Lesson Progress">78%</div>
   </div>
 </aside><div class="container">
       <div class="row">
@@ -208,7 +208,7 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="census.html">1. Data from U.S. Census Bureau</a>
+        <a href="introduction.html">1. Introduction to Data Collection</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -217,7 +217,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="imagery.html">2. Acquiring Raster Data using Imagery Databases</a>
+        <a href="repositories.html">2. Finding Data in Repositories</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -226,7 +226,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="imageryvector.html">3. Acquiring Vector Datasets from Data Repositories</a>
+        <a href="census.html">3. Data from the U.S. Census Bureau</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -235,7 +235,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="field.html">4. Field-based Data Collection</a>
+        <a href="imagery.html">4. Acquiring Imagery: Scanned Maps and Satellite Data</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -244,7 +244,16 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="qfield.html">5. QField Training: Mapping Grocery Stores to Identify Potential Food Deserts</a>
+        <a href="field.html">5. Collecting Data in the Field</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush7">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading7">
+        <a href="qfield.html">6. QField Demonstration: Mapping Grocery Stores</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -256,7 +265,7 @@
       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
-        6. Network Analysis for Grocery Access in QGIS
+        7. Network Analysis for Grocery Access in QGIS
         </span>
       </button>
     </div><!--/div.accordion-header-->
@@ -264,18 +273,17 @@
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#overview">Overview</a></li>
-<li><a href="#lesson-goals-and-scenario">Lesson goals and scenario</a></li>
-<li><a href="#data-setup">Data setup</a></li>
+<li><a href="#the-data">The data</a></li>
 <li><a href="#step-1-load-and-inspect-the-layers">Step 1: Load and inspect the layers</a></li>
-<li><a href="#step-2-reproject-the-data">Step 2: Reproject the data</a></li>
-<li><a href="#step-3-clip-to-the-study-area">Step 3: Clip to the study area</a></li>
-<li><a href="#step-4-create-or-choose-an-origin">Step 4: Create or choose an origin</a></li>
-<li><a href="#step-5-run-shortest-path-analysis-to-multiple-stores">Step 5: Run shortest path analysis to multiple stores</a></li>
-<li><a href="#step-6-symbolize-and-inspect-the-routes">Step 6: Symbolize and inspect the routes</a></li>
-<li><a href="#step-7-measure-travel-cost-and-identify-the-nearest-options">Step 7: Measure travel cost and identify the nearest options</a></li>
-<li><a href="#step-8-create-service-areas-from-grocery-stores">Step 8: Create service areas from grocery stores</a></li>
-<li><a href="#step-9-interpret-the-service-area">Step 9: Interpret the service area</a></li>
-<li><a href="#step-10-save-outputs-for-later-episodes">Step 10: Save outputs for later episodes</a></li>
+<li><a href="#step-2-keep-only-the-supermarkets">Step 2: Keep only the supermarkets</a></li>
+<li><a href="#step-3-reproject-the-data">Step 3: Reproject the data</a></li>
+<li><a href="#step-4-do-not-clip-the-roads-too-tightly">Step 4: Do not clip the roads too tightly</a></li>
+<li><a href="#step-5-choose-a-starting-point">Step 5: Choose a starting point</a></li>
+<li><a href="#step-6-shortest-paths-to-every-supermarket">Step 6: Shortest paths to every supermarket</a></li>
+<li><a href="#step-7-compare-network-and-straight-line-distance">Step 7: Compare network and straight-line distance</a></li>
+<li><a href="#step-8-service-areas-around-supermarkets">Step 8: Service areas around supermarkets</a></li>
+<li><a href="#step-9-interpret-the-results">Step 9: Interpret the results</a></li>
+<li><a href="#step-10-save-your-outputs">Step 10: Save your outputs</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -345,7 +353,7 @@
       <div class="d-none d-sm-none d-md-block">
         <a class="chapter-link" href="../instructor/qfield.html" rel="prev">
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
-          Previous: QField Training: Mapping Grocery Stores...
+          Previous: QField Demonstration: Mapping Grocery...
         </a>
         <a class="chapter-link float-end" href="../instructor/index.html" rel="next">
           Home
@@ -354,13 +362,13 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Network Analysis for Grocery Access in QGIS</h1>
-        <p>Last updated on 2026-04-15 |
+        <p>Last updated on 2026-10-17 |
 
-        <a href="https://github.com/SocialTurn/DataCollection/edit/main/episodes/qfield-network.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/SpatialTurn/DataCollection/edit/main/episodes/qfield-network.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
 
 
-        <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 105 minutes</p>
+        <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 75 minutes</p>
 
         <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
@@ -375,10 +383,10 @@
 <div class="card-body">
 <div class="inner">
 <h3 class="card-title">Questions</h3>
-<ul><li>How can we move from collected grocery store points to a road-based
-accessibility analysis?</li>
+<ul><li>How do we move from grocery store points to an analysis of travel
+along roads?</li>
 <li>How do shortest path and service area tools in QGIS answer different
-questions about grocery access?</li>
+questions about access?</li>
 <li>Why is network distance often better than straight-line distance for
 access studies?</li>
 </ul></div>
@@ -388,93 +396,96 @@ access studies?</li>
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<ul><li>Load and inspect grocery store points collected in QField</li>
-<li>Prepare a road network and confirm that all layers use an
-appropriate projected CRS.</li>
-<li>Calculate shortest paths from a selected origin to multiple grocery
-stores.</li>
-<li>Generate service areas from grocery stores to estimate walkable or
-drivable access.</li>
-<li>Interpret the outputs as part of a reproducible grocery access
-workflow.</li>
+<ul><li>Load grocery store, road and study area layers into QGIS from the
+web</li>
+<li>Reproject layers to a projected coordinate system so that distances
+are in meters</li>
+<li>Calculate shortest paths from one origin to every supermarket</li>
+<li>Generate service areas that show which streets are within walking
+distance of a supermarket</li>
+<li>Recognize data problems that break network analysis</li>
 </ul></div>
 </div>
 </div>
 </div>
 </div>
 <section><h2 class="section-heading" id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a></h2>
-<hr class="half-width"><p>In the previous lesson, learners simulated a collection of grocery
-store locations in the field using QField. In this lesson, learners will
-use those observation in QGIS to ask a new question:</p>
-<p><strong>How accessible are grocery stores when movement is
-constrained by the road network?</strong></p>
-<p>This episode shifts away from field <strong>data collection</strong>
-to <strong>spatial analysis</strong>. Instead of treating distance as a
-straight line, learners will use the street network to calculate
-routes.</p>
-<div id="before-we-begin" class="callout prereq">
+<hr class="half-width"><p>In the previous episode, a team mapped grocery stores in the field
+with QField. In this episode, we use grocery store points with a road
+network to ask a new question:</p>
+<p><strong>How accessible are grocery stores when movement is limited to
+the road network?</strong></p>
+<p>This episode moves from <strong>data collection</strong> to
+<strong>analysis</strong>. Instead of treating distance as a straight
+line, we measure routes along streets.</p>
+<p>Imagine that a class, a community partner or a student group wants to
+know how easy it is to reach a supermarket from a residence hall, an
+apartment complex or a neighborhood. We will:</p>
+<ol style="list-style-type: decimal"><li>prepare the grocery store and road data</li>
+<li>calculate routes from one starting point to every supermarket</li>
+<li>create service areas showing the streets within a chosen distance of
+a supermarket</li>
+</ol></section><section><h2 class="section-heading" id="the-data">The data<a class="anchor" aria-label="anchor" href="#the-data"></a></h2>
+<hr class="half-width"><p>Three small files are stored in this lesson’s repository. You do not
+need to download them; QGIS reads them straight from the web.</p>
+<table class="table"><colgroup><col width="33%"><col width="33%"><col width="33%"></colgroup><thead><tr><th>Layer</th>
+<th>Contents</th>
+<th>Source</th>
+</tr></thead><tbody><tr><td><code>grocery_stores</code></td>
+<td>64 food stores in and around Lafayette and West Lafayette: 17
+supermarkets, 2 wholesale stores and 45 convenience stores</td>
+<td>OpenStreetMap contributors (Open Database License), October
+2026</td>
+</tr><tr><td><code>roads</code></td>
+<td>3,466 road segments covering both cities and a margin around
+them</td>
+<td>U.S. Census Bureau, TIGER/Line 2024</td>
+</tr><tr><td><code>study_area</code></td>
+<td>The city limits of Lafayette and West Lafayette</td>
+<td>U.S. Census Bureau, 2024 cartographic boundary files</td>
+</tr></tbody></table><p>The store points stand in for data collected with QField. In a real
+project, the team would have verified them in the field first.</p>
+<div id="before-you-begin" class="callout prereq">
 <div class="callout-square">
 <i class="callout-icon" data-feather="check"></i>
 </div>
 <span class="callout-header">Prerequisite</span>
-<div id="before-we-begin" class="callout-inner">
-<h3 class="callout-title">Before we begin</h3>
+<div id="before-you-begin" class="callout-inner">
+<h3 class="callout-title">Before you begin</h3>
 <div class="callout-content">
-<p>Learners should have downloaded:</p>
-<ul><li>A point layer of grocery store locations (download link)</li>
-<li>a road layer for the study area (lesson link)</li>
-<li>study area boundary (lesson link)</li>
-<li>basic familiarity with QGIS (lesson link)</li>
+<ul><li>QGIS installed (see <a href="index.html#setup">Setup</a>)</li>
+<li>Basic familiarity with the QGIS interface, for example from the Data
+Visualization module’s “Getting Started with QGIS” episode</li>
 </ul></div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="lesson-goals-and-scenario">Lesson goals and scenario<a class="anchor" aria-label="anchor" href="#lesson-goals-and-scenario"></a></h2>
-<hr class="half-width"><p>Imagine that a local class, community partner, or student groups
-wants to understand how easy/accessible it is to reach grocery stores
-from a particular residence hall, apartment area, or neighborhood.</p>
-<p>In this lesson, we will complete three related tasks:</p>
-<ol style="list-style-type: decimal"><li>prepare the grocery and road data</li>
-<li>calculate routes from one origin to multiple stores</li>
-<li>create service areas that estimate the streets reachable within
-chosen travel cost</li>
-</ol></section><section><h2 class="section-heading" id="data-setup">Data setup<a class="anchor" aria-label="anchor" href="#data-setup"></a></h2>
-<hr class="half-width"><p>You should have the following layers ready to open in QGIS:</p>
-<ul><li>‘grocery_stores’ - point layer “collected” in QField</li>
-<li>‘roads’ - line layer representing the street network</li>
-<li>‘study_area’ - boundary polygon for the lesson extent</li>
-</ul><div id="teaching-note" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<span class="callout-header">Callout</span>
-<div id="teaching-note" class="callout-inner">
-<h3 class="callout-title">Teaching note</h3>
-<div class="callout-content">
-<p>For a workshop or classroom lesson/setting, use a small instructional
-sample instead of the full county data. A small area will run faster for
-your class, makes outputs and maps easier to read, and ensures your
-learners have a clear idea of the basics of network analysis</p>
-</div>
-</div>
-</div>
 </section><section><h2 class="section-heading" id="step-1-load-and-inspect-the-layers">Step 1: Load and inspect the layers<a class="anchor" aria-label="anchor" href="#step-1-load-and-inspect-the-layers"></a></h2>
-<hr class="half-width"><ol style="list-style-type: decimal"><li>Open QGIS.</li>
-<li>Add the grocery store points, road netowrk, and study area
-boundary.</li>
-<li>Open the attribute table for ‘grocery_stores’.</li>
-<li>confirm that the layer contains the fields we will be working
-with:</li>
-</ol><ul><li>store name</li>
-<li>store type</li>
-<li>verification status</li>
-</ul><ol start="5" style="list-style-type: decimal"><li>Visually inspect the grocery store points on top of the road
-network</li>
-</ol><p>Look and identify any obvious problems</p>
+<hr class="half-width"><ol style="list-style-type: decimal"><li><p>Open QGIS and start a new project.</p></li>
+<li><p>Go to <strong>Layer &gt; Add Layer &gt; Add Vector
+Layer</strong>.</p></li>
+<li><p>For <strong>Source Type</strong>, choose <strong>Protocol:
+HTTP(S), cloud, etc.</strong> and leave <strong>Type</strong> as
+<strong>HTTP/HTTPS/FTP</strong>.</p></li>
+<li>
+<p>Paste the first address into <strong>URI</strong>, click
+<strong>Add</strong>, and repeat for the other two:</p>
+<pre><code>https://raw.githubusercontent.com/SpatialTurn/DataCollection/main/data/grocery_stores.geojson
+https://raw.githubusercontent.com/SpatialTurn/DataCollection/main/data/roads.geojson
+https://raw.githubusercontent.com/SpatialTurn/DataCollection/main/data/study_area.geojson</code></pre>
+</li>
+<li><p>Click <strong>Close</strong>. In the <strong>Layers</strong>
+panel, drag <code>grocery_stores</code> to the top so the points draw
+above the roads.</p></li>
+<li><p>Right-click <code>grocery_stores</code> and choose <strong>Open
+Attribute Table</strong>. Look at the fields: <code>store_name</code>,
+<code>store_type</code>, <code>address</code>, <code>city</code>,
+<code>osm_id</code>, <code>source</code> and
+<code>verification</code>.</p></li>
+</ol><p>Before analyzing anything, look for problems:</p>
 <ul><li>duplicate points</li>
-<li>points outside the study area</li>
-<li>stores placed in parking lots instead of near the entrance or parcel
-frontage</li>
-<li>roads that appear disconnected</li>
+<li>stores outside the study area</li>
+<li>stores with no name or address</li>
+<li>roads that look disconnected from the rest</li>
 </ul><div id="quick-inspection" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -483,8 +494,9 @@ frontage</li>
 <div id="quick-inspection" class="callout-inner">
 <h3 class="callout-title">Quick inspection</h3>
 <div class="callout-content">
-<p>What kinds of data quality problems would most directly affect a
-network analysis?</p>
+<p>Look at the map and the attribute table. What do you notice? Which
+kinds of data problems would most directly affect a network
+analysis?</p>
 </div>
 </div>
 </div>
@@ -493,155 +505,186 @@ network analysis?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
-<p>Problems that affect where a route starts or ends are especially
-important. For example:</p>
-<ul><li>a grocery point placed far from the road network</li>
-<li>duplicate stores that inflate the number of destinations</li>
-<li>disconnected road segments that break routing</li>
-<li>a mismatched CRS that makes layers appear in the wrong place</li>
+<p>You may notice that six convenience stores, such as a Love’s travel
+stop, lie <strong>just outside the city limits</strong>. Stores like
+these should usually stay in an analysis, because city residents shop
+there too. (All 17 supermarkets are inside the city limits.) A few
+convenience stores have <strong>no name</strong>, and several stores
+have <strong>no address</strong>. Two <strong>Fresh Thyme</strong>
+points might look like duplicates, but they are two different stores,
+one in each city; check before deleting anything.</p>
+<p>The problems that most directly affect a network analysis are those
+that affect where a route starts or ends:</p>
+<ul><li>a store point placed far from any road</li>
+<li>duplicate stores, which inflate the number of destinations</li>
+<li>disconnected road segments, which break routes</li>
+<li>layers in different coordinate systems, which appear in the wrong
+place</li>
 </ul></div>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="step-2-reproject-the-data">Step 2: Reproject the data<a class="anchor" aria-label="anchor" href="#step-2-reproject-the-data"></a></h2>
-<hr class="half-width"><p>Network analysis should be done in a projected CRS so that distances
-are measured in meaningful linear units like meters or feet.</p>
-<p>For Lafayette / West Lafayette, choose an appropriate projected CRS
-for Indiana and your lesson goals such as NAD 1983/UTM 16N.</p>
-<ol style="list-style-type: decimal"><li>Right-click <code>grocery_stores</code>.</li>
-<li>Choose <strong>Export -&gt; Save Features As…</strong>
-</li>
-<li>Save a projected copy named
-<code>grocery_stores_projected</code>.</li>
-<li>Repeat for <code>roads</code> and <code>study_area</code> if
-needed.</li>
-<li>Confirm that all projected layers align correctly.</li>
-</ol><div id="crs-warning" class="callout caution">
+</section><section><h2 class="section-heading" id="step-2-keep-only-the-supermarkets">Step 2: Keep only the supermarkets<a class="anchor" aria-label="anchor" href="#step-2-keep-only-the-supermarkets"></a></h2>
+<hr class="half-width"><p>Convenience stores rarely sell a full range of fresh food, so food
+access studies usually focus on supermarkets.</p>
+<ol style="list-style-type: decimal"><li>Open the <strong>Processing Toolbox</strong> (<strong>Processing
+&gt; Toolbox</strong>).</li>
+<li>Search for <strong>Extract by attribute</strong> and open it.</li>
+<li>Set <strong>Input layer</strong> to <code>grocery_stores</code>,
+<strong>Selection attribute</strong> to <code>store_type</code>,
+<strong>Operator</strong> to <code>=</code>, and <strong>Value</strong>
+to <code>Supermarket</code>.</li>
+<li>Click <strong>Run</strong>. A new layer called <strong>Extracted
+(attribute)</strong> appears with 17 supermarkets. Rename it
+<code>supermarkets</code> (right-click &gt; <strong>Rename
+Layer</strong>).</li>
+</ol></section><section><h2 class="section-heading" id="step-3-reproject-the-data">Step 3: Reproject the data<a class="anchor" aria-label="anchor" href="#step-3-reproject-the-data"></a></h2>
+<hr class="half-width"><p>Network analysis should be done in a <strong>projected</strong>
+coordinate system, so that distances are measured in meters rather than
+degrees. The files are stored in latitude and longitude (EPSG:4326). For
+Lafayette, a good choice is <strong>NAD83 / UTM zone 16N
+(EPSG:26916)</strong>.</p>
+<ol style="list-style-type: decimal"><li>In the Processing Toolbox, search for <strong>Reproject
+layer</strong> and open it.</li>
+<li>Set <strong>Input layer</strong> to <code>supermarkets</code> and
+<strong>Target CRS</strong> to <strong>EPSG:26916</strong>.</li>
+<li>Click <strong>Run</strong>, and rename the output
+<code>supermarkets_utm</code>.</li>
+<li>Repeat for <code>roads</code> (rename the output
+<code>roads_utm</code>) and <code>study_area</code>
+(<code>study_area_utm</code>).</li>
+<li>Set the <strong>project</strong> coordinate system too: click the
+CRS button in the bottom-right corner of the QGIS window (it shows
+something like <strong>EPSG:4326</strong>), search for
+<strong>26916</strong>, select <strong>NAD83 / UTM zone 16N</strong>,
+and click <strong>OK</strong>.</li>
+</ol><div id="why-set-the-project-crs-as-well" class="callout caution">
 <div class="callout-square">
 <i class="callout-icon" data-feather="alert-triangle"></i>
 </div>
 <span class="callout-header">Caution</span>
-<div id="crs-warning" class="callout-inner">
-<h3 class="callout-title">CRS warning</h3>
+<div id="why-set-the-project-crs-as-well" class="callout-inner">
+<h3 class="callout-title">Why set the project CRS as well?</h3>
 <div class="callout-content">
+<p>QGIS’s network tools report travel cost in the units of the
+<strong>project’s</strong> coordinate system. If the project is still in
+EPSG:4326, a 4 km route is reported as a cost of about 0.036 (degrees).
+With the project in EPSG:26916, the same route has a cost of about 4,000
+(meters).</p>
 <p>Do not assume that layers are ready for analysis just because they
-draw in the same place on the map. Learners shoudl verify the CRS of
-each layer and make a projected copy when necessary.</p>
+draw in the same place. Check the CRS of each layer (right-click &gt;
+<strong>Properties &gt; Information</strong>).</p>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="step-3-clip-to-the-study-area">Step 3: Clip to the study area<a class="anchor" aria-label="anchor" href="#step-3-clip-to-the-study-area"></a></h2>
-<hr class="half-width"><p>To reduce processing time and simplify the map, clip the road layer
-to the study area.</p>
-<ol style="list-style-type: decimal"><li>Open the <strong>Processing Toolbox</strong>.</li>
-<li>Search for <strong>Clip</strong>.</li>
-<li>Use:
-<ul><li>
-<strong>Input layer</strong>: <code>roads_projected</code>
-</li>
-<li>
-<strong>Overlay layer</strong>:
-<code>study_area_projected</code>
-</li>
-</ul></li>
-<li>Save the output as <code>roads_clip</code>.</li>
-</ol><p>Optional: if the grocery layer includes stores outside the intended
-teaching extent, clip or filter that layer as well.</p>
-</section><section><h2 class="section-heading" id="step-4-create-or-choose-an-origin">Step 4: Create or choose an origin<a class="anchor" aria-label="anchor" href="#step-4-create-or-choose-an-origin"></a></h2>
-<hr class="half-width"><p>You need a start point for route analysis.</p>
-<ul><li>a manually created point representing a residence hall or apartment
-complex</li>
-<li>one point chosen from a learner-collected housing layer</li>
-<li>one point placed at a central campus location</li>
-</ul><p>To create an origin manually:</p>
-<ol style="list-style-type: decimal"><li>Create a new temporary point layer called
-<code>origin_point</code>.</li>
-<li>Add one feature at the chosen starting location.</li>
-<li>Save the layer if you want it to persist beyond the session.</li>
-</ol><div id="why-one-origin-first" class="callout discussion">
+</section><section><h2 class="section-heading" id="step-4-do-not-clip-the-roads-too-tightly">Step 4: Do not clip the roads too tightly<a class="anchor" aria-label="anchor" href="#step-4-do-not-clip-the-roads-too-tightly"></a></h2>
+<hr class="half-width"><p>It is tempting to clip the road layer to the city limits to make it
+smaller. Here, that is a mistake. The road file already stops a short
+distance outside the two cities, and the city limits are irregular: they
+do not even meet each other across the Wabash River. Clipping the roads
+to them removes the bridges and splits the network into pieces.</p>
+<figure><img src="../dc_clip_problem.png" alt="Two maps of Lafayette and West Lafayette. Left: with the full road layer, orange routes run from the origin star in West Lafayette to all 17 supermarkets. Right: with roads clipped to the irregular, dashed city limits, the network is split at the Wabash River and only the 7 supermarkets in West Lafayette are reached; the 10 in Lafayette are marked with red crosses." class="figure mx-auto d-block"><div class="figcaption">Clipping the roads to the city limits breaks the
+network.</div>
+</figure><p>With the full road layer, all 17 supermarkets can be reached. With
+roads clipped to the city limits, only 7 can. When you do clip a
+network, clip it to a generous rectangle or buffer around your study
+area, never to an irregular boundary.</p>
+</section><section><h2 class="section-heading" id="step-5-choose-a-starting-point">Step 5: Choose a starting point<a class="anchor" aria-label="anchor" href="#step-5-choose-a-starting-point"></a></h2>
+<hr class="half-width"><p>Our origin is the <strong>Purdue Memorial Union</strong>, in the
+center of campus. You will set it inside the shortest path tool in the
+next step, either by clicking on the map or by typing its
+coordinates:</p>
+<pre><code>507575, 4474900 [EPSG:26916]</code></pre>
+<div id="why-start-with-one-origin" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <span class="callout-header">Discussion</span>
-<div id="why-one-origin-first" class="callout-inner">
-<h3 class="callout-title">Why one origin first?</h3>
+<div id="why-start-with-one-origin" class="callout-inner">
+<h3 class="callout-title">Why start with one origin?</h3>
 <div class="callout-content">
-<p>Why might it be better to start with a single origin before scaling
-up to many housing points or neighborhoods?</p>
+<p>Why might it be better to start with a single origin before moving on
+to many homes or neighborhoods?</p>
+<p>A single origin keeps the first analysis easy to read. You can
+inspect the routes, compare stores and find problems with snapping or
+connectivity before moving to a more complex workflow with many
+origins.</p>
 </div>
 </div>
 </div>
-<p>A single origin keeps the first analysis legible. Learners can more
-easily inspect the routes, compare store access, and troubleshoot
-snapping or connectivity issues before moving to a more complex
-multi-origin workflow.</p>
-</section><section><h2 class="section-heading" id="step-5-run-shortest-path-analysis-to-multiple-stores">Step 5: Run shortest path analysis to multiple stores<a class="anchor" aria-label="anchor" href="#step-5-run-shortest-path-analysis-to-multiple-stores"></a></h2>
-<hr class="half-width"><p>Now we will calculate routes from one origin to every grocery
-store.</p>
-<p>In the Processing Toolbox, search for:</p>
-<p><strong>Shortest path (point to layer)</strong></p>
-<p>Set the parameters as follows:</p>
+</section><section><h2 class="section-heading" id="step-6-shortest-paths-to-every-supermarket">Step 6: Shortest paths to every supermarket<a class="anchor" aria-label="anchor" href="#step-6-shortest-paths-to-every-supermarket"></a></h2>
+<hr class="half-width"><ol style="list-style-type: decimal"><li>In the Processing Toolbox, search for <strong>Shortest path (point
+to layer)</strong> and open it.</li>
+<li>Set the parameters:
 <ul><li>
 <strong>Vector layer representing network</strong>:
-<code>roads_clip</code>
+<code>roads_utm</code>
 </li>
 <li>
-<strong>Path type to calculate</strong>: <code>Shortest</code>
+<strong>Path type to calculate</strong>:
+<strong>Shortest</strong>
 </li>
 <li>
-<strong>Start point</strong>: your chosen origin location</li>
+<strong>Start point (x, y)</strong>: click the <strong>…</strong>
+button, then click the Purdue Memorial Union on the map, or paste the
+coordinates from Step 5</li>
 <li>
 <strong>Vector layer with end points</strong>:
-<code>grocery_stores_projected</code>
+<code>supermarkets_utm</code>
 </li>
 <li>
-<strong>Shortest path</strong>: save as
-<code>routes_to_grocery</code>
-</li>
+<strong>Shortest path</strong>: leave as a temporary layer</li>
 <li>
-<strong>Non-routable features</strong>: save as
-<code>non_routable_grocery</code> or create a temporary layer</li>
-</ul><p>Run the tool.</p>
-<p>You should now have a line layer showing one route from the origin to
-each grocery store destination.</p>
-<div id="why-save-the-non-routable-output" class="callout">
+<strong>Non-routable features</strong>: leave as a temporary
+layer</li>
+</ul></li>
+<li>Click <strong>Run</strong>.</li>
+</ol><p>You now have a line layer, <strong>Shortest path</strong>, with one
+route from the origin to each supermarket. Its <code>cost</code> field
+is the route length in meters.</p>
+<div id="when-a-store-cannot-be-reached" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <span class="callout-header">Callout</span>
-<div id="why-save-the-non-routable-output" class="callout-inner">
-<h3 class="callout-title">Why save the non-routable output?</h3>
+<div id="when-a-store-cannot-be-reached" class="callout-inner">
+<h3 class="callout-title">When a store cannot be reached</h3>
 <div class="callout-content">
-<p>This layer is useful for teaching because it identifies destinations
-that could not be reached through the network. Those failures often
-reveal data quality problems, such as points too far from the road layer
-or disconnected network segments.</p>
+<p>If a store cannot be reached through the network, its route has an
+empty (<strong>NULL</strong>) cost. Stores that cannot be connected to
+the network at all are listed in the <strong>Non-routable
+features</strong> layer. Both usually point to a data problem: a store
+far from any road, a gap in the network, or a network clipped too
+tightly.</p>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="step-6-symbolize-and-inspect-the-routes">Step 6: Symbolize and inspect the routes<a class="anchor" aria-label="anchor" href="#step-6-symbolize-and-inspect-the-routes"></a></h2>
-<hr class="half-width"><ol style="list-style-type: decimal"><li>Style <code>routes_to_grocery</code> with a bold line color.</li>
-<li>Style grocery stores with a distinct point symbol.</li>
-<li>Style the origin point with a larger marker.</li>
-<li>Zoom to the study area and inspect the output.</li>
-</ol><ul><li>Which stores appear easiest to reach?</li>
-<li>Are any routes unexpectedly long?</li>
-<li>Are any stores missing from the routed output?</li>
-</ul><p>If the output contains several nearly overlapping lines, filter to a
-subset of stores or select a smaller study area for demonstration.</p>
-</section><section><h2 class="section-heading" id="step-7-measure-travel-cost-and-identify-the-nearest-options">Step 7: Measure travel cost and identify the nearest options<a class="anchor" aria-label="anchor" href="#step-7-measure-travel-cost-and-identify-the-nearest-options"></a></h2>
-<hr class="half-width"><ol style="list-style-type: decimal"><li>Open the attribute table for <code>routes_to_grocery</code>.</li>
-<li>Open the <strong>Field Calculator</strong>.</li>
-<li>Create a field named <code>route_m</code> using
-<code>$length</code>.</li>
-<li>Create another field named <code>route_km</code> using
-<code>$length / 1000</code> if desired.</li>
-<li>Sort the attribute table by <code>route_m</code> in ascending
-order.</li>
-</ol><p>This lets learners identify which stores are nearest by network
-distance instead of by straight-line distance.</p>
+</section><section><h2 class="section-heading" id="step-7-compare-network-and-straight-line-distance">Step 7: Compare network and straight-line distance<a class="anchor" aria-label="anchor" href="#step-7-compare-network-and-straight-line-distance"></a></h2>
+<hr class="half-width"><ol style="list-style-type: decimal"><li>Style the <strong>Shortest path</strong> layer with a bold, bright
+line, the supermarkets with a distinct point symbol, and the roads in
+light gray.</li>
+<li>Open the attribute table of <strong>Shortest path</strong> and click
+the <strong>Field Calculator</strong> button (the abacus icon).</li>
+<li>Create a new field <code>route_km</code> (<strong>Decimal
+number</strong>) with the expression <code>"cost" / 1000</code>.</li>
+<li>Create another field <code>straight_km</code> with the expression
+<code>distance(start_point($geometry), end_point($geometry)) / 1000</code>.
+This is the straight-line distance between the two ends of the
+route.</li>
+<li>Create a third field <code>detour</code> with the expression
+<code>"route_km" / "straight_km"</code>.</li>
+<li>Close the Field Calculator, turn off editing (save the edits), and
+sort the table by <code>route_km</code>.</li>
+</ol><figure><img src="../dc_routes_vs_straight.png" alt="Two maps of Lafayette and West Lafayette with an origin star at the Purdue Memorial Union and 17 black supermarket points. Left: purple straight lines radiate from the origin to each supermarket, averaging 5.0 kilometers. Right: orange routes follow the streets to the same stores, averaging 5.7 kilometers, crossing the Wabash River on the bridges near downtown Lafayette." class="figure mx-auto d-block"><div class="figcaption">Straight-line distance compared with network
+distance.</div>
+</figure><p>The nearest supermarket by road is about 1.3 km away. On average,
+routes are about 14% longer than straight lines, and some are much
+longer: the Walmart Supercenter on Veterans Memorial Parkway is 8.0 km
+away in a straight line but about 10.1 km by road, a detour of about
+1.3. The river, the few bridges, railroads and cul-de-sacs all force
+detours.</p>
 <div id="interpreting-route-results" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -650,8 +693,8 @@ distance instead of by straight-line distance.</p>
 <div id="interpreting-route-results" class="callout-inner">
 <h3 class="callout-title">Interpreting route results</h3>
 <div class="callout-content">
-<p>A store appears close on the map, but its route distance is much
-longer than expected. Name two possible reasons.</p>
+<p>A store looks close on the map, but its route is much longer than
+expected. Name two possible reasons.</p>
 </div>
 </div>
 </div>
@@ -660,66 +703,72 @@ longer than expected. Name two possible reasons.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
-<p>Possible reasons include:</p>
-<ul><li>the street network requires a detour because there is no direct
-connecting road</li>
-<li>the point is snapped to a road segment that is not the one learners
+<ul><li>The street network requires a detour, for example because there is
+no bridge or direct road</li>
+<li>The store or the origin snapped to a different road segment than you
 expected</li>
-<li>barriers such as limited crossings or cul-de-sacs increase network
-travel distance</li>
-<li>the grocery point or origin point is placed slightly off the true
-access location</li>
+<li>Barriers such as rivers, railroads, highways with few crossings, or
+cul-de-sacs</li>
+<li>The store point is slightly off its true entrance, for example in
+the middle of a large parking lot</li>
 </ul></div>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="step-8-create-service-areas-from-grocery-stores">Step 8: Create service areas from grocery stores<a class="anchor" aria-label="anchor" href="#step-8-create-service-areas-from-grocery-stores"></a></h2>
-<hr class="half-width"><p>Shortest routes answer the question, <strong>how do I get from one
-place to a store?</strong></p>
-<p>Service areas answer a different question, <strong>how far along the
-network can I travel from each store within a given distance or
-time?</strong></p>
-<p>In the Processing Toolbox, search for:</p>
-<p><strong>Service area (from layer)</strong></p>
-<p>Use these parameters:</p>
+</section><section><h2 class="section-heading" id="step-8-service-areas-around-supermarkets">Step 8: Service areas around supermarkets<a class="anchor" aria-label="anchor" href="#step-8-service-areas-around-supermarkets"></a></h2>
+<hr class="half-width"><p>Shortest paths answer the question: <strong>how do I get from one
+place to each store?</strong></p>
+<p>Service areas answer a different question: <strong>which streets are
+within a given distance of a store?</strong></p>
+<ol style="list-style-type: decimal"><li>In the Processing Toolbox, search for <strong>Service area (from
+layer)</strong> and open it.</li>
+<li>Set the parameters:
 <ul><li>
 <strong>Vector layer representing network</strong>:
-<code>roads_clip</code>
+<code>roads_utm</code>
 </li>
 <li>
 <strong>Vector layer with start points</strong>:
-<code>grocery_stores_projected</code>
+<code>supermarkets_utm</code>
 </li>
 <li>
-<strong>Path type to calculate</strong>: <code>Shortest</code>
+<strong>Path type to calculate</strong>:
+<strong>Shortest</strong>
 </li>
 <li>
-<strong>Travel cost</strong>: choose a value appropriate for your
-lesson, such as <code>800</code> meters for an approximate short walk or
-another value that matches your teaching goals</li>
-<li>save the output as <code>grocery_service_area</code>
-</li>
-</ul><p>Run the tool.</p>
-<p>The resulting output shows the network segments reachable from each
-grocery store within the chosen cost threshold.</p>
-</section><section><h2 class="section-heading" id="step-9-interpret-the-service-area">Step 9: Interpret the service area<a class="anchor" aria-label="anchor" href="#step-9-interpret-the-service-area"></a></h2>
-<hr class="half-width"><p>Service areas can support discussion questions such as:</p>
+<strong>Travel cost</strong>: <code>800</code> (meters, about a
+10-minute walk)</li>
+</ul></li>
+<li>Click <strong>Run</strong>.</li>
+</ol><p>The output, <strong>Service area (lines)</strong>, shows the parts of
+the street network you can reach within 800 m of a supermarket.</p>
+<figure><img src="../dc_service_area.png" alt="Map of Lafayette and West Lafayette roads in light gray, with green street segments around each of the 17 supermarkets showing the streets within 800 meters along the network. The green areas are small clusters around stores, mostly along the commercial corridors; most streets, including downtown Lafayette and much of the Purdue campus area, are gray." class="figure mx-auto d-block"><div class="figcaption">Streets within 800 meters of a
+supermarket.</div>
+</figure><p>Only about 11% of the street length inside the two cities is within
+an 800 m walk of a supermarket. Most supermarkets sit on commercial
+corridors at the edges of the cities, designed for people who drive.</p>
+</section><section><h2 class="section-heading" id="step-9-interpret-the-results">Step 9: Interpret the results<a class="anchor" aria-label="anchor" href="#step-9-interpret-the-results"></a></h2>
+<hr class="half-width"><p>Service areas support questions such as:</p>
 <ul><li>Which parts of the study area appear well served by the current
-store network?</li>
-<li>Which neighborhoods or campus zones appear less connected?</li>
-<li>How does the answer change if the travel cost is 400 m, 800 m, or
-1600 m?</li>
-</ul><p>At this stage, remind learners that the output is only as good as the
-network and assumptions behind it.</p>
-<p>For example:</p>
-<ul><li>a road centerline layer does not necessarily represent
-sidewalks</li>
-<li>a driving-oriented network may not be ideal for pedestrian
-access</li>
-<li>field-collected store points improve destination quality, but they
-do not fix a poor road dataset</li>
+supermarkets?</li>
+<li>Which neighborhoods appear poorly connected?</li>
+<li>How does the answer change with a travel cost of 400 m, 800 m or
+1,600 m?</li>
+</ul><p>Combine this with the census map from the Census episode. Of the six
+census tracts with the highest share of households <strong>without a
+car</strong>, four (tracts 4, 7, 105 and 112, in central Lafayette and
+around the Purdue campus) have almost no streets within 800 m of a
+supermarket. That is exactly where a food access problem would be
+expected.</p>
+<p>Remember that the result is only as good as the network and the
+assumptions behind it:</p>
+<ul><li>A road centerline layer does not show sidewalks, crosswalks or
+footpaths</li>
+<li>Highways appear walkable in the network, but are not</li>
+<li>Verified store points improve the destinations, but cannot fix a
+poor road layer</li>
 </ul><div id="reflection" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
@@ -728,69 +777,86 @@ do not fix a poor road dataset</li>
 <div id="reflection" class="callout-inner">
 <h3 class="callout-title">Reflection</h3>
 <div class="callout-content">
-<p>What kinds of real-world access are still missing from this analysis
+<p>What parts of real-world access are still missing from this analysis,
 even after using a network instead of straight-line distance?</p>
-</div>
-</div>
-</div>
 <p>Possible answers include sidewalk quality, crosswalks, traffic
-safety, store hours, prices, food quality, disability access, and
-whether the road network is truly walkable.</p>
-</section><section><h2 class="section-heading" id="step-10-save-outputs-for-later-episodes">Step 10: Save outputs for later episodes<a class="anchor" aria-label="anchor" href="#step-10-save-outputs-for-later-episodes"></a></h2>
-<hr class="half-width"><p>Save the following layers into the lesson geopackage or project
-folder:</p>
-<ul><li><code>grocery_stores_projected</code></li>
-<li><code>roads_clip</code></li>
-<li><code>origin_point</code></li>
-<li><code>routes_to_grocery</code></li>
-<li><code>non_routable_grocery</code></li>
-<li><code>grocery_service_area</code></li>
-</ul><p>These outputs can be reused in later episodes on:</p>
-<ul><li>accessibility comparison between neighborhoods</li>
-<li>joining service areas to census or block data</li>
-<li>map layout design</li>
-<li>reproducible analysis in the Processing Model Designer</li>
-<li>exporting results for a story map or final report</li>
-</ul><div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
+safety, bus routes, store hours, prices, food quality, disability
+access, and whether a road is really walkable.</p>
+</div>
+</div>
+</div>
+<div id="change-the-distance" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="change-the-distance" class="callout-inner">
+<h3 class="callout-title">Change the distance</h3>
+<div class="callout-content">
+<p>Run <strong>Service area (from layer)</strong> again with a travel
+cost of <code>1600</code> (about a 20-minute walk). How does the picture
+change?</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div class="accordion-body">
+<p>The share of city streets within reach rises from about 11% to about
+40%, and the green areas begin to join along the main corridors. But
+some areas are still left out: tract 105, beside the Purdue campus,
+where more than 40% of households have no car, has no streets within
+1,600 m of a supermarket along the network. Walking 20 minutes each way
+with groceries is a real burden, which is why access studies also
+consider car ownership and public transit.</p>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="step-10-save-your-outputs">Step 10: Save your outputs<a class="anchor" aria-label="anchor" href="#step-10-save-your-outputs"></a></h2>
+<hr class="half-width"><p>Temporary layers disappear when QGIS closes. To keep them,
+right-click each one and choose <strong>Export &gt; Save Features
+As…</strong>, and save it to a GeoPackage (for example
+<code>grocery_access.gpkg</code>) with a different <strong>Layer
+name</strong> for each:</p>
+<ul><li><code>supermarkets_utm</code></li>
+<li><code>roads_utm</code></li>
+<li><code>shortest_paths</code></li>
+<li><code>service_area_800m</code></li>
+</ul><p>Then save the project (<strong>Project &gt; Save</strong>). These
+outputs can be reused to join service areas to census data, to design a
+map layout, or to compare neighborhoods.</p>
+<div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
   <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Instructor notes </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
 <div class="accordion-body">
-<div class="section level3">
-<h3 id="suggested-pacing">Suggested pacing<a class="anchor" aria-label="anchor" href="#suggested-pacing"></a></h3>
-<ul><li>Introduction and setup: 10 minutes</li>
-<li>Data inspection and projection: 15 minutes</li>
-<li>Shortest path analysis: 20 minutes</li>
-<li>Service area analysis: 15 minutes</li>
-<li>Discussion and interpretation: 10 minutes</li>
-<li>Challenge and troubleshooting time: 15 minutes</li>
-</ul></div>
-<div class="section level3">
-<h3 id="recommended-teaching-strategy">Recommended teaching strategy<a class="anchor" aria-label="anchor" href="#recommended-teaching-strategy"></a></h3>
-<p>Keep the lesson focused on one clear idea: network distance differs
-from straight-line distance. Learners already collected grocery store
-data in the previous lesson, so the sequel should emphasize analytical
-payoff.</p>
-</div>
-<div class="section level3">
-<h3 id="common-learner-problems">Common learner problems<a class="anchor" aria-label="anchor" href="#common-learner-problems"></a></h3>
-<ul><li>layers are not projected consistently</li>
-<li>grocery points do not sit close enough to the road network</li>
-<li>road network is clipped too tightly and breaks valid routes</li>
-<li>learners confuse service areas with buffers</li>
-<li>outputs are saved as temporary layers and then lost</li>
-</ul></div>
-<div class="section level3">
-<h3 id="good-extension-ideas">Good extension ideas<a class="anchor" aria-label="anchor" href="#good-extension-ideas"></a></h3>
-<ul><li>compare shortest versus fastest paths</li>
-<li>build a small housing-origin layer and use a many-to-one routing
-workflow</li>
-<li>compare service areas across different travel thresholds</li>
-<li>discuss whether a road network is an appropriate proxy for
-pedestrian access</li>
-</ul></div>
+<p><strong>Suggested pacing</strong>: loading and inspection 10 minutes;
+extracting and reprojecting 15; shortest paths 15; comparing distances
+10; service areas 15; discussion and challenges 15.</p>
+<p><strong>Teaching strategy</strong>: keep the lesson focused on one
+idea: network distance differs from straight-line distance. Connect it
+to the census episode’s map of households without a car.</p>
+<p><strong>Common learner problems</strong>:</p>
+<ul><li>the project CRS is left in EPSG:4326, so costs appear in
+degrees</li>
+<li>layers are not reprojected consistently</li>
+<li>the road network is clipped too tightly (show the clipping
+figure)</li>
+<li>learners confuse service areas with buffers (a buffer ignores
+roads)</li>
+<li>outputs are left as temporary layers and lost</li>
+</ul><p><strong>Extensions</strong>: compare shortest and fastest paths;
+build a layer of several origins (residence halls or apartment
+complexes); convert service area lines to polygons with the
+<strong>Concave hull</strong> tool; join service areas to census
+tracts.</p>
 </div>
 </div>
 </div>
@@ -802,23 +868,23 @@ pedestrian access</li>
 <span class="callout-header">Key Points</span>
 <div class="callout-inner">
 <div class="callout-content">
-<ul><li>Grocery points collected in QField become much more analytically
-useful when paired with a road network.</li>
-<li>Network analysis answers access questions that straight-line
-distance cannot.</li>
-<li>Shortest path tools are useful for route comparison, while service
-area tools estimate reachable portions of the network.</li>
-<li>Projected data, clean destination points, and a connected road layer
-are essential for reliable outputs.</li>
-<li>Saving routable and non-routable results supports interpretation and
-troubleshooting.</li>
+<ul><li>Grocery store points become far more useful for access questions
+when combined with a road network</li>
+<li>Reproject layers and set the project CRS to a projected system so
+that costs are in meters</li>
+<li>Shortest path tools compare routes; service area tools show which
+streets are within reach</li>
+<li>Network distance is longer than straight-line distance, sometimes by
+much more than expected</li>
+<li>Clipping a network to an irregular boundary can break routes; check
+for unreachable destinations</li>
 </ul></div>
 </div>
 </div>
 <!--
-Place links that you need to refer to multiple times across pages here. Delete
-any links that you are not going to use.
- -->
+Links listed here can be reused across pages as [text][name].
+Add reference-style links below as needed.
+-->
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter Bottom"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/qfield.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
@@ -828,7 +894,7 @@ any links that you are not going to use.
       <div class="d-none d-sm-none d-md-block">
         <a class="chapter-link" href="../instructor/qfield.html" rel="prev">
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>
-          Previous: QField Training: Mapping Grocery Stores...
+          Previous: QField Demonstration: Mapping Grocery...
         </a>
         <a class="chapter-link float-end" href="../instructor/index.html" rel="next">
           Home
@@ -843,14 +909,14 @@ any links that you are not going to use.
         <p>This lesson is subject to the <a href="CODE_OF_CONDUCT.html">Code of Conduct</a></p>
         <p>
 
-        <a href="https://github.com/SocialTurn/DataCollection/edit/main/episodes/qfield-network.md" class="external-link">Edit on GitHub</a>
+        <a href="https://github.com/SpatialTurn/DataCollection/edit/main/episodes/qfield-network.md" class="external-link">Edit on GitHub</a>
 
 	
-        | <a href="https://github.com/SocialTurn/DataCollection/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
-        | <a href="https://github.com/SocialTurn/DataCollection/" class="external-link">Source</a></p>
+        | <a href="https://github.com/SpatialTurn/DataCollection/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
+        | <a href="https://github.com/SpatialTurn/DataCollection/" class="external-link">Source</a></p>
         <p>
         <a href="../citation.html">Cite</a>
-        | <a href="mailto:rkalyanapurdue@gmail.com">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
+        | <a href="mailto:ilindsay@purdue.edu">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 		</div>
 		<div class="col-md-6">
 
@@ -869,18 +935,18 @@ any links that you are not going to use.
     {
   "@context": "https://schema.org",
   "@type": "LearningResource",
-  "@id": "https://SocialTurn.github.io/DataCollection/instructor/qfield-network.html",
+  "@id": "https://SpatialTurn.github.io/DataCollection/instructor/qfield-network.html",
   "inLanguage": "en",
   "dct:conformsTo": "https://bioschemas.org/profiles/LearningResource/1.0-RELEASE",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
-  "keywords": "GIS, data, FAIR, social science",
+  "keywords": "GIS, data collection, U.S. Census, American Community Survey, Census API, satellite imagery, QField, network analysis, FAIR, social science",
   "name": "Network Analysis for Grocery Access in QGIS",
   "creativeWorkStatus": "active",
-  "url": "https://SocialTurn.github.io/DataCollection/instructor/qfield-network.html",
-  "identifier": "https://SocialTurn.github.io/DataCollection/instructor/qfield-network.html",
+  "url": "https://SpatialTurn.github.io/DataCollection/instructor/qfield-network.html",
+  "identifier": "https://SpatialTurn.github.io/DataCollection/instructor/qfield-network.html",
   "dateCreated": "2024-08-08",
-  "dateModified": "2026-04-15",
-  "datePublished": "2026-10-13"
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17"
 }
 
   </script><script>

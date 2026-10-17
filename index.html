@@ -27,13 +27,13 @@
         <a href="index.html">
         <img id="incubator-logo" alt="GIS Data Collection for Social Scientists" src="assets/images/incubator-logo.svg"></a>
 
-        <span class="badge text-bg-danger">
-          <abbr title="This lesson is in the pre-alpha phase, which means that it is in early development, but has not yet been taught.">
+        <span class="badge text-bg-warning">
+          <abbr title="This lesson is in the alpha phase, which means that it has been taught once and lesson authors are iterating on feedback.">
             <a href="https://docs.carpentries.org/resources/curriculum/lesson-life-cycle.html" class="external-link alert-link">
-              <i aria-hidden="true" class="icon" data-feather="alert-octagon" style="border-radius: 5px"></i>
-              Pre-Alpha
+              <i aria-hidden="true" class="icon" data-feather="alert-triangle" style="border-radius: 5px"></i>
+              Alpha
             </a>
-            <span class="visually-hidden">This lesson is in the pre-alpha phase, which means that it is in early development, but has not yet been taught.</span>
+            <span class="visually-hidden">This lesson is in the alpha phase, which means that it has been taught once and lesson authors are iterating on feedback.</span>
           </abbr>
         </span>
 
@@ -206,8 +206,12 @@
 
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#data-sets">Data Sets</a></li>
-<li><a href="#software-setup">Software Setup</a></li>
+        <ul><li><a href="#what-you-need">What you need</a></li>
+<li><a href="#part-1-get-a-census-api-key">Part 1: Get a Census API key</a></li>
+<li><a href="#part-2-google-colab">Part 2: Google Colab</a></li>
+<li><a href="#part-3-install-qgis">Part 3: Install QGIS</a></li>
+<li><a href="#part-4-optional-qfield">Part 4 (optional): QField</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
 
@@ -217,7 +221,7 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="census.html">1. Data from U.S. Census Bureau</a>
+        <a href="introduction.html">1. Introduction to Data Collection</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -226,7 +230,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="imagery.html">2. Acquiring Raster Data using Imagery Databases</a>
+        <a href="repositories.html">2. Finding Data in Repositories</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -235,7 +239,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="imageryvector.html">3. Acquiring Vector Datasets from Data Repositories</a>
+        <a href="census.html">3. Data from the U.S. Census Bureau</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -244,7 +248,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="field.html">4. Field-based Data Collection</a>
+        <a href="imagery.html">4. Acquiring Imagery: Scanned Maps and Satellite Data</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -253,7 +257,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="qfield.html">5. QField Training: Mapping Grocery Stores to Identify Potential Food Deserts</a>
+        <a href="field.html">5. Collecting Data in the Field</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -262,7 +266,16 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="qfield-network.html">6. Network Analysis for Grocery Access in QGIS</a>
+        <a href="qfield.html">6. QField Demonstration: Mapping Grocery Stores</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush8">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading8">
+        <a href="qfield-network.html">7. Network Analysis for Grocery Access in QGIS</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -324,72 +337,195 @@
         <!-- START: inst/pkgdown/templates/content-syllabus.html -->
   <div class="col-xl-8 col-lg-12 primary-content">
     <nav class="lesson-content mx-md-4" aria-label="Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
-        <a class="chapter-link float-end" href="census.html" rel="next">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="introduction.html" rel="next">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
-        <a class="chapter-link float-end" href="census.html" rel="next">Next: Data from U.S. Census Bureau... <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="introduction.html" rel="next">Next: Introduction to Data Collection... <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
     </nav><main id="main-content" class="main-content"><h1 class="schedule-heading">Summary and Setup</h1>
       
 
-<p>One of the primary challenges with the utilization of digital
-datasets in the social sciences is a lack of data literacy skills in
-collecting data. This includes both data collection from existing data
-repositories and field-based data collections such as observation data,
-interviews, and surveys. This module will provide learning materials on
-both sides to prepare the researchers with data collection skills at
-beginner, intermediate, and expert levels.</p>
-<div id="getting-started" class="callout prereq">
+<p>One of the main challenges in using digital data in the social
+sciences is knowing how to <strong>collect</strong> it: where to find
+existing data, how to judge whether it can be trusted, and how to gather
+original data when nothing suitable exists. This module covers both
+sides, from data repositories and the U.S. Census Bureau to satellite
+imagery and field data collection with a phone.</p>
+<table class="table"><colgroup><col width="33%"><col width="33%"><col width="33%"></colgroup><thead><tr><th>Episode</th>
+<th>What you will learn</th>
+<th>Tools</th>
+</tr></thead><tbody><tr><td>Introduction to Data Collection</td>
+<td>When to use existing data or collect your own; vector and raster
+data; judging data quality; FAIR data</td>
+<td>Concepts</td>
+</tr><tr><td>Finding Data in Repositories</td>
+<td>Where to find free vector data, how to read metadata, and how to
+load data from the web</td>
+<td>Web browser, QGIS</td>
+</tr><tr><td>Data from the U.S. Census Bureau</td>
+<td>Census geography, the Decennial Census and the ACS, margins of
+error, and the Census API</td>
+<td>Web browser, Python notebooks</td>
+</tr><tr><td>Acquiring Imagery</td>
+<td>Scanned historic maps, declassified CORONA imagery and Sentinel-2
+satellite data</td>
+<td>Web browser, QGIS</td>
+</tr><tr><td>Collecting Data in the Field</td>
+<td>Methods and apps, designing a schema, GPS accuracy, ethics and
+quality checks</td>
+<td>Concepts</td>
+</tr><tr><td>QField Demonstration</td>
+<td>A complete field workflow for mapping grocery stores</td>
+<td>QField, QGIS</td>
+</tr><tr><td>Network Analysis for Grocery Access</td>
+<td>Shortest paths and service areas along the road network</td>
+<td>QGIS</td>
+</tr></tbody></table><p>The Census, QField and network analysis episodes share one example:
+<strong>access to grocery stores in Lafayette and West Lafayette,
+Indiana</strong>.</p>
+<div id="prerequisites" class="callout prereq">
 <div class="callout-square">
 <i class="callout-icon" data-feather="check"></i>
 </div>
 <span class="callout-header">Prerequisite</span>
-<div id="getting-started" class="callout-inner">
-<h3 class="callout-title">Getting Started</h3>
+<div id="prerequisites" class="callout-inner">
+<h3 class="callout-title">Prerequisites</h3>
 <div class="callout-content">
-<p>These modules are intended to be hands-on through the use of Jupyter
-notebooks. No prior experience is assumed in order to use these
-materials.</p>
+<ul><li>A Google account, to open the notebooks in Google Colab</li>
+<li>A free Census API key (see Setup below)</li>
+<li>QGIS installed on your computer (see Setup below)</li>
+<li>For the notebooks: basic Python, such as running cells and working
+with a <code>pandas</code> DataFrame</li>
+<li>No prior GIS experience is needed</li>
+</ul></div>
 </div>
 </div>
-</div>
+<p>This module is part of <a href="https://spatialturn.github.io/" class="external-link">Enabling the Geospatial Turn in
+the Social Sciences</a>, a set of training modules developed at Purdue
+University with support from the National Science Foundation.</p>
 <!--
-Place links that you need to refer to multiple times across pages here. Delete
-any links that you are not going to use.
- -->
+Links listed here can be reused across pages as [text][name].
+Add reference-style links below as needed.
+-->
 
 
-      <section id="setup"><section><h2 class="section-heading" id="data-sets">Data Sets<a class="anchor" aria-label="anchor" href="#data-sets"></a></h2>
-<hr class="half-width"><p>Each lesson will provide instructions on where to access and download
-the relevant datasets.</p>
-</section><section><h2 class="section-heading" id="software-setup">Software Setup<a class="anchor" aria-label="anchor" href="#software-setup"></a></h2>
-<hr class="half-width"><div id="details" class="callout discussion">
-<div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
-</div>
-<span class="callout-header">Discussion</span>
-<div id="details" class="callout-inner">
-<h3 class="callout-title">Details</h3>
-<div class="callout-content">
-<p>We will be utilizing Jupyter notebooks for most of the hands-on
-activities. A public JupyterHub server has been setup for these lessons,
-where you can login with your institutional credentials. Some of the
-lessons will require the use of a desktop GIS tool such as QGIS. You can
-download the version of QGIS for your operating system <a href="https://www.qgis.org/download" class="external-link">here</a>.</p>
-</div>
-</div>
-</div>
-<!--
-Place links that you need to refer to multiple times across pages here. Delete
-any links that you are not going to use.
- -->
-</section></section></main><nav class="bottom-pagination mx-md-4" aria-label="Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
-        <a class="chapter-link float-end" href="census.html" rel="next">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+      <section id="setup"><p>This module uses free tools only:</p>
+<ul><li>
+<strong>A web browser</strong> for the repositories, the Census API
+and the imagery websites</li>
+<li>
+<strong>Google Colab</strong> for the Python notebooks in the Census
+episode. It runs in your browser, so there is nothing to install.</li>
+<li>
+<strong>QGIS</strong> for the imagery and network analysis episodes.
+It is a desktop program you install once.</li>
+<li>
+<strong>QField</strong> (optional) if you want to try field data
+collection on your phone</li>
+</ul><section><h2 class="section-heading" id="what-you-need">What you need<a class="anchor" aria-label="anchor" href="#what-you-need"></a></h2>
+<hr class="half-width"><ul><li>A Google account (for Colab)</li>
+<li>A computer where you can install software (for QGIS)</li>
+<li>A free <strong>Census API key</strong> for Census notebooks 1b and
+1c and the API examples (see below)</li>
+<li>Optional: free accounts on <a href="https://earthexplorer.usgs.gov/" class="external-link">USGS EarthExplorer</a> and the <a href="https://browser.dataspace.copernicus.eu/" class="external-link">Copernicus Browser</a>
+to download satellite imagery</li>
+</ul></section><section><h2 class="section-heading" id="part-1-get-a-census-api-key">Part 1: Get a Census API key<a class="anchor" aria-label="anchor" href="#part-1-get-a-census-api-key"></a></h2>
+<hr class="half-width"><p><strong>Every learner needs their own key.</strong> It is free and
+takes a few minutes.</p>
+<ol style="list-style-type: decimal"><li>Go to <a href="https://api.census.gov/data/key_signup.html" class="external-link uri">https://api.census.gov/data/key_signup.html</a>.</li>
+<li>Enter your organization (for example, Purdue University) and your
+email address, and agree to the terms.</li>
+<li>Check your email. The key arrives within a few minutes.</li>
+<li>
+<strong>Click the activation link in the email.</strong> The key
+does not work until you do.</li>
+<li>Keep the key somewhere safe. Treat it like a password: do not post
+it online or leave it in a notebook you share.</li>
+</ol></section><section><h2 class="section-heading" id="part-2-google-colab">Part 2: Google Colab<a class="anchor" aria-label="anchor" href="#part-2-google-colab"></a></h2>
+<hr class="half-width"><ol style="list-style-type: decimal"><li>Click a notebook link in the table in the Census episode. It opens
+in Colab.</li>
+<li>Click <strong>File &gt; Save a copy in Drive</strong> so your
+changes are kept.</li>
+<li>Paste your Census API key where the notebook asks for it.</li>
+<li>Run cells from top to bottom: click a cell and press <strong>Shift +
+Enter</strong>.</li>
+<li>If Colab warns that the notebook was not written by Google, click
+<strong>Run anyway</strong>.</li>
+</ol><p>The notebooks read all their data straight from the Census Bureau’s
+website, so you never need to download anything.</p>
+</section><section><h2 class="section-heading" id="part-3-install-qgis">Part 3: Install QGIS<a class="anchor" aria-label="anchor" href="#part-3-install-qgis"></a></h2>
+<hr class="half-width"><p><strong>QGIS</strong> is a free, open source Geographic Information
+System (GIS) for viewing, analyzing and mapping spatial data.</p>
+<ol style="list-style-type: decimal"><li>Go to <a href="https://qgis.org" class="external-link uri">https://qgis.org</a>
+and click <strong>Download</strong>.</li>
+<li>Choose the <strong>Long Term Release (LTR)</strong> version, the
+most stable one.
+<ul><li>
+<strong>Windows:</strong> the standalone installer
+(<code>.msi</code>)</li>
+<li>
+<strong>macOS:</strong> the macOS installer (<code>.dmg</code>). The
+first time you open QGIS, you may need to right-click the app and choose
+<strong>Open</strong> to get past the security warning.</li>
+<li>
+<strong>Linux:</strong> follow the instructions for your
+distribution on the QGIS download page</li>
+</ul></li>
+<li>Run the installer and keep the default settings.</li>
+<li>Open <strong>QGIS Desktop</strong>.</li>
+</ol><p>If you are new to QGIS, the Data Visualization module’s “Getting
+Started with QGIS” episode introduces the interface.</p>
+<div class="section level3">
+<h3 id="loading-the-lesson-data-in-qgis">Loading the lesson data in QGIS<a class="anchor" aria-label="anchor" href="#loading-the-lesson-data-in-qgis"></a></h3>
+<p>The network analysis episode reads its data straight from this
+lesson’s repository:</p>
+<ol style="list-style-type: decimal"><li><strong>Layer &gt; Add Layer &gt; Add Vector Layer</strong></li>
+<li>
+<strong>Source Type</strong>: <strong>Protocol: HTTP(S), cloud,
+etc.</strong>
+</li>
+<li>Paste the address given in the episode into <strong>URI</strong>,
+then click <strong>Add</strong>
+</li>
+</ol></div>
+</section><section><h2 class="section-heading" id="part-4-optional-qfield">Part 4 (optional): QField<a class="anchor" aria-label="anchor" href="#part-4-optional-qfield"></a></h2>
+<hr class="half-width"><p>To try field data collection yourself:</p>
+<ol style="list-style-type: decimal"><li>Install <strong>QField</strong> from <a href="https://qfield.org/" class="external-link uri">https://qfield.org/</a> (Android and iOS app stores, or
+Windows, macOS and Linux).</li>
+<li>In QGIS, install the <strong>QFieldSync</strong> plugin:
+<strong>Plugins &gt; Manage and Install Plugins</strong>, search for
+QFieldSync, and click <strong>Install Plugin</strong>.</li>
+</ol><p>The QField episode is a demonstration, so this part is not
+required.</p>
+</section><section><h2 class="section-heading" id="troubleshooting">Troubleshooting<a class="anchor" aria-label="anchor" href="#troubleshooting"></a></h2>
+<hr class="half-width"><table class="table"><colgroup><col width="50%"><col width="50%"></colgroup><thead><tr><th>Problem</th>
+<th>Fix</th>
+</tr></thead><tbody><tr><td>The Census API returns a “Missing Key” or “Invalid Key” page</td>
+<td>Check that you clicked the activation link in the email, and that
+the key was pasted completely</td>
+</tr><tr><td>A notebook cell says <code>NameError</code>
+</td>
+<td>A cell above it was skipped. Use <strong>Runtime &gt; Run
+before</strong>
+</td>
+</tr><tr><td>QGIS will not open on macOS</td>
+<td>Right-click the app, choose <strong>Open</strong>, then confirm</td>
+</tr><tr><td>A layer loaded from a web address shows nothing</td>
+<td>Right-click the layer and choose <strong>Zoom to Layer</strong>;
+check that the address was pasted completely</td>
+</tr><tr><td>Network analysis costs look tiny (such as 0.04)</td>
+<td>Set the project coordinate system to EPSG:26916 (bottom-right corner
+of the QGIS window)</td>
+</tr></tbody></table><!--
+Links listed here can be reused across pages as [text][name].
+Add reference-style links below as needed.
+--></section></section></main><nav class="bottom-pagination mx-md-4" aria-label="Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
+        <a class="chapter-link float-end" href="introduction.html" rel="next">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
       <div class="d-none d-sm-none d-md-block">
-        <a class="chapter-link float-end" href="census.html" rel="next">Next: Data from U.S. Census Bureau... <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
+        <a class="chapter-link float-end" href="introduction.html" rel="next">Next: Introduction to Data Collection... <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
     </nav></div>
 <!-- END  : inst/pkgdown/templates/content-syllabus.html -->
@@ -399,14 +535,14 @@ any links that you are not going to use.
         <p>This lesson is subject to the <a href="CODE_OF_CONDUCT.html">Code of Conduct</a></p>
         <p>
 
-        <a href="https://github.com/SocialTurn/DataCollection/edit/main/index.md" class="external-link">Edit on GitHub</a>
+        <a href="https://github.com/SpatialTurn/DataCollection/edit/main/index.md" class="external-link">Edit on GitHub</a>
 
 	
-        | <a href="https://github.com/SocialTurn/DataCollection/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
-        | <a href="https://github.com/SocialTurn/DataCollection/" class="external-link">Source</a></p>
+        | <a href="https://github.com/SpatialTurn/DataCollection/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
+        | <a href="https://github.com/SpatialTurn/DataCollection/" class="external-link">Source</a></p>
         <p>
         <a href="citation.html">Cite</a>
-        | <a href="mailto:rkalyanapurdue@gmail.com">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
+        | <a href="mailto:ilindsay@purdue.edu">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 		</div>
 		<div class="col-md-6">
 
@@ -425,18 +561,18 @@ any links that you are not going to use.
     {
   "@context": "https://schema.org",
   "@type": "LearningResource",
-  "@id": "https://SocialTurn.github.io/DataCollection/index.html",
+  "@id": "https://SpatialTurn.github.io/DataCollection/index.html",
   "inLanguage": "en",
   "dct:conformsTo": "https://bioschemas.org/profiles/LearningResource/1.0-RELEASE",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
-  "keywords": "GIS, data, FAIR, social science",
+  "keywords": "GIS, data collection, U.S. Census, American Community Survey, Census API, satellite imagery, QField, network analysis, FAIR, social science",
   "name": "GIS Data Collection for Social Scientists",
   "creativeWorkStatus": "active",
-  "url": "https://SocialTurn.github.io/DataCollection/index.html",
-  "identifier": "https://SocialTurn.github.io/DataCollection/index.html",
+  "url": "https://SpatialTurn.github.io/DataCollection/index.html",
+  "identifier": "https://SpatialTurn.github.io/DataCollection/index.html",
   "dateCreated": "2024-08-08",
-  "dateModified": "2026-10-13",
-  "datePublished": "2026-10-13"
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17"
 }
 
   </script><script>

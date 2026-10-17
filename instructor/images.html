@@ -43,13 +43,13 @@
         <a href="index.html">
         <img id="incubator-logo" alt="GIS Data Collection for Social Scientists" src="../assets/images/incubator-logo.svg"></a>
 
-        <span class="badge text-bg-danger">
-          <abbr title="This lesson is in the pre-alpha phase, which means that it is in early development, but has not yet been taught.">
+        <span class="badge text-bg-warning">
+          <abbr title="This lesson is in the alpha phase, which means that it has been taught once and lesson authors are iterating on feedback.">
             <a href="https://docs.carpentries.org/resources/curriculum/lesson-life-cycle.html" class="external-link alert-link">
-              <i aria-hidden="true" class="icon" data-feather="alert-octagon" style="border-radius: 5px"></i>
-              Pre-Alpha
+              <i aria-hidden="true" class="icon" data-feather="alert-triangle" style="border-radius: 5px"></i>
+              Alpha
             </a>
-            <span class="visually-hidden">This lesson is in the pre-alpha phase, which means that it is in early development, but has not yet been taught.</span>
+            <span class="visually-hidden">This lesson is in the alpha phase, which means that it has been taught once and lesson authors are iterating on feedback.</span>
           </abbr>
         </span>
 
@@ -245,7 +245,7 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="census.html">1. Data from U.S. Census Bureau</a>
+        <a href="introduction.html">1. Introduction to Data Collection</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -257,7 +257,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="imagery.html">2. Acquiring Raster Data using Imagery Databases</a>
+        <a href="repositories.html">2. Finding Data in Repositories</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -269,7 +269,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="imageryvector.html">3. Acquiring Vector Datasets from Data Repositories</a>
+        <a href="census.html">3. Data from the U.S. Census Bureau</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -281,7 +281,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="field.html">4. Field-based Data Collection</a>
+        <a href="imagery.html">4. Acquiring Imagery: Scanned Maps and Satellite Data</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -293,7 +293,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="qfield.html">5. QField Training: Mapping Grocery Stores to Identify Potential Food Deserts</a>
+        <a href="field.html">5. Collecting Data in the Field</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -305,7 +305,19 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="qfield-network.html">6. Network Analysis for Grocery Access in QGIS</a>
+        <a href="qfield.html">6. QField Demonstration: Mapping Grocery Stores</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush8">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading8">
+        <a href="qfield-network.html">7. Network Analysis for Grocery Access in QGIS</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -388,17 +400,54 @@
     <main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>All Images</h1>
         
-<section id="census"><h2 class="section-heading"><a href="census.html">Data from U.S. Census Bureau</a></h2>
+<section id="introduction"><h2 class="section-heading"><a href="introduction.html">Introduction to Data Collection</a></h2>
+<hr class="half-width">
+<h3 id="introduction-figure-1">Figure 1</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Flow diagram. Step 1, define the question, leads to step 2, does suitable data already exist? If yes, step 3a, find it in a repository or API, then step 4a, check quality, license and metadata. If no, step 3b, design a field form and schema, then step 4b, collect and quality-check. Both paths end at step 5, document and analyze. A dashed arrow from 4a to 3b says: not good enough? Fill the gaps yourself.’</p>
+<figure><img src="../dc_workflow.png" alt="Flow diagram. Step 1, define the question, leads to step 2, does suitable data already exist? If yes, step 3a, find it in a repository or API, then step 4a, check quality, license and metadata. If no, step 3b, design a field form and schema, then step 4b, collect and quality-check. Both paths end at step 5, document and analyze. A dashed arrow from 4a to 3b says: not good enough? Fill the gaps yourself." class="figure mx-auto d-block"><div class="figcaption">A data collection workflow.</div>
+</figure><hr>
+<h3 id="introduction-figure-2">Figure 2</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Two panels of the same 5 by 4 kilometer area of West Lafayette and Lafayette. Left, vector: orange store points, gray road lines and a light blue city polygon. Right, raster: a grid of 200 meter gray cells, darker where there is more road length in the cell, so the road pattern appears as a blocky texture.’</p>
+<figure><img src="../dc_raster_vector.png" alt="Two panels of the same 5 by 4 kilometer area of West Lafayette and Lafayette. Left, vector: orange store points, gray road lines and a light blue city polygon. Right, raster: a grid of 200 meter gray cells, darker where there is more road length in the cell, so the road pattern appears as a blocky texture." class="figure mx-auto d-block"><div class="figcaption">The same area as vector and raster data.</div>
+</figure><hr></section><section id="repositories"><h2 class="section-heading"><a href="repositories.html">Finding Data in Repositories</a></h2>
+<hr class="half-width"></section><section id="census"><h2 class="section-heading"><a href="census.html">Data from the U.S. Census Bureau</a></h2>
 <hr class="half-width">
 <h3 id="census-figure-1">Figure 1</h3>
-<p aria-hidden="true">Image 1 of 1: ‘Census USA Map’</p>
-<figure><img src="../official_census.png" title="A map showing U.S. Census Bureau TIGER/Line shapefile boundaries for states and counties." alt="Census USA Map" class="figure mx-auto d-block"><div class="figcaption">Census USA Map</div>
-</figure><hr></section><section id="imagery"><h2 class="section-heading"><a href="imagery.html">Acquiring Raster Data using Imagery Databases</a></h2>
-<hr class="half-width"></section><section id="imageryvector"><h2 class="section-heading"><a href="imageryvector.html">Acquiring Vector Datasets from Data Repositories</a></h2>
-<hr class="half-width"></section><section id="field"><h2 class="section-heading"><a href="field.html">Field-based Data CollectionModule Overview<a class="anchor" aria-label="anchor" href="#module-overview"></a></a></h2>
-<hr class="half-width"></section><section id="qfield"><h2 class="section-heading"><a href="qfield.html">QField Training: Mapping Grocery Stores to Identify Potential Food Deserts</a></h2>
+<p aria-hidden="true">Image 1 of 1: ‘Three panels. Left: Indiana's 92 counties, with Tippecanoe County, GEOID 18157, highlighted. Middle: the 43 census tracts of Tippecanoe County, small in the cities and large in rural areas, with tract 106, GEOID 18157010600, highlighted. Right: tract 106 divided into four block groups with GEOIDs 181570106001 to 181570106004.’</p>
+<figure><img src="../dc_census_geographies.png" alt="Three panels. Left: Indiana's 92 counties, with Tippecanoe County, GEOID 18157, highlighted. Middle: the 43 census tracts of Tippecanoe County, small in the cities and large in rural areas, with tract 106, GEOID 18157010600, highlighted. Right: tract 106 divided into four block groups with GEOIDs 181570106001 to 181570106004." class="figure mx-auto d-block"><div class="figcaption">Census geographies nest inside each other.</div>
+</figure><hr>
+<h3 id="census-figure-2">Figure 2</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Dot plot of the percent of households without a vehicle in 16 Indiana counties, each with a horizontal error bar. LaGrange County is far above the rest at 29.2 percent, plus or minus 2.2. Large counties such as Marion, Lake, Allen and Hamilton have very short error bars. Small counties such as Ohio, Union, Benton, Warren and Blackford have wide error bars spanning several percentage points.’</p>
+<figure><img src="../dc_moe_counties.png" alt="Dot plot of the percent of households without a vehicle in 16 Indiana counties, each with a horizontal error bar. LaGrange County is far above the rest at 29.2 percent, plus or minus 2.2. Large counties such as Marion, Lake, Allen and Hamilton have very short error bars. Small counties such as Ohio, Union, Benton, Warren and Blackford have wide error bars spanning several percentage points." class="figure mx-auto d-block"><div class="figcaption">ACS estimates with their margins of error.</div>
+</figure><hr>
+<h3 id="census-figure-3">Figure 3</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Two choropleth maps of the share of households without a vehicle by census tract, in five classes from light yellow (0 to 3 percent) to dark red (15 to 41 percent). Left, all of Tippecanoe County: rural tracts are light and many are hatched as low reliability. Right, a zoom on Lafayette and West Lafayette: the darkest tracts are near downtown Lafayette and the Purdue campus, such as tracts 4, 55 and 105. Tract 104, on campus, is gray because it has no households.’</p>
+<figure><img src="../dc_no_car_tracts.png" alt="Two choropleth maps of the share of households without a vehicle by census tract, in five classes from light yellow (0 to 3 percent) to dark red (15 to 41 percent). Left, all of Tippecanoe County: rural tracts are light and many are hatched as low reliability. Right, a zoom on Lafayette and West Lafayette: the darkest tracts are near downtown Lafayette and the Purdue campus, such as tracts 4, 55 and 105. Tract 104, on campus, is gray because it has no households." class="figure mx-auto d-block"><div class="figcaption">Households without a vehicle by census tract in
+Tippecanoe County.</div>
+</figure><hr></section><section id="imagery"><h2 class="section-heading"><a href="imagery.html">Acquiring Imagery: Scanned Maps and Satellite Data</a></h2>
+<hr class="half-width"></section><section id="field"><h2 class="section-heading"><a href="field.html">Collecting Data in the Field</a></h2>
+<hr class="half-width">
+<h3 id="field-figure-1">Figure 1</h3>
+<p aria-hidden="true">Image 1 of 1: ‘A store location in West Lafayette drawn as a black dot, surrounded by three accuracy circles: 3 meters (a good phone fix under open sky), 10 meters (the target), and 30 meters, which reaches toward the road and neighboring lots. A scale bar shows 30 meters.’</p>
+<figure><img src="../dc_gps_accuracy.png" alt="A store location in West Lafayette drawn as a black dot, surrounded by three accuracy circles: 3 meters (a good phone fix under open sky), 10 meters (the target), and 30 meters, which reaches toward the road and neighboring lots. A scale bar shows 30 meters." class="figure mx-auto d-block"><div class="figcaption">How far off could a recorded point be?</div>
+</figure><hr></section><section id="qfield"><h2 class="section-heading"><a href="qfield.html">QField Demonstration: Mapping Grocery Stores</a></h2>
 <hr class="half-width"></section><section id="qfield-network"><h2 class="section-heading"><a href="qfield-network.html">Network Analysis for Grocery Access in QGIS</a></h2>
-<hr class="half-width"></section>
+<hr class="half-width">
+<h3 id="qfield-network-figure-1">Figure 1</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Two maps of Lafayette and West Lafayette. Left: with the full road layer, orange routes run from the origin star in West Lafayette to all 17 supermarkets. Right: with roads clipped to the irregular, dashed city limits, the network is split at the Wabash River and only the 7 supermarkets in West Lafayette are reached; the 10 in Lafayette are marked with red crosses.’</p>
+<figure><img src="../dc_clip_problem.png" alt="Two maps of Lafayette and West Lafayette. Left: with the full road layer, orange routes run from the origin star in West Lafayette to all 17 supermarkets. Right: with roads clipped to the irregular, dashed city limits, the network is split at the Wabash River and only the 7 supermarkets in West Lafayette are reached; the 10 in Lafayette are marked with red crosses." class="figure mx-auto d-block"><div class="figcaption">Clipping the roads to the city limits breaks the
+network.</div>
+</figure><hr>
+<h3 id="qfield-network-figure-2">Figure 2</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Two maps of Lafayette and West Lafayette with an origin star at the Purdue Memorial Union and 17 black supermarket points. Left: purple straight lines radiate from the origin to each supermarket, averaging 5.0 kilometers. Right: orange routes follow the streets to the same stores, averaging 5.7 kilometers, crossing the Wabash River on the bridges near downtown Lafayette.’</p>
+<figure><img src="../dc_routes_vs_straight.png" alt="Two maps of Lafayette and West Lafayette with an origin star at the Purdue Memorial Union and 17 black supermarket points. Left: purple straight lines radiate from the origin to each supermarket, averaging 5.0 kilometers. Right: orange routes follow the streets to the same stores, averaging 5.7 kilometers, crossing the Wabash River on the bridges near downtown Lafayette." class="figure mx-auto d-block"><div class="figcaption">Straight-line distance compared with network
+distance.</div>
+</figure><hr>
+<h3 id="qfield-network-figure-3">Figure 3</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Map of Lafayette and West Lafayette roads in light gray, with green street segments around each of the 17 supermarkets showing the streets within 800 meters along the network. The green areas are small clusters around stores, mostly along the commercial corridors; most streets, including downtown Lafayette and much of the Purdue campus area, are gray.’</p>
+<figure><img src="../dc_service_area.png" alt="Map of Lafayette and West Lafayette roads in light gray, with green street segments around each of the 17 supermarkets showing the streets within 800 meters along the network. The green areas are small clusters around stores, mostly along the commercial corridors; most streets, including downtown Lafayette and much of the Purdue campus area, are gray." class="figure mx-auto d-block"><div class="figcaption">Streets within 800 meters of a
+supermarket.</div>
+</figure><hr></section>
 </div>
     </main>
 </div>
@@ -411,14 +460,14 @@
         <p>This lesson is subject to the <a href="CODE_OF_CONDUCT.html">Code of Conduct</a></p>
         <p>
 
-        <a href="https://github.com/SocialTurn/DataCollection/edit/main/README.md" class="external-link">Edit on GitHub</a>
+        <a href="https://github.com/SpatialTurn/DataCollection/edit/main/README.md" class="external-link">Edit on GitHub</a>
 
 	
-        | <a href="https://github.com/SocialTurn/DataCollection/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
-        | <a href="https://github.com/SocialTurn/DataCollection/" class="external-link">Source</a></p>
+        | <a href="https://github.com/SpatialTurn/DataCollection/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
+        | <a href="https://github.com/SpatialTurn/DataCollection/" class="external-link">Source</a></p>
         <p>
         <a href="../citation.html">Cite</a>
-        | <a href="mailto:rkalyanapurdue@gmail.com">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
+        | <a href="mailto:ilindsay@purdue.edu">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 		</div>
 		<div class="col-md-6">
 
@@ -438,18 +487,18 @@
     {
   "@context": "https://schema.org",
   "@type": "LearningResource",
-  "@id": "https://SocialTurn.github.io/DataCollection/instructor/images.html",
+  "@id": "https://SpatialTurn.github.io/DataCollection/instructor/images.html",
   "inLanguage": "en",
   "dct:conformsTo": "https://bioschemas.org/profiles/LearningResource/1.0-RELEASE",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
-  "keywords": "GIS, data, FAIR, social science",
+  "keywords": "GIS, data collection, U.S. Census, American Community Survey, Census API, satellite imagery, QField, network analysis, FAIR, social science",
   "name": "All Images",
   "creativeWorkStatus": "active",
-  "url": "https://SocialTurn.github.io/DataCollection/instructor/images.html",
-  "identifier": "https://SocialTurn.github.io/DataCollection/instructor/images.html",
+  "url": "https://SpatialTurn.github.io/DataCollection/instructor/images.html",
+  "identifier": "https://SpatialTurn.github.io/DataCollection/instructor/images.html",
   "dateCreated": "2024-08-08",
-  "dateModified": "2026-10-13",
-  "datePublished": "2026-10-13"
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17"
 }
 
   </script><script>

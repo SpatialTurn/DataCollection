@@ -27,13 +27,13 @@
         <a href="index.html">
         <img id="incubator-logo" alt="GIS Data Collection for Social Scientists" src="assets/images/incubator-logo.svg"></a>
 
-        <span class="badge text-bg-danger">
-          <abbr title="This lesson is in the pre-alpha phase, which means that it is in early development, but has not yet been taught.">
+        <span class="badge text-bg-warning">
+          <abbr title="This lesson is in the alpha phase, which means that it has been taught once and lesson authors are iterating on feedback.">
             <a href="https://docs.carpentries.org/resources/curriculum/lesson-life-cycle.html" class="external-link alert-link">
-              <i aria-hidden="true" class="icon" data-feather="alert-octagon" style="border-radius: 5px"></i>
-              Pre-Alpha
+              <i aria-hidden="true" class="icon" data-feather="alert-triangle" style="border-radius: 5px"></i>
+              Alpha
             </a>
-            <span class="visually-hidden">This lesson is in the pre-alpha phase, which means that it is in early development, but has not yet been taught.</span>
+            <span class="visually-hidden">This lesson is in the alpha phase, which means that it has been taught once and lesson authors are iterating on feedback.</span>
           </abbr>
         </span>
 
@@ -205,7 +205,7 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="census.html">1. Data from U.S. Census Bureau</a>
+        <a href="introduction.html">1. Introduction to Data Collection</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -214,7 +214,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="imagery.html">2. Acquiring Raster Data using Imagery Databases</a>
+        <a href="repositories.html">2. Finding Data in Repositories</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -223,7 +223,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="imageryvector.html">3. Acquiring Vector Datasets from Data Repositories</a>
+        <a href="census.html">3. Data from the U.S. Census Bureau</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -232,7 +232,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="field.html">4. Field-based Data Collection</a>
+        <a href="imagery.html">4. Acquiring Imagery: Scanned Maps and Satellite Data</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -241,7 +241,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="qfield.html">5. QField Training: Mapping Grocery Stores to Identify Potential Food Deserts</a>
+        <a href="field.html">5. Collecting Data in the Field</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -250,7 +250,16 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="qfield-network.html">6. Network Analysis for Grocery Access in QGIS</a>
+        <a href="qfield.html">6. QField Demonstration: Mapping Grocery Stores</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush8">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading8">
+        <a href="qfield-network.html">7. Network Analysis for Grocery Access in QGIS</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -315,14 +324,19 @@
     <div class="container lesson-content">
       <p>
 
-        <a href="https://github.com/SocialTurn/DataCollection/edit/main/index.md" class="external-link">
+        <a href="https://github.com/SpatialTurn/DataCollection/edit/main/index.md" class="external-link">
           Edit this page <i aria-hidden="true" data-feather="edit"></i>
         </a>
       </p>
       <section id="authors"><section><h2 class="section-heading" id="cite-this-lesson">Cite This Lesson<a class="anchor" aria-label="anchor" href="#cite-this-lesson"></a></h2>
 <hr class="half-width"><p>This lesson was developed collaboratively by the following
-authors:</p><p>Ian Lindsay<span class="author-info"></span> (2024). <em>Data Collection Learning Module</em>. Version [unversioned]. <br><a href="https://SocialTurn.github.io/DataCollection/%20" class="external-link"> https://SocialTurn.github.io/DataCollection/ </a></p>
-<div id="copy-pasteable-citation" class="callout">
+authors:</p>
+<p>Ian Lindsay<span class="author-info"> <a href="#aff1"><sup>1</sup></a> </span>, Nicole Kong<span class="author-info"> <a href="#aff1"><sup>1</sup></a> </span>, Innocensia Owuor<span class="author-info"> <a href="#aff1"><sup>1</sup></a> </span>, Max Gosch<span class="author-info"> <a href="#aff2"><sup>2</sup></a> </span>, Aniket Dev Roy<span class="author-info"> <a href="#aff3"><sup>3</sup></a> </span> (2024). <em>GIS Data Collection for Social Scientists</em>. Version [unversioned]. <br><a href="https://spatialturn.github.io/DataCollection/%20" class="external-link"> https://spatialturn.github.io/DataCollection/ </a></p>
+<p style="font-size=0.8em">Affiliations:<br></p>
+<ol class="affiliations"><li id="aff1">Purdue University</li>
+<li id="aff2">Department of Anthropology, Purdue University</li>
+<li id="aff3">Purdue University Libraries and School of Information</li>
+</ol><div id="copy-pasteable-citation" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -330,7 +344,7 @@ authors:</p><p>Ian Lindsay<span class="author-info"></span> (2024). <em>Data Col
 <div id="copy-pasteable-citation" class="callout-inner">
 <h3 class="callout-title">Copy-Pasteable Citation</h3>
 <div class="callout-content">
-<pre class="citation"><code>Lindsay I. (2024). Data Collection Learning Module. Version [unversioned].</code></pre>
+<pre class="citation"><code>Lindsay I., Kong N., Owuor I., Gosch M., Roy AD. (2024). GIS Data Collection for Social Scientists. Version [unversioned].</code></pre>
 </div>
 </div>
 </div>
@@ -340,9 +354,9 @@ software. To support the Workbench and its developers and community,
 please <a href="https://carpentries.org/workbench/#cite-the-workbench" class="external-link">cite the
 project</a>!</p>
 <!--
-Place links that you need to refer to multiple times across pages here. Delete
-any links that you are not going to use.
- -->
+Links listed here can be reused across pages as [text][name].
+Add reference-style links below as needed.
+-->
 </section></section></div>
   </main></div>
 <!-- END  : inst/pkgdown/templates/content-citation.html -->
@@ -352,14 +366,14 @@ any links that you are not going to use.
         <p>This lesson is subject to the <a href="CODE_OF_CONDUCT.html">Code of Conduct</a></p>
         <p>
 
-        <a href="https://github.com/SocialTurn/DataCollection/edit/main/README.md" class="external-link">Edit on GitHub</a>
+        <a href="https://github.com/SpatialTurn/DataCollection/edit/main/README.md" class="external-link">Edit on GitHub</a>
 
 	
-        | <a href="https://github.com/SocialTurn/DataCollection/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
-        | <a href="https://github.com/SocialTurn/DataCollection/" class="external-link">Source</a></p>
+        | <a href="https://github.com/SpatialTurn/DataCollection/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
+        | <a href="https://github.com/SpatialTurn/DataCollection/" class="external-link">Source</a></p>
         <p>
         <a href="citation.html">Cite</a>
-        | <a href="mailto:rkalyanapurdue@gmail.com">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
+        | <a href="mailto:ilindsay@purdue.edu">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 		</div>
 		<div class="col-md-6">
 
@@ -378,18 +392,18 @@ any links that you are not going to use.
     {
   "@context": "https://schema.org",
   "@type": "LearningResource",
-  "@id": "https://SocialTurn.github.io/DataCollection/citation.html",
+  "@id": "https://SpatialTurn.github.io/DataCollection/citation.html",
   "inLanguage": "en",
   "dct:conformsTo": "https://bioschemas.org/profiles/LearningResource/1.0-RELEASE",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
-  "keywords": "GIS, data, FAIR, social science",
+  "keywords": "GIS, data collection, U.S. Census, American Community Survey, Census API, satellite imagery, QField, network analysis, FAIR, social science",
   "name": "Acknowledgements and Citations",
   "creativeWorkStatus": "active",
-  "url": "https://SocialTurn.github.io/DataCollection/citation.html",
-  "identifier": "https://SocialTurn.github.io/DataCollection/citation.html",
+  "url": "https://SpatialTurn.github.io/DataCollection/citation.html",
+  "identifier": "https://SpatialTurn.github.io/DataCollection/citation.html",
   "dateCreated": "2024-08-08",
-  "dateModified": "2026-10-13",
-  "datePublished": "2026-10-13"
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17"
 }
 
   </script><script>

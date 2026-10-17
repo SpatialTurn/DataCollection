@@ -27,13 +27,13 @@
         <a href="index.html">
         <img id="incubator-logo" alt="GIS Data Collection for Social Scientists" src="assets/images/incubator-logo.svg"></a>
 
-        <span class="badge text-bg-danger">
-          <abbr title="This lesson is in the pre-alpha phase, which means that it is in early development, but has not yet been taught.">
+        <span class="badge text-bg-warning">
+          <abbr title="This lesson is in the alpha phase, which means that it has been taught once and lesson authors are iterating on feedback.">
             <a href="https://docs.carpentries.org/resources/curriculum/lesson-life-cycle.html" class="external-link alert-link">
-              <i aria-hidden="true" class="icon" data-feather="alert-octagon" style="border-radius: 5px"></i>
-              Pre-Alpha
+              <i aria-hidden="true" class="icon" data-feather="alert-triangle" style="border-radius: 5px"></i>
+              Alpha
             </a>
-            <span class="visually-hidden">This lesson is in the pre-alpha phase, which means that it is in early development, but has not yet been taught.</span>
+            <span class="visually-hidden">This lesson is in the alpha phase, which means that it has been taught once and lesson authors are iterating on feedback.</span>
           </abbr>
         </span>
 
@@ -205,7 +205,7 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="census.html">1. Data from U.S. Census Bureau</a>
+        <a href="introduction.html">1. Introduction to Data Collection</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -214,7 +214,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="imagery.html">2. Acquiring Raster Data using Imagery Databases</a>
+        <a href="repositories.html">2. Finding Data in Repositories</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -223,7 +223,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="imageryvector.html">3. Acquiring Vector Datasets from Data Repositories</a>
+        <a href="census.html">3. Data from the U.S. Census Bureau</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -232,7 +232,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="field.html">4. Field-based Data Collection</a>
+        <a href="imagery.html">4. Acquiring Imagery: Scanned Maps and Satellite Data</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -241,7 +241,7 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="qfield.html">5. QField Training: Mapping Grocery Stores to Identify Potential Food Deserts</a>
+        <a href="field.html">5. Collecting Data in the Field</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -250,7 +250,16 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="qfield-network.html">6. Network Analysis for Grocery Access in QGIS</a>
+        <a href="qfield.html">6. QField Demonstration: Mapping Grocery Stores</a>
+    </div><!--/div.accordion-header-->
+
+  </div><!--/div.accordion-item-->
+</div><!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush8">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading8">
+        <a href="qfield-network.html">7. Network Analysis for Grocery Access in QGIS</a>
     </div><!--/div.accordion-header-->
 
   </div><!--/div.accordion-item-->
@@ -323,9 +332,9 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Reference</h1>
-        <p>Last updated on 2023-03-16 |
+        <p>Last updated on 2026-10-17 |
 
-        <a href="https://github.com/SocialTurn/DataCollection/edit/main/learners/reference.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/SpatialTurn/DataCollection/edit/main/learners/reference.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
 
 
@@ -334,13 +343,180 @@
         </div>
 
         
+
 <section><h2 class="section-heading" id="glossary">Glossary<a class="anchor" aria-label="anchor" href="#glossary"></a></h2>
-<hr class="half-width"><p>This is a placeholder file. Please add content here.</p>
-<!--
-Place links that you need to refer to multiple times across pages here. Delete
-any links that you are not going to use.
- -->
-</section></div> <!-- / div.lesson-content -->
+<hr class="half-width"><dl><dt>American Community Survey (ACS)</dt>
+<dd>
+A yearly U.S. Census Bureau survey of about 3.5 million addresses that
+produces estimates on social, economic and housing topics. Published as
+1-year and 5-year estimates, each with a margin of error.
+</dd>
+<dt>Annotation code</dt>
+<dd>
+A special negative value, such as <code>-666666666</code>, that the
+Census API returns instead of an estimate when a value cannot be
+calculated. Replace it with “missing” before calculating.
+</dd>
+<dt>API (Application Programming Interface)</dt>
+<dd>
+A way for a program to request data from a server with a structured web
+address, instead of a person clicking through a website.
+</dd>
+<dt>Block group</dt>
+<dd>
+A census geography inside a tract, usually with 600 to 3,000 people. The
+smallest area with ACS 5-year estimates.
+</dd>
+<dt>Cartographic boundary file</dt>
+<dd>
+A simplified Census Bureau boundary file, clipped to the shoreline,
+designed for thematic maps. Its file names start with <code>cb_</code>.
+</dd>
+<dt>Census tract</dt>
+<dd>
+A small, fairly permanent census area of about 1,200 to 8,000 people
+(4,000 on average), used to compare neighborhoods over time.
+</dd>
+<dt>Coefficient of variation (CV)</dt>
+<dd>
+A measure of how reliable an estimate is: the standard error as a
+percentage of the estimate. For ACS data,
+<code>CV = (MOE / 1.645) / estimate x 100</code>.
+</dd>
+<dt>CORONA</dt>
+<dd>
+A U.S. reconnaissance satellite program (1960 to 1972) whose more than
+860,000 images were declassified in 1995.
+</dd>
+<dt>Coordinate reference system (CRS)</dt>
+<dd>
+The system that links map coordinates to places on Earth, identified by
+an EPSG code such as EPSG:4326 (latitude and longitude) or EPSG:26916
+(UTM zone 16N, in meters).
+</dd>
+<dt>Decennial Census</dt>
+<dd>
+The U.S. count of every person, taken every ten years. It has no margin
+of error but asks only a few questions.
+</dd>
+<dt>Digitizing</dt>
+<dd>
+Creating vector features by tracing them from a map or image.
+</dd>
+<dt>FAIR principles</dt>
+<dd>
+Guidelines for making data Findable, Accessible, Interoperable and
+Reusable.
+</dd>
+<dt>FIPS code</dt>
+<dd>
+A Federal Information Processing Standards code identifying a state (2
+digits) or county (3 digits).
+</dd>
+<dt>GEOID</dt>
+<dd>
+A census geography’s identifier, built by joining FIPS and other codes,
+for example <code>18157</code> for Tippecanoe County, Indiana. Used to
+join census tables to boundaries. Keep it as text.
+</dd>
+<dt>Georeferencing</dt>
+<dd>
+Assigning real-world coordinates to a scanned map or image so it lines
+up with other layers.
+</dd>
+<dt>GNSS (Global Navigation Satellite System)</dt>
+<dd>
+Satellite positioning systems, including GPS, Galileo, GLONASS and
+BeiDou, used by phones and receivers to determine location.
+</dd>
+<dt>Group quarters</dt>
+<dd>
+Places where people live in a group, such as university residence halls,
+nursing homes and prisons. Their residents are not counted as
+households.
+</dd>
+<dt>Margin of error (MOE)</dt>
+<dd>
+The range around an ACS estimate within which the true value lies with
+90% confidence.
+</dd>
+<dt>Metadata</dt>
+<dd>
+Documentation describing a dataset: who made it, when, how, where it
+covers, its attributes, its coordinate system and its license.
+</dd>
+<dt>Network analysis</dt>
+<dd>
+Analysis of movement along a network, such as roads, for example finding
+shortest paths or service areas.
+</dd>
+<dt>QField</dt>
+<dd>
+A free, open source app for collecting field data on phones and tablets,
+using projects prepared in QGIS.
+</dd>
+<dt>Raster data</dt>
+<dd>
+Data stored as a grid of cells, each with a value, such as a satellite
+image or elevation model.
+</dd>
+<dt>Resolution</dt>
+<dd>
+For imagery: the ground size of one pixel (spatial), the number of
+wavelength bands (spectral), or how often an area is imaged (temporal).
+</dd>
+<dt>Schema</dt>
+<dd>
+The planned list of fields in a dataset, with their types and allowed
+values.
+</dd>
+<dt>Sentinel-2</dt>
+<dd>
+European Union Copernicus satellites providing free 13-band imagery at
+10 to 60 m resolution about every 5 days.
+</dd>
+<dt>Service area</dt>
+<dd>
+The part of a network that can be reached from a starting point within a
+given distance or time.
+</dd>
+<dt>Shortest path</dt>
+<dd>
+The route between two points along a network with the lowest total
+distance (or time).
+</dd>
+<dt>TIGER/Line</dt>
+<dd>
+The Census Bureau’s full-detail geographic files of boundaries and
+features such as roads. Their file names start with <code>tl_</code>.
+</dd>
+<dt>Vector data</dt>
+<dd>
+Data stored as points, lines or polygons, each with attributes.
+</dd>
+<dt>ZCTA (ZIP Code Tabulation Area)</dt>
+<dd>
+A census approximation of a ZIP code’s area, used to publish census data
+by ZIP code.
+</dd>
+</dl></section><section><h2 class="section-heading" id="further-reading-and-tools">Further reading and tools<a class="anchor" aria-label="anchor" href="#further-reading-and-tools"></a></h2>
+<hr class="half-width"><ul><li><a href="https://www.census.gov/data/developers/guidance/api-user-guide.html" class="external-link">Census
+Data API user guide</a></li>
+<li><a href="https://www.census.gov/programs-surveys/acs/guidance/estimates.html" class="external-link">Census
+Bureau: when to use 1-year or 5-year estimates</a></li>
+<li><a href="https://www.census.gov/geographies/mapping-files.html" class="external-link">Census
+Bureau mapping files (TIGER/Line and cartographic boundaries)</a></li>
+<li><a href="https://www.usgs.gov/centers/eros/science/usgs-eros-archive-declassified-data-declassified-satellite-imagery-1" class="external-link">USGS:
+declassified satellite imagery</a></li>
+<li><a href="https://documentation.dataspace.copernicus.eu/Applications/Browser.html" class="external-link">Copernicus
+Browser documentation</a></li>
+<li><a href="https://docs.qfield.org/" class="external-link">QField documentation</a></li>
+<li><a href="https://www.go-fair.org/fair-principles/" class="external-link">GO FAIR: the FAIR
+principles</a></li>
+</ul><!--
+Links listed here can be reused across pages as [text][name].
+Add reference-style links below as needed.
+--></section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter Bottom"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="index.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
       </div>
@@ -359,14 +535,14 @@ any links that you are not going to use.
         <p>This lesson is subject to the <a href="CODE_OF_CONDUCT.html">Code of Conduct</a></p>
         <p>
 
-        <a href="https://github.com/SocialTurn/DataCollection/edit/main/learners/reference.md" class="external-link">Edit on GitHub</a>
+        <a href="https://github.com/SpatialTurn/DataCollection/edit/main/learners/reference.md" class="external-link">Edit on GitHub</a>
 
 	
-        | <a href="https://github.com/SocialTurn/DataCollection/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
-        | <a href="https://github.com/SocialTurn/DataCollection/" class="external-link">Source</a></p>
+        | <a href="https://github.com/SpatialTurn/DataCollection/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
+        | <a href="https://github.com/SpatialTurn/DataCollection/" class="external-link">Source</a></p>
         <p>
         <a href="citation.html">Cite</a>
-        | <a href="mailto:rkalyanapurdue@gmail.com">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
+        | <a href="mailto:ilindsay@purdue.edu">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 		</div>
 		<div class="col-md-6">
 
@@ -385,18 +561,18 @@ any links that you are not going to use.
     {
   "@context": "https://schema.org",
   "@type": "LearningResource",
-  "@id": "https://SocialTurn.github.io/DataCollection/reference.html",
+  "@id": "https://SpatialTurn.github.io/DataCollection/reference.html",
   "inLanguage": "en",
   "dct:conformsTo": "https://bioschemas.org/profiles/LearningResource/1.0-RELEASE",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
-  "keywords": "GIS, data, FAIR, social science",
+  "keywords": "GIS, data collection, U.S. Census, American Community Survey, Census API, satellite imagery, QField, network analysis, FAIR, social science",
   "name": "Reference",
   "creativeWorkStatus": "active",
-  "url": "https://SocialTurn.github.io/DataCollection/reference.html",
-  "identifier": "https://SocialTurn.github.io/DataCollection/reference.html",
+  "url": "https://SpatialTurn.github.io/DataCollection/reference.html",
+  "identifier": "https://SpatialTurn.github.io/DataCollection/reference.html",
   "dateCreated": "2024-08-08",
-  "dateModified": "2023-03-16",
-  "datePublished": "2026-10-13"
+  "dateModified": "2026-10-17",
+  "datePublished": "2026-10-17"
 }
 
   </script><script>
